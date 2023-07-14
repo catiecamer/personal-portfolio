@@ -1,0 +1,349 @@
+body {
+    width: 100vw;
+    background-color: #B71375;
+}
+
+.animation {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    z-index:0;
+}
+
+h1{
+    font-family:'Inter';
+    font-size: 120px;
+    color: rgb(249, 195, 203);
+    letter-spacing: 2px;
+    font-weight:400;
+}
+
+.title{
+    display: block;
+    line-height: 0.5;
+}
+
+.title2{
+    margin-top: -7rem;
+    margin-left: 7rem;
+    display: block;
+    line-height: 1.3;
+}
+
+.project{
+    justify-content: right;
+    display: flex;
+    padding-bottom: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem; 
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.project-xsmall{
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 3rem; 
+    justify-content: right;
+}
+
+.projects{
+    font-family:'Inter';
+    font-size: 120px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight:400;  
+    z-index: 2;
+    opacity:0;
+    
+}
+
+.line1{
+    font-family: 'Inter';
+    color: white;
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: inline;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.text-xsmall {
+    font-size: 60px;
+    display: inline;
+    justify-content: center;
+    line-height: normal;
+    margin:0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.slogan-xsmall{
+    font-size: 42px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.text{
+    display: flex;
+    z-index: 2;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    align-items: left; 
+    width: 100%;
+}
+
+
+
+.bold {
+    font-weight: 300;
+    color:#B71375;
+    display: inline;
+   
+}
+
+.letsTalk{
+    border-style:solid;
+    border-radius: 50px;
+    border-width: 2px;
+    padding: 20px 50px 20px 50px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color:transparent;
+    border-color: rgb(249, 217, 222);
+    color: rgb(249, 217, 222);
+    box-shadow: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin:9rem auto 2rem auto;
+    
+}
+
+.magenta {
+    background:  linear-gradient(0deg,#B71375, rgba(162, 19, 107, 0.5)),  url('../../../assets/images/backgroundLanding.jpg');
+    background-color: #B71375;
+    background-size:1800px; 
+    display: block;
+    width: 100%;
+    margin:0;
+    }
+
+    .about {
+        text-align: right;
+        float: right;
+        font-family:'Inter';
+        letter-spacing: 1.5px;
+        //background-color: rgb(194, 55, 90);
+        background-color: transparent;
+        outline: none!important;
+        color: white;
+        font-size: 14px;
+        border: none;
+        font-weight: 500;
+    }
+    
+    .name {
+        text-align: left;
+        float: left;
+        font-family:'Inter';
+        font-weight: 500;
+        background-color: transparent;
+        color: white;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        border: none;  
+    }
+    
+    .nav {
+        display: block;
+        padding-top: 3rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .nav-xsmall{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    
+.arrow{
+    display: block;
+    color: #ff661f;
+    font-size: 100px;
+    font-weight: 100;
+    z-index: 2;
+}
+
+
+
+.mainCircle {
+    display: block;
+    overflow: hidden;
+    z-index: 0;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding-top: 30rem;
+}
+
+.maincircle-xsmall {
+    margin-top: -2rem;
+    z-index:0;
+}
+
+.halfcircle {
+    background-color: rgb(203, 145, 189);
+    border-radius: 50% 50% 0 0 ;
+    height: 40rem;
+    display: block;
+    width: 200%;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1;
+    overflow: hidden;
+}
+.circle {
+    background-color: rgb(203, 145, 189);
+    z-index: 1;
+    margin-top: -35rem;
+    width: 100%;
+}
+
+.circle-xsmall{
+    width:100%;
+}
+
+.circleContainer {
+    display: flex;
+    margin-left: -5rem;
+    margin-right: -5rem;
+    
+}
+.circles {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    background-color: #F79540;
+    z-index: 2;
+    margin: 2rem;
+    display: inline;
+    flex: 0 0 140px;
+}
+
+.circles-xsmall {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #F79540;
+    z-index: 2;
+    margin: 1rem;
+    display: inline;
+    flex: 0 0 50px;
+}
+
+
+#expand{
+    background-color: #ff661f;
+}
+
+img {
+    width:100%;
+    z-index:1;
+}
+
+.img-xsmall {
+    height: 100vh;
+    width:auto;
+}
+
+
+.panel  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    flex-direction: column;
+    will-change: transform;
+    width: 100%;
+    overflow:hidden;
+  }
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    flex-direction: column;
+    overflow:hidden;
+    z-index:2;
+   
+}
+
+.imgText {
+    font-family: 'Inter';
+    color: white;
+    font-weight: 300;
+    text-decoration: underline;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    width: 80%;
+    font-size: calc(100vw / 10);
+    z-index:1;
+}
+
+.headline {
+    display: block;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 10rem;
+    z-index: 0;
+
+}
+
+.headline-xsmall {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.contact {
+    background:  linear-gradient(0deg,#B71375, rgba(162, 19, 107, 0.5)),  url('../../../assets/images/backgroundLanding.jpg');
+}
+
+.aboutme {
+    font-family:'Inter';
+    font-size: 120px;
+    color: rgb(249, 195, 203);
+    letter-spacing: 1px;
+    font-weight:300;
+    display: inline; 
+
+}
+
+.aboutmeItalics {
+    font-family:'clash grotesk extralight';
+    font-size: 120px;
+    color: rgb(249, 195, 203);
+    letter-spacing: 1px;
+    font-weight:300;
+    display: inline; 
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }

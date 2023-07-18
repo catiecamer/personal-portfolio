@@ -8,11 +8,15 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LayoutModule } from '@angular/cdk/layout';
+import { AboutComponent } from './components/about/about.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+    AboutComponent,
+    NavbarComponent,
  
     
   ],

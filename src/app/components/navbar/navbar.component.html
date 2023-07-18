@@ -1,0 +1,31 @@
+<div [ngClass]="{'nav-xsmall': isMobile}" class="nav">
+    <!-- <img class="logo" src="../../../assets/images/logo.png" alt="logo"> -->
+    <div [ngClass]="{'firstline-xsmall': isMobile}" class="firstline">
+        <button [ngClass]="{'button-xsmall': isMobile,'name-xsmall': isMobile}" mat-flat-button [autofocus]="false" class="name">CATIE CAMER</button>
+        <button [ngClass]="{'button-xsmall': isMobile, 'about-xsmall': isMobile}" mat-flat-button [autofocus]="false" class="about">ABOUT</button>
+    </div>
+    <div class="buttons">
+        <button 
+        [ngClass]="{'buttons-xsmall': isMobile}"
+        class="email"
+        [ngClass]="{'pink': hover1}" 
+        (mouseenter)="hover1=true"
+        (mouseleave)="hover1=false"
+        >
+        Email</button>
+        <button 
+        [ngClass]="{'buttons-xsmall': isMobile}"
+        class="resume"
+        [ngClass]="{'pink': hover2}" 
+        (mouseenter)="hover2=true"
+        (mouseleave)="hover2=false">
+        Resume</button>
+        <button 
+        [ngClass]="{'buttons-xsmall': isMobile}"
+        class="linkedin"
+        [ngClass]="{'pink': hover3}" 
+        (mouseenter)="hover3=true"
+        (mouseleave)="hover3=false">
+        LinkedIn</button>
+    </div>
+</div>

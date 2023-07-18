@@ -1,10 +1,11 @@
 <body>     
     <div class="magenta">
-        <span [ngClass]="{'nav-xsmall': isMobile}" class="nav">
+        <app-navbar></app-navbar>
+        <!-- <span [ngClass]="{'nav-xsmall': isMobile}" class="nav">
             <!-- <img class="logo" src="../../../assets/images/logo.png" alt="logo"> -->
-            <button mat-flat-button [autofocus]="false" class="name">CATIE CAMER</button>
+            <!-- <button mat-flat-button [autofocus]="false" class="name">CATIE CAMER</button>
             <button mat-flat-button [autofocus]="false" class="about">ABOUT</button>
-        </span>
+        </span> --> -->
         <div class="animation">
             <div [ngClass]="{'headline-xsmall': isMobile}" class="headline">
                 <h1 [ngClass]="{'text-xsmall': isMobile}" >PRODUCT</h1> 
@@ -32,7 +33,7 @@
                         <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
                     </div>
                     <div [ngClass]="{'project-xsmall': isMobile}"class="project">
-                        <p [ngClass]="{'text-xsmall': isMobile}" class="projects">PROJECTS</p>
+                        <p [ngClass]="{'projecttext-xsmall': isMobile}" class="projects">PROJECTS</p>
                     </div>
                 </div>
             </div>
@@ -50,25 +51,38 @@
     <section class="container">
         <div class="panel 1">
             <img [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/THATTorontoStudio.jpg" alt="THAT Toronto Studio Project">
-            <p class="imgText">THAT Toronto Studio</p>
+            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">THAT Toronto Studio</p>
         </div>
         <div class="panel 2">
             <img  [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/UofW.jpg" alt="UofW Project">
-            <p class="imgText">UofW</p>
+            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">UofW</p>
         </div>
         <div class="panel 3">
             <img [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/CanadaComputers.jpg" alt="Canada Computers Project">
-            <p class="imgText">Canada Computers</p>
+            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">Canada Computers</p>
         </div>
         <div class="panel 4">
             <img [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/Gmail.jpg" alt="Gmail Project">
-            <p class="imgText">Gmail</p>
+            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">Gmail</p>
         </div>
     </section>
 
     <div class="contact">
-        <h1 class="aboutme">About me - About me - About me - About me - About me - About me</h1>
-        <h1 class="aboutmeItalics">About me - About me - About me - About me - About me - About me</h1>
+        <div class="circleContainer2">
+            <div [ngClass]="{'circles2-xsmall': isMobile}" class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2" id="expand"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+        </div>
+        <p class="aboutme" [ngClass]="{'aboutme-xsmall': isMobile}">About me - About me - About me - About me - About me - About me</p>
+        <p class="aboutmeItalics" [ngClass]="{'aboutmeItalics-xsmall': isMobile}">About me - About me - About me - About me - About me - About me</p> 
     </div>
 </body>
 

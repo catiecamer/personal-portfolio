@@ -51,7 +51,7 @@ export class LandingPageComponent implements OnInit {
           pin: false,
           start: "top top",
           end: "+=100%",
-          markers: true,
+          // markers: true,
           // pinSpacing: false 
         }
       })
@@ -65,16 +65,17 @@ export class LandingPageComponent implements OnInit {
           pin: false,
           start: "top top",
           end: "+=400%",
-          markers: true,
+          // markers: true,
           // pinSpacing: false 
         }
       })
 
     //  circleBG.to(".circle", {y: "-50%", ease: "power1.in", duration: 3, overflowX:"hidden", transformOrigin: 'center'}, 0)
      circleBG.to(".halfcircle", {y: "-200%", ease: "power1.in", duration: 3, overflowX:"hidden"}, 0)
-     circleBG.to(".mainCircle", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
-     circleBG.to(".mainCircle-xsmall", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
-     circleBG.to(".animation", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
+    //  circleBG.to(".mainCircle", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
+    //  circleBG.to(".mainCircle-xsmall", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
+    //  circleBG.to(".animation", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
+    //  circleBG.to(".container", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
     //  circleBG.to(".magenta", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
     
 
@@ -85,7 +86,7 @@ export class LandingPageComponent implements OnInit {
           scrub: true,
           pin: false,
           start: "bottom 20% ",
-          end: "+=100%",
+          end: "+=200%",
           // pinSpacing: false 
           // markers: true,
         }
@@ -111,8 +112,10 @@ export class LandingPageComponent implements OnInit {
     ScrollTrigger.refresh()
     projects.to(".circle", {backgroundColor: "#ff661f",ease: "power1.in"})
     projects.to(".halfcircle", {backgroundColor: "#ff661f",ease: "power1.in"},0)
-    projects.to(".projects", {opacity:1},0)
-    projects.to(".projects", {x: "-15%", ease: "power1.in"},0)
+    projects.to(".project", {opacity:1},0)
+    projects.to(".project", {x: "-15%", ease: "power1.in"},0)
+    projects.to(".projecttext-xsmall", {x: "", ease: "power1.in"},0)
+
 
 
       // handle the section pinning "#F79540"
@@ -131,6 +134,20 @@ let pin = gsap.timeline ({
 });
 
 
+let aboutcircles = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".contact",
+    scrub: true,
+    pin: false,
+    start: "top bottom",
+    end: "+=200%",
+    // markers: true,
+  }
+})
+
+aboutcircles.to(".circles2", {x: "-200%", backgroundColor: "#ff661f", ease: "power1.in"})
+aboutcircles.to(".aboutme", {x: "20%", ease: "power1.in"},0)
+aboutcircles.to(".aboutmeItalics", {x: "-20%", ease: "power1.in"},0)
 
 
 
@@ -139,10 +156,15 @@ panels.forEach((panel:any, i:any) => {
   ScrollTrigger.create({
     trigger: panel,
     start:"top top", // if it's shorter than the viewport, we prefer to pin it at the top
-    pin: true, 
-    // pinSpacing: false 
+    pin: i === panels.length -1 ? false : true, 
+    end:"bottom 100",
+    pinSpacing: false 
   });
 });
+
+
+
+
 
 
 
@@ -165,6 +187,7 @@ panels.forEach((panel:any, i:any) => {
 //     },
 //   });
 // });
+
 
 }
 }

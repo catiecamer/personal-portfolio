@@ -1,0 +1,73 @@
+.about, .name {
+    text-align: right;
+    // float: right;
+    font-family:'Inter';
+    letter-spacing: 1.5px;
+    //background-color: rgb(194, 55, 90);
+    background-color: transparent;
+    outline: none!important;
+    color: rgb(203, 0, 135);
+    font-size: 14px;
+    border: none;
+    font-weight: 600;
+}
+.about-xsmall{
+    float: right;
+}
+
+.firstline{
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstline-xsmall{
+   
+}
+
+.name {
+    text-align: left;
+}
+
+.nav {
+    display: block;
+    padding-top: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.nav-xsmall{
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    z-index: 20;
+    width: calc(100% - 60px)
+    
+}
+
+.buttons{
+    display: block;
+    padding-top: 0.5rem;;
+
+}
+
+.resume, .linkedin, .email {
+    background-color: transparent;
+    outline: none!important;
+    color: white;
+    font-size: 14px;
+    border: none;
+    font-weight: 300;
+    font-family:'Inter';
+    letter-spacing: 1px;
+}
+
+
+.button-xsmall{
+    color:#ffffff;
+}
+
+
+.pink {
+    color: #B71375;
+}
+

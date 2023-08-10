@@ -1,0 +1,63 @@
+.box {
+  width: 250px;
+  //   height: 160px;
+  position: fixed;
+  z-index: 9000;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: inset;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.email {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-family: "Inter";
+  letter-spacing: 1px;
+  color: #1b065e;
+  font-weight: 600;
+}
+
+.done {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  font-family: "Inter";
+  width: 20%;
+  color: #5804de;
+  box-shadow: none;
+  outline: none !important;
+}
+
+.done:hover {
+  color: #b71375;
+}
+
+.centerrow {
+  display: block;
+}
+
+.funtalk {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  margin-top: -0.8rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}

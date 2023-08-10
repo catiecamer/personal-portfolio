@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { EmailComponent } from './components/email/email.component';
+import { ResumeComponent } from './components/resume/resume.component';
+
 
 @NgModule({
   declarations: [
@@ -17,15 +21,19 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LandingPageComponent,
     AboutComponent,
     NavbarComponent,
+    EmailComponent,
+    ResumeComponent,
  
     
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    LayoutModule
+    LayoutModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

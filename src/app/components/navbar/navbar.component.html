@@ -1,31 +1,90 @@
-<div [ngClass]="{'nav-xsmall': isMobile}" class="nav">
-    <!-- <img class="logo" src="../../../assets/images/logo.png" alt="logo"> -->
-    <div [ngClass]="{'firstline-xsmall': isMobile}" class="firstline">
-        <button [ngClass]="{'button-xsmall': isMobile,'name-xsmall': isMobile}" mat-flat-button [autofocus]="false" class="name">CATIE CAMER</button>
-        <button [ngClass]="{'button-xsmall': isMobile, 'about-xsmall': isMobile}" mat-flat-button [autofocus]="false" class="about">ABOUT</button>
-    </div>
-    <div class="buttons">
-        <button 
-        [ngClass]="{'buttons-xsmall': isMobile}"
-        class="email"
-        [ngClass]="{'pink': hover1}" 
-        (mouseenter)="hover1=true"
-        (mouseleave)="hover1=false"
-        >
-        Email</button>
-        <button 
-        [ngClass]="{'buttons-xsmall': isMobile}"
-        class="resume"
-        [ngClass]="{'pink': hover2}" 
-        (mouseenter)="hover2=true"
-        (mouseleave)="hover2=false">
-        Resume</button>
-        <button 
-        [ngClass]="{'buttons-xsmall': isMobile}"
-        class="linkedin"
-        [ngClass]="{'pink': hover3}" 
-        (mouseenter)="hover3=true"
-        (mouseleave)="hover3=false">
-        LinkedIn</button>
-    </div>
+<div [ngClass]="{ 'nav-xsmall': isMobile }" class="nav">
+  <!-- <img class="logo" src="../../../assets/images/logo.png" alt="logo"> -->
+  <div [ngClass]="{ 'firstline-xsmall': isMobile }" class="firstline">
+    <a routerLink="">
+      <button
+        [ngClass]="{
+          name: ['/about', '/resume'].includes(url1),
+
+          home: !['/about', '/resume'].includes(url1),
+
+          'button-xsmall': isMobile,
+          'name-xsmall': isMobile
+        }"
+        mat-flat-button
+        [autofocus]="false"
+        class="name"
+      >
+        CATIE CAMER
+      </button>
+    </a>
+    <a routerLink="/about">
+      <button
+        [ngClass]="{
+          about: ['/about', '/resume'].includes(url1),
+          home: !['/about', '/resume'].includes(url1),
+          'button-xsmall': isMobile,
+          'about-xsmall': isMobile
+        }"
+        mat-flat-button
+        [autofocus]="false"
+        class="about"
+      >
+        ABOUT
+      </button>
+    </a>
+  </div>
+  <div class="buttons">
+    <button
+      (click)="openDialog()"
+      [ngClass]="{
+        email: ['/about', '/resume'].includes(url1),
+        homecontact: !['/about', '/resume'].includes(url1),
+        'buttons-xsmall': isMobile,
+        pink: hover1,
+        white: hover4
+      }"
+      (mouseenter)="url1 === '/about' && (hover1 = true)"
+      (mouseleave)="url1 === '/about' && (hover1 = false)"
+      (mouseenter)="url1 != '/about' && (hover4 = true)"
+      (mouseleave)="url1 != '/about' && (hover4 = false)"
+    >
+      Email
+    </button>
+    <a routerLink="/resume">
+      <button
+        [ngClass]="{
+          resume: ['/about', '/resume'].includes(url1),
+          homecontact: !['/about', '/resume'].includes(url1),
+          'buttons-xsmall': isMobile,
+          pink: hover2,
+          white: hover5
+        }"
+        (mouseenter)="url1 === '/about' && (hover2 = true)"
+        (mouseleave)="url1 === '/about' && (hover2 = false)"
+        (mouseenter)="url1 != '/about' && (hover5 = true)"
+        (mouseleave)="url1 != '/about' && (hover5 = false)"
+      >
+        Resume
+      </button>
+    </a>
+    <a href="https://www.linkedin.com/in/catiecamer/" target="_blank">
+      <button
+        [ngClass]="{
+          linkedin: ['/about', '/resume'].includes(url1),
+          homecontact: !['/about', '/resume'].includes(url1),
+          'buttons-xsmall': isMobile,
+          pink: hover3,
+          white: hover6
+        }"
+        (mouseenter)="url1 === '/about' && (hover3 = true)"
+        (mouseleave)="url1 === '/about' && (hover3 = false)"
+        (mouseenter)="url1 != '/about' && (hover6 = true)"
+        (mouseleave)="url1 != '/about' && (hover6 = false)"
+      >
+        LinkedIn
+      </button>
+    </a>
+  </div>
+  <app-email *ngIf="modalOpenSubject | async"></app-email>
 </div>

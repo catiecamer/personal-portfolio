@@ -1,0 +1,132 @@
+<body [ngClass]="{ 'body-xsmall': isMobile }">
+  <app-email *ngIf="modalOpenSubject | async"></app-email>
+  <div [ngClass]="{ freeze: modalOpenSubject | async }">
+    <app-navbar></app-navbar>
+    <div [ngClass]="{ 'background-xsmall': isMobile }" class="background">
+      <div [ngClass]="{ 'design-xsmall': isMobile }" class="design"></div>
+      <h1 [ngClass]="{ 'h1-xsmall': isMobile }">Catie Camer</h1>
+      <p [ngClass]="{ 'designer-xsmall': isMobile }" class="designer">
+        Product Designer
+      </p>
+
+      <div [ngClass]="{ 'container-xsmall': isMobile }" class="container">
+        <div
+          [ngClass]="{ 'column1-xsmall': isMobile, 'column1-small': isTablet }"
+          class="column1"
+        >
+          <div>
+            <p class="experience">Experience</p>
+            <div class="line"></div>
+            <div class="line1">
+              <p class="title">Freelance Product Designer</p>
+              <p class="place">, Toronto, ON Mar 2023 - Present</p>
+            </div>
+            <ul>
+              <li>
+                Conducted UX research and converged data to create desktop and
+                mobile wireframes for THAT Toronto Studio (Protopie & Figma)
+              </li>
+              <li>
+                Implemented changes into Squarespace to create new website with
+                the use of CSS for customization
+              </li>
+            </ul>
+            <div class="line1">
+              <p class="title">Senior Financial Analyst</p>
+              <p class="place">
+                , Toronto, ON — Greenbrook TMS Inc., Sept 2021 - Oct 2022
+              </p>
+            </div>
+            <ul>
+              <li>
+                Managed a group of seven accountants and ensured that monthly
+                deadlines for posting activities were met and appropriate
+              </li>
+              <li>
+                Researched and documented how to account for unique transactions
+                and presented findings to Director of Finance and Finance
+                Manager; created a more efficient revenue calculation
+              </li>
+              <li>
+                Created a more efficient revenue calculation; reconstructed a
+                process that took 24-48 hours in excel into a 2 minute process
+                in Python; resulted in more timely financial statements
+              </li>
+            </ul>
+
+            <div class="line1">
+              <p class="title">Staff Accountant</p>
+              <p class="place">Toronto, ON — KPMG LLP, Sept 2019 - Sept 2021</p>
+            </div>
+            <ul>
+              <li>
+                Audited financial statements for multiple clients in the
+                technology industry
+              </li>
+              <li>
+                Led control testing for a client; improved efficiency by
+                communicating daily with clients and planning detailed trackers
+              </li>
+              <li>
+                Coached and supervised junior employees; conducted learning
+                sessions; improved teamwork
+              </li>
+            </ul>
+          </div>
+
+          <p class="experience">Languages</p>
+          <div class="line"></div>
+          <p>English, French, Romanian</p>
+        </div>
+        <div [ngClass]="{ 'column2-xsmall': isMobile }" class="column2">
+          <div class="skills">
+            <p class="experience">Skills</p>
+            <div class="line"></div>
+            <p class="title">Personal</p>
+            <ul>
+              <li class="skill">
+                Quick learner, creative, team player, detail oriented
+              </li>
+            </ul>
+            <p class="title">Technical</p>
+            <ul>
+              <li class="skill">
+                Interviews, User flows, Surveys, Sketching, IA, Wireframes,
+                Usability testing, LinkedIn WCAG 2.2
+              </li>
+            </ul>
+            <p class="title">Tools</p>
+            <ul>
+              <li class="skill">
+                Figma, Adobe Photoshop/Illustrator, CSS, HTML, Python, Webflow,
+                Protopie, Squarespace
+              </li>
+            </ul>
+          </div>
+
+          <div class="education">
+            <p class="experience">Education</p>
+            <div class="line"></div>
+            <p class="title">General Assembly</p>
+            <p class="line1">, Toronto, ON — UX Design Immersive Bootcamp</p>
+            <ul>
+              <li>Nov 2022 - Mar 2023</li>
+            </ul>
+            <p class="title">CPA Ontario</p>
+            <p class="line1">
+              , Toronto, ON — Chartered Professional Accountant Designation
+            </p>
+            <ul>
+              <li>Sept 2018 - Apr 2022</li>
+            </ul>
+            <p class="title">Queen’s University</p>
+            <p class="line1">, Kingston, ON — Bachelor of Commerce</p>
+            <ul>
+              <li>Sept 2015 - Sept 2019</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

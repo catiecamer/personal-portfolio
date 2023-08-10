@@ -1,91 +1,204 @@
-<body>     
+<body>
+  <app-email *ngIf="modalOpenSubject | async"></app-email>
+  <div [ngClass]="{ freeze: modalOpenSubject | async }">
     <div class="magenta">
-        <app-navbar></app-navbar>
-        <!-- <span [ngClass]="{'nav-xsmall': isMobile}" class="nav">
-            <!-- <img class="logo" src="../../../assets/images/logo.png" alt="logo"> -->
-            <!-- <button mat-flat-button [autofocus]="false" class="name">CATIE CAMER</button>
-            <button mat-flat-button [autofocus]="false" class="about">ABOUT</button>
-        </span> --> -->
-        <div class="animation">
-            <div [ngClass]="{'headline-xsmall': isMobile}" class="headline">
-                <h1 [ngClass]="{'text-xsmall': isMobile}" >PRODUCT</h1> 
-                <div class="arrow">
-                    <!-- <fa-icon [icon]="faArrowDown"></fa-icon> -->
-                </div>
-                <h1 [ngClass]="{'text-xsmall': isMobile}" class="title2">DESIGNER</h1>
-            </div>
-            <div [ngClass]="{'maincircle-xsmall': isMobile}" class="mainCircle">
-                <div class="halfcircle"></div>
-                <div [ngClass]="{'circle-xsmall': isMobile}" class="circle">
-                
-                    
-                    <div class="text">
-                        <p [ngClass]="{'text-xsmall': isMobile, 'slogan-xsmall': isMobile}" class="line1">From <span class="bold">art to finance </span> and now <span class="bold">product design, </span>I bring a fresh perspective to<span class="bold"> creative problem-solving. </span> </p>
-                    </div>
-                    <div class="circleContainer">
-                        <div [ngClass]="{'circles-xsmall': isMobile}" class="circles"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles" id="expand"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
-                        <div [ngClass]="{'circles-xsmall': isMobile}"class="circles"><span></span></div>
-                    </div>
-                    <div [ngClass]="{'project-xsmall': isMobile}"class="project">
-                        <p [ngClass]="{'projecttext-xsmall': isMobile}" class="projects">PROJECTS</p>
-                    </div>
-                </div>
-            </div>
+      <app-navbar></app-navbar>
+      <div class="animation">
+        <div
+          [ngClass]="{
+            'headline-xsmall': isMobile,
+            'headline-small': isTablet
+          }"
+          class="headline"
+        >
+          <h1 [ngClass]="{ 'text-xsmall': isMobile, 'text-small': isTablet }">
+            PRODUCT
+          </h1>
+          <h2
+            [ngClass]="{ 'text-xsmall': isMobile, 'text-small': isTablet }"
+            class="title2"
+          >
+            DESIGNER
+          </h2>
         </div>
-        
-
-        <!-- <div>
-            <button class="letsTalk">Let's Talk!</button>
-        </div> -->
-
-
-        
-
+        <div [ngClass]="{ 'maincircle-xsmall': isMobile }" class="mainCircle">
+          <div class="halfcircle"></div>
+          <div [ngClass]="{ 'circle-xsmall': isMobile }" class="circle">
+            <div class="text">
+              <p
+                [ngClass]="{
+                  'slogan-xsmall': isMobile,
+                  'slogan-small': isTablet
+                }"
+                class="line1"
+              >
+                From <span class="bold">art to finance </span> and now
+                <span class="bold">product design, </span>I bring a fresh
+                perspective to<span class="bold">
+                  creative problem-solving.
+                </span>
+              </p>
+            </div>
+            <div class="circleContainer">
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+              <div
+                [ngClass]="{ 'circles-xsmall': isMobile }"
+                class="circles"
+                id="expand"
+              >
+                <span></span>
+              </div>
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+                <span></span>
+              </div>
+            </div>
+            <div
+              [ngClass]="{
+                'project-xsmall': isMobile,
+                'project-small': isTablet
+              }"
+              class="project"
+            >
+              <p
+                [ngClass]="{
+                  'projecttext-xsmall': isMobile,
+                  'projecttext-small': isTablet
+                }"
+                class="projects"
+              >
+                PROJECTS
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <section class="container">
+      <a [href]="THATTorontoStudioProjectLink" target="_blank">
         <div class="panel 1">
-            <img [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/THATTorontoStudio.jpg" alt="THAT Toronto Studio Project">
-            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">THAT Toronto Studio</p>
+          <img
+            [ngClass]="{ 'img-xsmall': isMobile }"
+            src="../../../assets/images/THATTorontoStudio.jpg"
+            alt="THAT Toronto Studio Project"
+          />
+          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+            THAT Toronto Studio
+          </p>
         </div>
+      </a>
+      <a [href]="waterlooProjectLink" target="_blank">
         <div class="panel 2">
-            <img  [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/UofW.jpg" alt="UofW Project">
-            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">UofW</p>
+          <img
+            class="projectimages"
+            [ngClass]="{ 'img-xsmall': isMobile }"
+            src="../../../assets/images/UofW.jpg"
+            alt="UofW Project"
+          />
+          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">UofW</p>
         </div>
+      </a>
+
+      <a [href]="canadaComputersProjectLink" target="_blank">
         <div class="panel 3">
-            <img [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/CanadaComputers.jpg" alt="Canada Computers Project">
-            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">Canada Computers</p>
+          <img
+            [ngClass]="{ 'img-xsmall': isMobile }"
+            src="../../../assets/images/CanadaComputers.jpg"
+            alt="Canada Computers Project"
+          />
+          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+            Canada Computers
+          </p>
         </div>
+      </a>
+
+      <a [href]="gmailProjectLink" target="_blank">
         <div class="panel 4">
-            <img [ngClass]="{'img-xsmall': isMobile}" src="../../../assets/images/Gmail.jpg" alt="Gmail Project">
-            <p [ngClass]="{'imgText-xsmall': isMobile}" class="imgText">Gmail</p>
+          <img
+            [ngClass]="{ 'img-xsmall': isMobile }"
+            src="../../../assets/images/Gmail.jpg"
+            alt="Gmail Project"
+          />
+          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+            Gmail
+          </p>
         </div>
+      </a>
     </section>
 
     <div class="contact">
-        <div class="circleContainer2">
-            <div [ngClass]="{'circles2-xsmall': isMobile}" class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2" id="expand"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
-            <div [ngClass]="{'circles2-xsmall': isMobile}"class="circles2"><span></span></div>
+      <div class="circleContainer2">
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
         </div>
-        <p class="aboutme" [ngClass]="{'aboutme-xsmall': isMobile}">About me - About me - About me - About me - About me - About me</p>
-        <p class="aboutmeItalics" [ngClass]="{'aboutmeItalics-xsmall': isMobile}">About me - About me - About me - About me - About me - About me</p> 
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div
+          [ngClass]="{ 'circles2-xsmall': isMobile }"
+          class="circles2"
+          id="expand"
+        >
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+      </div>
+      <a routerLink="/about">
+        <p
+          class="aboutme"
+          [ngClass]="{ 'aboutme-xsmall': isMobile, 'aboutme-small': isTablet }"
+        >
+          About me - About me - About me - About me - About me - About me
+        </p>
+        <p
+          class="aboutmeItalics"
+          [ngClass]="{
+            'aboutmeItalics-xsmall': isMobile,
+            'aboutmeItalics-small': isTablet
+          }"
+        >
+          About me - About me - About me - About me - About me - About me
+        </p>
+      </a>
     </div>
+  </div>
 </body>
-
-
-
-

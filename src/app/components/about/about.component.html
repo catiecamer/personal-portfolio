@@ -9,7 +9,13 @@
       <div [ngClass]="{ 'art4-xsmall': isMobile }" class="art4"></div>
       <div [ngClass]="{ 'art5-xsmall': isMobile }" class="art5"></div>
       <div class="art6"></div>
-      <div [ngClass]="{ 'imgContainer-xsmall': isMobile }" class="imgContainer">
+      <div
+        [ngClass]="{
+          'imgContainer-xsmall': isMobile,
+          'imgContainer-small': isTablet
+        }"
+        class="imgContainer"
+      >
         <!-- <p class="name">I'm Catie Camer</p> -->
         <img
           class="profile"
@@ -50,7 +56,7 @@
               }"
               class="accounting"
             >
-              <p [ngClass]="{ 'p-xsmall': isMobile }">
+              <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
                 From balancing the books...
               </p>
               I started my career as a CPA, crunching numbers 📈. As I worked my
@@ -69,7 +75,7 @@
               }"
               class="painting"
             >
-              <p [ngClass]="{ 'p-xsmall': isMobile }">
+              <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
                 And painting canvases...
               </p>
               By the way, I also paint abstract pieces 🎨 and have been selling
@@ -86,7 +92,9 @@
               }"
               class="uxdesign"
             >
-              <p [ngClass]="{ 'p-xsmall': isMobile }">To designing products!</p>
+              <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
+                To designing products!
+              </p>
               I fell head over heels for everything UX during my immersive
               course at General Assembly 🎓. Collaborating with other designers
               and developers during the course was a blast 🚀. When it comes to

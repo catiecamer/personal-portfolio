@@ -1,5 +1,5 @@
 .freeze {
-  background-color: rgb(183, 19, 117, 0.5);
+  background-color: rgba(255, 182, 201, 0.821);
   z-index: 999;
   width: 100vw;
   height: 100vh;
@@ -12,6 +12,7 @@
 body {
   margin: 0;
   background-color: #e49fd8;
+  background-color: #f4cedd;
 }
 
 .background {
@@ -20,7 +21,7 @@ body {
 }
 
 .container {
-  padding: 3rem 6rem 6rem 6rem;
+  padding: 3rem 5rem 5rem 5rem;
   display: flex;
 }
 
@@ -30,10 +31,11 @@ body {
 }
 
 h1 {
-  margin: 6rem;
+  margin: 5rem;
   font-family: Inter;
   font-size: 72px;
   color: #fa2452;
+  color: #e95d53;
   font-weight: 700;
   letter-spacing: -5px;
   margin-top: 0;
@@ -44,6 +46,7 @@ p,
 ul {
   font-family: Inter;
   color: rgb(221, 32, 73);
+  color: #1f5a59;
   font-weight: 2s00;
   font-size: 12px;
   letter-spacing: 1.2;
@@ -104,24 +107,28 @@ li {
   width: 90%;
   height: 2px;
   background-color: rgb(221, 32, 73);
+  background-color: rgb(31, 90, 89);
   border-radius: 1px;
   margin-bottom: 1.5rem;
 }
 
 .design {
-  margin: 6rem;
+  margin: 5rem;
   margin-bottom: -0.5rem;
   width: 100px;
   height: 15px;
   background-color: rgb(250, 36, 82);
+  background-color: rgb(233, 94, 84);
+  // background-color: rgb(253, 130, 63);
 }
 
 .designer {
-  margin: 6rem;
+  margin: 5rem;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
   font-size: 32px;
   font-weight: 200;
+  color: rgb(233, 94, 84);
 }
 
 .designer-xsmall,

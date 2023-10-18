@@ -7,9 +7,24 @@
   background-color: transparent;
   outline: none !important;
   color: #1b065e;
+  color: rgb(233, 94, 84);
   font-size: 14px;
   border: none;
   font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button-xsmall {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.buttons-xsmall {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
 }
 
 .home {
@@ -19,6 +34,7 @@
   background-color: transparent;
   outline: none !important;
   color: white;
+  color: rgb(255, 255, 135);
   font-size: 14px;
   border: none;
   font-weight: 600;
@@ -31,6 +47,7 @@
 .firstline {
   display: flex;
   justify-content: space-between;
+  height: 19px;
 }
 
 .firstline-xsmall {
@@ -42,22 +59,25 @@
 
 .nav {
   display: block;
-  padding-top: 3rem;
+  padding-top: 24px;
+  padding-bottom: 21px;
   padding-left: 5rem;
   padding-right: 5rem;
 }
 
 .nav-xsmall {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: absolute;
   z-index: 20;
-  width: calc(100% - 60px);
+  width: calc(100vw - 40px);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .buttons {
   display: block;
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
 }
 
 .resume,
@@ -68,19 +88,27 @@
   background-color: transparent;
   outline: none !important;
   color: white;
-  font-size: 14px;
+  color: rgb(31, 90, 89);
+  // font-size: 14px;
   border: none;
-  font-weight: 300;
+  font-weight: 400;
   font-family: "Inter";
   letter-spacing: 1px;
+  font-size: 12px;
 }
 
 .button-xsmall {
+  color: #ffffff;
+  color: rgb(255, 255, 135);
+}
+
+.buttons-xsmall {
   color: #ffffff;
 }
 
 .pink {
   color: #b71375;
+  color: rgb(253, 130, 63);
 }
 
 .white {
@@ -90,12 +118,14 @@
 .homecontact {
   background-color: transparent;
   outline: none !important;
-  font-size: 14px;
+  // font-size: 14px;
   border: none;
-  font-weight: 300;
+  font-weight: 400;
   font-family: "Inter";
   letter-spacing: 1px;
   color: rgb(249, 195, 203);
+  color: rgb(255, 255, 255, 0.7);
+  font-size: 12px;
 }
 
 .homecontact:hover {
@@ -106,4 +136,40 @@
 .resume:hover,
 .linkedin:hover {
   color: #b71375;
+  color: rgb(253, 130, 63);
+}
+
+.navprojects {
+  display: flex;
+  background-color: white;
+  color: black;
+  height: 19px;
+  margin-top: -6px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.buttonsprojects {
+  display: none;
+}
+
+.buttons {
+  .buttons2 {
+    padding: 0;
+    display: none;
+  }
+}
+
+.navbarprojects {
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  z-index: 1000;
+}
+
+#logo {
+  text-decoration: overline;
+  text-decoration-thickness: 2px;
 }

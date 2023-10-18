@@ -90,60 +90,293 @@
         </div>
       </div>
     </div>
-    <section class="container">
-      <a [href]="THATTorontoStudioProjectLink" target="_blank">
-        <div class="panel 1">
+    <section class="container" [ngClass]="{ 'container-xsmall': isMobile }">
+      <div
+        class="projectsidebar"
+        [ngClass]="{ 'projectsidebar-xsmall': isMobile }"
+      >
+        <a routerLink="/waterloo">
+          <div
+            [ngClass]="{ 'panel-xsmall panel1-xsmall': isMobile }"
+            class="panel one"
+            [ngStyle]="{
+              'background-color': isHovering4 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <img
+              (mouseover)="isHovering4 = true"
+              (mouseout)="isHovering4 = false"
+              class="projectimages"
+              [ngClass]="{ 'img-xsmall': isMobile, img1: !isMobile }"
+              [ngStyle]="{
+                opacity: isHovering4 ? '0.4' : ''
+              }"
+              src="assets/images/UofW.jpg"
+              alt="UNIVERSITY OF WATERLOO PROJECT"
+            />
+            <div
+              class="description desc1"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering4 ? 'white' : '' }"
+            >
+              <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+                UNIVERSITY OF WATERLOO PROJECT
+              </p>
+              <p
+                [ngClass]="{ 'para-xsmall': isMobile, 'para-small': isTablet }"
+                class="para"
+                (mouseover)="isHovering4 = true"
+                (mouseout)="isHovering4 = false"
+              >
+                We had a big challenge when approaching the Waterloo website:
+                Organizing and presenting large amounts of information to
+                various audiences. The project was completed in a three-week
+                timeline and included two team members.
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <div class="circle3" [ngClass]="{ 'circle3-xsmall': isMobile }"></div>
+
+        <a routerLink="/thattorontostudio">
+          <div
+            [ngClass]="{ 'panel-xsmall panel2-xsmall': isMobile }"
+            class="panel two"
+            [ngStyle]="{
+              'background-color': isHovering ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <div
+              class="description desc2"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering ? 'white' : '' }"
+            >
+              <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+                THAT TORONTO STUDIO
+              </p>
+              <p
+                [ngClass]="{ 'para-xsmall': isMobile, 'para-small': isTablet }"
+                class="para"
+                (mouseover)="isHovering = true"
+                (mouseout)="isHovering = false"
+              >
+                In a three-week design project for THAT Toronto Studio, I was
+                tasked with suggesting UI and UX improvements for their current
+                desktop and mobile websites based on user feedback. The focus
+                was on enhancing the landing page and booking process, which
+                were identified as crucial elements in improving the overall
+                user experience.
+              </p>
+            </div>
+            <img
+              [ngStyle]="{
+                opacity: isHovering ? '0.4' : ''
+              }"
+              (mouseover)="isHovering = true"
+              (mouseout)="isHovering = false"
+              class="projectimages img2"
+              [ngClass]="{ 'img-xsmall img2-xsmall': isMobile }"
+              src="assets/images/THATTorontoStudio.jpg"
+              alt="THAT Toronto Studio Project"
+            />
+            <div
+              class="circle4"
+              [ngClass]="{ 'circle4-xsmall': isMobile }"
+            ></div>
+          </div>
+        </a>
+
+        <a routerLink="/canadacomputers">
+          <div
+            [ngClass]="{ 'panel-xsmall panel3-xsmall': isMobile }"
+            class="panel three"
+            [ngStyle]="{
+              'background-color': isHovering3 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <img
+              class="projectimages img3"
+              [ngStyle]="{
+                opacity: isHovering3 ? '0.4' : ''
+              }"
+              [ngClass]="{ 'img1-xsmall': isMobile }"
+              src="assets/images/CanadaComputers.jpg"
+              alt="Canada Computers Project"
+              (mouseover)="isHovering3 = true"
+              (mouseout)="isHovering3 = false"
+            />
+            <img
+              class="projectimages img31"
+              [ngStyle]="{
+                opacity: isHovering3 ? '0.4' : ''
+              }"
+              (mouseover)="isHovering3 = true"
+              (mouseout)="isHovering3 = false"
+              [ngClass]="{ 'img-xsmall': isMobile }"
+              src="assets/images/CanadaComputers2.jpg"
+              alt="Canada Computers Project"
+            />
+            <div
+              class="description desc3"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering3 ? 'white' : '' }"
+            >
+              <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+                CANADA COMPUTERS
+              </p>
+              <p
+                [ngClass]="{ 'para-xsmall': isMobile, 'para-small': isTablet }"
+                class="para"
+                (mouseover)="isHovering3 = true"
+                (mouseout)="isHovering3 = false"
+              >
+                The following is a UX design case study for the Canada Computers
+                website completed by five students at General Assembly. With a
+                timeline of two weeks, we directed our focus to the checkout
+                process, which most users identified as pain points in early
+                rounds of task analysis.
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <a routerLink="/gmail">
+          <div
+            [ngClass]="{ 'panel-xsmall panel4-xsmall': isMobile }"
+            class="panel four"
+            [ngStyle]="{
+              'background-color': isHovering2 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <div
+              class="description desc4"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering2 ? 'white' : '' }"
+            >
+              <p
+                [ngClass]="{ 'imgText-xsmall imgText4-xsmall': isMobile }"
+                class="imgText"
+              >
+                GMAIL
+              </p>
+              <p
+                [ngClass]="{ 'para-xsmall': isMobile, 'para-small': isTablet }"
+                class="para"
+                (mouseover)="isHovering2 = true"
+                (mouseout)="isHovering2 = false"
+              >
+                As part of a General Assembly UX Design project, I was given the
+                task to research and improve a pre-installed android application
+                with a two-week turnaround. The following is an analysis about
+                the user friendliness of the Gmail application, more
+                specifically when it comes to composing emails and interacting
+                with ‘drafts’ on an android.
+              </p>
+            </div>
+            <img
+              [ngStyle]="{
+                opacity: isHovering2 ? '0.4' : ''
+              }"
+              (mouseover)="isHovering2 = true"
+              (mouseout)="isHovering2 = false"
+              class="projectimages img4"
+              [ngClass]="{ 'img-xsmall': isMobile }"
+              src="assets/images/Gmail.jpg"
+              alt="Gmail Project"
+            />
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- <section class="container">
+      <a routerLink="/waterloo" >
+        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel one">
           <img
+            class="projectimages img1"
+            [ngClass]="{ 'img-xsmall': isMobile }"
+            src="assets/images/UofW.jpg"
+            alt="UNIVERSITY OF WATERLOO PROJECT"
+          />
+
+          <div class="description">
+            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+              UNIVERSITY OF WATERLOO PROJECT
+            </p>
+            <p>test test ets</p>
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/thattorontostudio" >
+        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel two">
+          <div class="description">
+            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+              THAT TORONTO STUDIO
+            </p>
+            <p>test test ets</p>
+          </div>
+          <img
+            class="projectimages img2"
             [ngClass]="{ 'img-xsmall': isMobile }"
             src="assets/images/THATTorontoStudio.jpg"
             alt="THAT Toronto Studio Project"
           />
-          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-            THAT Toronto Studio
-          </p>
-        </div>
-      </a>
-      <a [href]="waterlooProjectLink" target="_blank">
-        <div class="panel 2">
-          <img
-            class="projectimages"
-            [ngClass]="{ 'img-xsmall': isMobile }"
-            src="assets/images/UofW.jpg"
-            alt="UofW Project"
-          />
-          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">UofW</p>
         </div>
       </a>
 
-      <a [href]="canadaComputersProjectLink" target="_blank">
-        <div class="panel 3">
+      <a routerLink="/canadacomputers" >
+        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel three">
           <img
+            class="projectimages img3"
             [ngClass]="{ 'img-xsmall': isMobile }"
             src="assets/images/CanadaComputers.jpg"
             alt="Canada Computers Project"
           />
-          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-            Canada Computers
-          </p>
+          <div class="description">
+            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+              CANADA COMPUTERS
+            </p>
+            <p>test test ets</p>
+          </div>
         </div>
       </a>
 
-      <a [href]="gmailProjectLink" target="_blank">
-        <div class="panel 4">
+      <a routerLink="/gmail" >
+        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel four">
+          <div class="description">
+            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+              GMAIL
+            </p>
+            <p>test test ets</p>
+          </div>
           <img
+            class="projectimages img4"
             [ngClass]="{ 'img-xsmall': isMobile }"
             src="assets/images/Gmail.jpg"
             alt="Gmail Project"
           />
-          <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-            Gmail
-          </p>
         </div>
       </a>
-    </section>
+    </section> -->
 
     <div class="contact">
-      <div class="circleContainer2">
+      <div
+        class="circleContainer2"
+        [ngClass]="{ 'circleContainer2-xsmall': isMobile }"
+      >
         <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
           <span></span>
         </div>

@@ -4,6 +4,7 @@ body {
 
 .freeze {
   background-color: rgb(183, 19, 117, 0.5);
+  background-color: #f4cedd;
   z-index: 999;
   width: 100vw;
   height: 100vh;
@@ -18,11 +19,20 @@ body {
   position: relative;
   z-index: 0;
   background-color: #e49fd8;
+  background-color: #f4cedd;
 }
 
 .imgContainer {
   padding-top: 2rem;
   // overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+  margin-bottom: 5rem;
+}
+
+.imgContainer-small {
+  padding-top: 2rem;
   display: flex;
   justify-content: center;
   height: 75vh;
@@ -52,15 +62,11 @@ body {
 }
 
 .gradient-xsmall {
-  background: linear-gradient(
-    to bottom,
-    rgba(58, 31, 55, 0.5) 0%,
-    rgba(112, 58, 108, 0.2) 50%
-  );
+  background: linear-gradient(to bottom, rgb(13, 6, 9) 20%, rgb(13, 6, 9) 0%);
   z-index: 2;
   display: block;
   position: absolute;
-  content: "";
+  opacity: 0.4;
   width: 100vw;
   height: 100vh;
 }
@@ -196,15 +202,20 @@ img {
 
 .mainmessage {
   font-family: "Inter";
-  font-size: 120px;
+  font-size: 72px;
   color: white;
+  color: rgb(253, 130, 63);
+  color: rgb(233, 94, 84);
+  color: rgb(31, 90, 89);
   letter-spacing: 2px;
   font-weight: 200;
   line-height: 1.1;
-  padding: 5rem;
   padding-top: 5rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
   opacity: 0;
-  padding-bottom: 10rem;
+  padding-bottom: 7rem;
+  text-align: center;
 }
 
 .mainmessage-xsmall {
@@ -219,7 +230,7 @@ img {
 .mainmessage-small {
   line-height: 1.1;
   letter-spacing: 1px;
-  font-size: 72px;
+  font-size: 64px;
   padding: 5rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -227,6 +238,10 @@ img {
 
 span {
   color: rgb(203, 0, 135);
+  color: rgb(233, 94, 84);
+  // color: rgb(74, 114, 179);
+  // color: rgb(253, 130, 63);
+  // color: rgb(255, 255, 135);
   font-weight: 300;
 }
 
@@ -239,8 +254,8 @@ span {
   font-weight: 200;
   padding-left: 5rem;
   padding-right: 5rem;
-  padding-top: 9rem;
-  padding-bottom: 9rem;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
   width: 55%;
   display: flex;
   flex-direction: column;
@@ -254,20 +269,25 @@ span {
   padding-left: 30px;
   padding-right: 30px;
   justify-content: center;
-  width: calc(100% - 60px);
+  width: calc(100vw - 60px);
   line-height: 1.5;
   padding-top: 5rem;
   padding-bottom: 5rem;
   opacity: 0;
+  margin: 0;
 }
 
 .accounting-small,
 .painting-small,
 .uxdesign-small {
-  width: calc(100% - 10rem);
+  width: calc(100vw - 6rem);
   line-height: 1.5;
   padding-top: 6rem;
   opacity: 0;
+  font-size: 16px;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin: auto;
 }
 
 .accounting {
@@ -277,12 +297,12 @@ span {
 
 .accounting-small {
   padding-top: 10rem;
-  margin-right: auto;
+  padding-bottom: 8rem;
 }
 
 .accounting-xsmall {
   padding-top: 10rem;
-  margin: auto;
+  padding-bottom: 5rem;
 }
 
 .uxdesign {
@@ -292,12 +312,12 @@ span {
 
 .uxdesign-xsmall {
   padding-bottom: 10rem;
-  margin-right: auto;
+  padding-top: 5rem;
 }
 
 .uxdesign-small {
   padding-bottom: 15rem;
-  margin-right: auto;
+  padding-top: 5rem;
 }
 
 .painting {
@@ -305,16 +325,32 @@ span {
   margin-left: auto;
 }
 
+.painting-small {
+  padding-bottom: 8rem;
+  padding-top: 5rem;
+}
+
+.painting-xsmall {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 p {
   font-size: 48px;
   font-weight: 400;
   margin-bottom: 1rem;
+  color: rgb(253, 130, 63);
+  color: rgb(255, 255, 135);
 }
 
 .p-xsmall {
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 1rem;
+}
+
+.p-small {
+  font-size: 36px;
 }
 
 .container {
@@ -324,7 +360,8 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
+  // background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
+  background-color: rgb(31, 90, 89);
   width: 180%;
   border-radius: 100% 100% 0 0;
   height: auto;
@@ -335,7 +372,8 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
+  // background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
+  background-color: rgb(31, 90, 89);
   width: 300%;
   border-radius: 100% 100% 0 0;
   height: auto;
@@ -346,7 +384,8 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
+  // background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
+  background-color: rgb(31, 90, 89);
   width: 400%;
   border-radius: 100% 100% 0 0;
   height: auto;
@@ -361,6 +400,9 @@ p {
 
 .rectangle-xsmall {
   width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .rectangle-small {
@@ -383,6 +425,7 @@ p {
   width: 120px;
   border-radius: 80px;
   background-color: rgb(203, 145, 189);
+  background-color: #f4cedd;
   // background-color: #FCC8C2;
   z-index: 2;
   margin: 2rem;
@@ -401,6 +444,13 @@ p {
 .workContainer {
   background: linear-gradient(0deg, #1b065e, rgba(162, 19, 107, 0.5)),
     url("../../../assets/images/backgroundLanding.jpg");
+  background: linear-gradient(
+      0deg,
+      rgb(233, 94, 84, 0.8),
+      rgb(253, 130, 63, 0.8)
+    ),
+    url("../../../assets/images/backgroundLanding.jpg");
+
   // background:linear-gradient(0deg, rgb(27, 6, 94), rgb(27, 6, 94,0.5)),  url('../../../assets/images/backgroundLanding.jpg');
   background-size: 1600px;
   width: 100%;
@@ -416,8 +466,9 @@ p {
 
 .work {
   font-family: "Inter";
-  font-size: 120px;
+  font-size: 96px;
   color: rgb(249, 195, 203);
+  color: #f4cedd;
   // color: #F5ECCD;
   font-weight: 300;
   z-index: 2;
@@ -436,8 +487,8 @@ p {
 
 .workItalics {
   font-family: "clash grotesk extralight";
-  font-size: 120px;
-  color: #f79540;
+  font-size: 96px;
+  color: #f8c149;
   // color: #FF87AB;
   font-weight: 300;
   z-index: 2;
@@ -462,5 +513,6 @@ p {
 
 #expand {
   background-color: #ff661f;
+  background-color: rgb(255, 255, 135);
   // background-color: #FF47DA;
 }

@@ -19,6 +19,10 @@ import {
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+  isHovering = false;
+  isHovering2 = false;
+  isHovering3 = false;
+  isHovering4 = false;
   isMobile = false;
   isTablet = false;
   gmailProjectLink: string;
@@ -44,6 +48,12 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!localStorage.getItem('land')) {
+      localStorage.setItem('land', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('land');
+    }
     this.modalOpenSubject = this.modalService.emailModalOpen;
     this.breakpointSub = this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.XSmall])
@@ -179,10 +189,13 @@ export class LandingPageComponent implements OnInit {
     });
 
     ScrollTrigger.refresh();
-    projects.to('.circle', { backgroundColor: '#ff661f', ease: 'power1.in' });
+    projects.to('.circle', {
+      backgroundColor: 'rgb(253, 130, 63)',
+      ease: 'power1.in',
+    });
     projects.to(
       '.halfcircle',
-      { backgroundColor: '#ff661f', ease: 'power1.in' },
+      { backgroundColor: 'rgb(253, 130, 63)', ease: 'power1.in' },
       0
     );
     projects.to('.project', { opacity: 1 }, 0);
@@ -218,23 +231,147 @@ export class LandingPageComponent implements OnInit {
 
     aboutcircles.to('.circles2', {
       x: '-200%',
-      backgroundColor: '#ff661f',
+      backgroundColor: 'rgb(31, 90, 89)',
       ease: 'power1.in',
     });
     aboutcircles.to('.aboutme', { x: '20%', ease: 'power1.in' }, 0);
     aboutcircles.to('.aboutmeItalics', { x: '-20%', ease: 'power1.in' }, 0);
 
-    ScrollTrigger.refresh();
-    let panels = gsap.utils.toArray('.panel');
-    panels.forEach((panel: any, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: 'top top', // if it's shorter than the viewport, we prefer to pin it at the top
-        pin: i === panels.length - 1 ? false : true,
-        end: 'bottom 100',
-        pinSpacing: false,
+    // gsap.to('.one', {
+    //   yPercent: -10,
+    //   scaleY: 1.1,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.one',
+    //     // start: "top bottom", // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.img1', {
+    //   yPercent: 5,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.one',
+    //     // start: "top bottom", // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
+
+    if (!this.isMobile) {
+      gsap.to('.img2', {
+        yPercent: -30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.one',
+          // start: "top bottom", // the default values
+          // end: "bottom top",
+          scrub: true,
+        },
       });
+
+      gsap.to('.img3', {
+        yPercent: -30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.two',
+          // start: "top bottom", // the default values
+          // end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      gsap.to('.img31', {
+        yPercent: 10,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.two',
+          // start: "top bottom", // the default values
+          // end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      gsap.to('.img4', {
+        yPercent: 15,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.three',
+          // start: "top bottom", // the default values
+          // end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+
+    // gsap.to('.circle3-xsmall', {
+    //   yPercent: -20,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.panel1-xsmall',
+    //     // start: "top bottom", // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.circle4-xsmall', {
+    //   yPercent: -20,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.panel3-xsmall',
+    //     // start: "top bottom", // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.three', {
+    //   yPercent: -100,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.two',
+    //     // start: "top bottom", // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.four', {
+    //   yPercent: -120,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.two',
+    //     start: 'bottom bottom', // the default values
+    //     // end: "bottom top",
+    //     scrub: true,
+    //   },
+    // }); 'rgb(31, 90, 89)'
+
+    gsap.to('.container', {
+      backgroundColor: 'rgb(74, 114, 179)',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.three',
+        start: '50% bottom ',
+        end: 'top top',
+        scrub: true,
+      },
     });
+
+    // ScrollTrigger.refresh();
+    // let panels = gsap.utils.toArray('.panel');
+    // panels.forEach((panel: any, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: panel,
+    //     start: 'top top', // if it's shorter than the viewport, we prefer to pin it at the top
+    //     pin: i === panels.length - 1 ? false : true,
+    //     end: 'bottom 100',
+    //     pinSpacing: false,
+    //   });
+    // });
 
     // gsap.utils.toArray(".panel").forEach((container:any, i:any) => {
     //   ScrollTrigger.create({

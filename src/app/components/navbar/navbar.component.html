@@ -1,12 +1,22 @@
-<div [ngClass]="{ 'nav-xsmall': isMobile }" class="nav">
+<div
+  [ngClass]="{
+   'nav-xsmall': isMobile,
+    navbarprojects: ['/waterloo', '/thattorontostudio', '/canadacomputers', '/gmail'].includes(url1),
+  }"
+  class="nav"
+>
   <div [ngClass]="{ 'firstline-xsmall': isMobile }" class="firstline">
     <a routerLink="">
       <button
         [ngClass]="{
           name: ['/about', '/resume'].includes(url1),
-
           home: !['/about', '/resume'].includes(url1),
-
+          navprojects: [
+            '/waterloo',
+            '/thattorontostudio',
+            '/canadacomputers',
+            '/gmail'
+          ].includes(url1),
           'button-xsmall': isMobile,
           'name-xsmall': isMobile
         }"
@@ -14,14 +24,21 @@
         [autofocus]="false"
         class="name"
       >
-        CATIE CAMER
+        <span id="logo">C</span>ATIE CAMER
       </button>
     </a>
+
     <a routerLink="/about">
       <button
         [ngClass]="{
           about: ['/about', '/resume'].includes(url1),
           home: !['/about', '/resume'].includes(url1),
+          navprojects: [
+            '/waterloo',
+            '/thattorontostudio',
+            '/canadacomputers',
+            '/gmail'
+          ].includes(url1),
           'button-xsmall': isMobile,
           'about-xsmall': isMobile
         }"
@@ -33,12 +50,34 @@
       </button>
     </a>
   </div>
-  <div class="buttons">
+
+  <div
+    [ngClass]="{
+      buttons2: [
+        '/waterloo',
+        '/canadacomputers',
+        '/thattorontostudio',
+        '/gmail'
+      ].includes(url1),
+      buttons: ![
+        '/waterloo',
+        '/canadacomputers',
+        '/thattorontostudio',
+        '/gmail'
+      ].includes(url1)
+    }"
+  >
     <button
       (click)="openDialog()"
       [ngClass]="{
         email: ['/about', '/resume'].includes(url1),
         homecontact: !['/about', '/resume'].includes(url1),
+        buttonsprojects: [
+          '/waterloo',
+          '/thattorontostudio',
+          '/canadacomputers',
+          '/gmail'
+        ].includes(url1),
         'buttons-xsmall': isMobile,
         pink: hover1,
         white: hover4
@@ -55,6 +94,12 @@
         [ngClass]="{
           resume: ['/about', '/resume'].includes(url1),
           homecontact: !['/about', '/resume'].includes(url1),
+          buttonsprojects: [
+            '/waterloo',
+            '/thattorontostudio',
+            '/canadacomputers',
+            '/gmail'
+          ].includes(url1),
           'buttons-xsmall': isMobile,
           pink: hover2,
           white: hover5
@@ -72,6 +117,12 @@
         [ngClass]="{
           linkedin: ['/about', '/resume'].includes(url1),
           homecontact: !['/about', '/resume'].includes(url1),
+          buttonsprojects: [
+            '/waterloo',
+            '/thattorontostudio',
+            '/canadacomputers',
+            '/gmail'
+          ].includes(url1),
           'buttons-xsmall': isMobile,
           pink: hover3,
           white: hover6
@@ -85,5 +136,6 @@
       </button>
     </a>
   </div>
+
   <app-email *ngIf="modalOpenSubject | async"></app-email>
 </div>

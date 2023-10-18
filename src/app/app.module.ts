@@ -13,6 +13,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { EmailComponent } from './components/email/email.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { CommonModule } from '@angular/common';
+import { WaterlooComponent } from './components/waterloo/waterloo.component';
+import { THATtorontostudioComponent } from './components/thattorontostudio/thattorontostudio.component';
+import { CanadacomputersComponent } from './components/canadacomputers/canadacomputers.component';
+import { GmailComponent } from './components/gmail/gmail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     EmailComponent,
     ResumeComponent,
+    WaterlooComponent,
+    THATtorontostudioComponent,
+    CanadacomputersComponent,
+    GmailComponent,
   ],
   imports: [
     CommonModule,

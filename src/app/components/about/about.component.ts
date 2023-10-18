@@ -42,11 +42,17 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!localStorage.getItem('about')) {
+      localStorage.setItem('about', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('about');
+    }
     this.modalOpenSubject = this.modalService.emailModalOpen;
     this.breakpointPointSub = this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.XSmall])
       .subscribe((result: BreakpointState) => {
-        // ScrollTrigger.refresh()
+        ScrollTrigger.refresh();
 
         if (result.breakpoints[Breakpoints.XSmall]) {
           this.isMobile = true;
@@ -105,14 +111,14 @@ export class AboutComponent implements OnInit {
       { x: '-10%', y: '-40%', ease: 'power1.in', stagger: 0.1 },
       0
     );
-    // ScrollTrigger.refresh();
+    ScrollTrigger.refresh();
 
     let message = gsap.timeline({
       scrollTrigger: {
         trigger: '.mainmessage',
         scrub: true,
         pin: false,
-        start: 'top 40%',
+        start: 'top 60%',
         end: '+=40%',
         // markers: true,
         // pinSpacing: false,
@@ -120,7 +126,7 @@ export class AboutComponent implements OnInit {
     });
     message.to('.mainmessage', { opacity: 1, stagger: 0.4 }, 0);
 
-    // ScrollTrigger.refresh()
+    ScrollTrigger.refresh();
 
     let halfpill = gsap.timeline({
       scrollTrigger: {
@@ -137,20 +143,20 @@ export class AboutComponent implements OnInit {
     halfpill.to('.halfpill', { yPercent: '-10', ease: 'power1.in' }, 0);
     halfpill.to('.halfpill-xsmall', { yPercent: '-5', ease: 'power1.in' }, 0);
 
-    // ScrollTrigger.refresh()
+    ScrollTrigger.refresh();
 
     let accounting = gsap.timeline({
       scrollTrigger: {
         trigger: '.accounting',
         scrub: true,
         pin: false,
-        start: 'top 40%',
+        start: 'top 60%',
         end: '+=30%',
         // markers: true,
       },
     });
 
-    // ScrollTrigger.refresh()
+    ScrollTrigger.refresh();
 
     accounting.to('.accounting', { opacity: 1 }, 0);
 
@@ -159,7 +165,7 @@ export class AboutComponent implements OnInit {
         trigger: '.painting',
         scrub: true,
         pin: false,
-        start: 'top 55%',
+        start: 'top 70%',
         end: '+=30%',
         // markers: true,
       },
@@ -174,7 +180,7 @@ export class AboutComponent implements OnInit {
         trigger: '.uxdesign',
         scrub: true,
         pin: false,
-        start: 'top 55%',
+        start: 'top 70%',
         end: '+=30%',
         // markers: true,
       },
@@ -197,7 +203,7 @@ export class AboutComponent implements OnInit {
 
     workcircles.to('.circles2', {
       x: '-100%',
-      backgroundColor: '#FF47DA',
+      backgroundColor: 'rgb(255, 255, 135)',
       ease: 'power1.in',
     });
     workcircles.to('.work', { x: '5%', ease: 'power1.in' }, 0);

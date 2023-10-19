@@ -1,4 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-waterloo',
@@ -8,12 +9,15 @@ import { Component, ElementRef } from '@angular/core';
 export class WaterlooComponent {
   isLoading = true;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private loadingService: LoadingService
+  ) {}
 
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 1500);
+    }, this.loadingService.PAGE_LOADING_TIME);
   }
 
   ngAfterViewInit() {

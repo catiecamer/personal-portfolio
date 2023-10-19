@@ -105,7 +105,7 @@ export class LandingPageComponent implements OnInit {
         scrub: true,
         pin: false,
         start: 'top top',
-        end: '+=100%',
+        end: '+=80%',
         // markers: true,
         // pinSpacing: false
       },

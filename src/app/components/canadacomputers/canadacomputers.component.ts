@@ -14,13 +14,14 @@ export class CanadacomputersComponent {
     private loadingService: LoadingService
   ) {}
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, this.loadingService.PAGE_LOADING_TIME);
-  }
+  // ngOnInit() {
+  //   setTimeout(() => {
+  //     this.isLoading = false;
+  //   }, this.loadingService.PAGE_LOADING_TIME);
+  // }
 
   ngAfterViewInit() {
+    this.isLoading = false;
     var a = document.createElement('script');
     a.type = 'text/javascript';
     a.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';

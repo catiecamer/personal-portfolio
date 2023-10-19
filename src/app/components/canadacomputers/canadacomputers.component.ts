@@ -6,7 +6,15 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./canadacomputers.component.scss'],
 })
 export class CanadacomputersComponent {
+  isLoading = true;
+
   constructor(private elementRef: ElementRef) {}
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
+  }
 
   ngAfterViewInit() {
     var a = document.createElement('script');

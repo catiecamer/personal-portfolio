@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="!isLoading"></app-navbar>
+<app-loader *ngIf="isLoading"></app-loader>
 <!DOCTYPE html>
 
 <html

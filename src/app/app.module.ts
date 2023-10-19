@@ -17,6 +17,7 @@ import { WaterlooComponent } from './components/waterloo/waterloo.component';
 import { THATtorontostudioComponent } from './components/thattorontostudio/thattorontostudio.component';
 import { CanadacomputersComponent } from './components/canadacomputers/canadacomputers.component';
 import { GmailComponent } from './components/gmail/gmail.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { GmailComponent } from './components/gmail/gmail.component';
     THATtorontostudioComponent,
     CanadacomputersComponent,
     GmailComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,

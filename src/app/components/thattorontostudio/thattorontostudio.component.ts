@@ -6,7 +6,15 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./thattorontostudio.component.scss'],
 })
 export class THATtorontostudioComponent {
+  isLoading = true;
+
   constructor(private elementRef: ElementRef) {}
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
+  }
 
   ngAfterViewInit() {
     var a = document.createElement('script');

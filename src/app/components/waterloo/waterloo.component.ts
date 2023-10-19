@@ -6,7 +6,15 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./waterloo.component.scss'],
 })
 export class WaterlooComponent {
+  isLoading = true;
+
   constructor(private elementRef: ElementRef) {}
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
+  }
 
   ngAfterViewInit() {
     var a = document.createElement('script');

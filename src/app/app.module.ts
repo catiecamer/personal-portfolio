@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AboutComponent } from './components/about/about.component';
@@ -18,6 +18,7 @@ import { THATtorontostudioComponent } from './components/thattorontostudio/thatt
 import { CanadacomputersComponent } from './components/canadacomputers/canadacomputers.component';
 import { GmailComponent } from './components/gmail/gmail.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { LoadInterceptor } from './load.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,13 @@ import { LoaderComponent } from './components/loader/loader.component';
     FontAwesomeModule,
     LayoutModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

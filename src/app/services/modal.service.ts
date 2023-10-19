@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ModalService {
+  public emailModalOpen: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  public emailModalOpen: BehaviorSubject<boolean> = new BehaviorSubject(false) 
-
-  constructor() { }
+  constructor() {}
 
   toggleEmailModal() {
-    this.emailModalOpen.next(!this.emailModalOpen.getValue())
+    this.emailModalOpen.next(!this.emailModalOpen.getValue());
   }
 }

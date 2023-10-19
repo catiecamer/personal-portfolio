@@ -7,7 +7,7 @@ import { LoadingService } from 'src/app/services/loading.service';
   styleUrls: ['./canadacomputers.component.scss'],
 })
 export class CanadacomputersComponent {
-  isLoading = true;
+  // isLoading = true;
 
   constructor(
     private elementRef: ElementRef,
@@ -21,7 +21,7 @@ export class CanadacomputersComponent {
   // }
 
   ngAfterViewInit() {
-    this.isLoading = false;
+    // this.isLoading = false;
     var a = document.createElement('script');
     a.type = 'text/javascript';
     a.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';

@@ -1,5 +1,5 @@
-<app-navbar *ngIf="!isLoading"></app-navbar>
-<app-loader *ngIf="isLoading"></app-loader>
+<app-loader *ngIf="!doneLoading"></app-loader>
+<app-navbar></app-navbar>
 <!DOCTYPE html>
 
 <html
@@ -66,7 +66,9 @@
     >
       <div class="navigation-items">
         <a href="/" class="logo-link w-nav-brand"
-          ><img
+          ><img 
+          #image
+      (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8be635ca6475a317ecc_Frame%2011.svg"
             width="104"
             alt=""
@@ -78,7 +80,9 @@
             ><a href="/about" class="navigation-item w-nav-link">About</a>
           </nav>
           <div class="menu-button w-nav-button">
-            <img
+            <img 
+            #image
+      (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/63d2e77a0807595def2a231f_menu-icon.png"
               width="22"
               alt=""
@@ -90,6 +94,8 @@
     </div> -->
     <div class="div-block-117">
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6515ec5b0ce6a5d808c43605_Group%208977%20(3).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -108,6 +114,8 @@
         <div class="div-block-82">
           <div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6437258645b49ec29d16a2fa_Group%208991%20(2).png"
               loading="lazy"
               sizes="100vw"
@@ -136,6 +144,8 @@
         <div class="div-block-84">
           <div class="div-block-85">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/64383770f806282a8e5f02a2_Rectangle%20109%20(1).png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 50vw, 470px"
@@ -200,6 +210,8 @@
               Based off of four user interviews and five surveys
             </div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642f53ddba061285f5334f52_Group%208957.png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, 400px"
@@ -243,6 +255,8 @@
                 <span class="text-span-72">first thing they see</span>
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6526f1c610fe7161ac0b92d4_Group%208958%20(1).png"
                 loading="lazy"
                 sizes="100vw"
@@ -262,6 +276,8 @@
                 distract users
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/64341555e8f0afc6aa6a22d9_Group%208959.png"
                 loading="lazy"
                 sizes="100vw"
@@ -280,6 +296,8 @@
                 landing page
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/643415631f92bea6c213c5cf_Group%208960.png"
                 loading="lazy"
                 sizes="100vw"
@@ -301,6 +319,8 @@
                 >; unnecessary
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/643415804263ec1ce80bccb7_Group%208961.png"
                 loading="lazy"
                 sizes="100vw"
@@ -319,6 +339,8 @@
                 sometimes <span class="text-span-78">missed</span>
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6434158d0a05bc606c78655e_Group%208962.png"
                 loading="lazy"
                 sizes="100vw"
@@ -337,6 +359,8 @@
                 <span class="text-span-80">booking process</span>
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525f03374270a9342ac322f_Group%208963%20(1).png"
                 loading="lazy"
                 sizes="100vw"
@@ -382,6 +406,8 @@
             page
           </div>
           <img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6434154694cfb11a467c1bf7_Group%208958.png"
             loading="lazy"
             id="w-node-dd46ef67-cc1c-eb7b-b49e-d4ee8e511adb-002a2318"
@@ -394,6 +420,8 @@
             "
             class="image-203"
           /><img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/64341555e8f0afc6aa6a22d9_Group%208959.png"
             loading="lazy"
             id="w-node-_36eb2f9f-1776-a8d6-2806-1431fd633a56-002a2318"
@@ -406,6 +434,8 @@
             "
             class="image-204"
           /><img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/643415631f92bea6c213c5cf_Group%208960.png"
             loading="lazy"
             id="w-node-df8b6ac1-5b99-6a7b-8e8c-604d725eb2aa-002a2318"
@@ -443,6 +473,8 @@
             <span class="text-span-80">booking process</span>
           </div>
           <img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/643415804263ec1ce80bccb7_Group%208961.png"
             loading="lazy"
             id="w-node-_2fe848fa-9fc4-f9b1-e2f8-c27e60da52ce-002a2318"
@@ -455,6 +487,8 @@
             "
             class="image-206"
           /><img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6434158d0a05bc606c78655e_Group%208962.png"
             loading="lazy"
             id="w-node-_8c4c3776-ed26-90d9-2ad3-de9a874ccc5e-002a2318"
@@ -467,6 +501,8 @@
             "
             class="image-207"
           /><img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525f03374270a9342ac322f_Group%208963%20(1).png"
             loading="lazy"
             id="w-node-acb1524e-fe7b-4604-a6e4-11153b55895f-002a2318"
@@ -513,6 +549,8 @@
             </div>
             <div class="div-block-96">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/64342b1ebcc7cb5808760774_Group%208964.png"
                 loading="lazy"
                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 47vw, (max-width: 991px) 44vw, 399.5625px"
@@ -563,6 +601,8 @@
               <h1 class="heading-9">User Support</h1>
             </div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6434383ca930e1eb4b7937c8_image%2056.png"
               loading="lazy"
               id="w-node-ad8bfe71-0aaa-89bb-2830-78802520cf98-002a2318"
@@ -609,6 +649,8 @@
               the site + FAQ’s
             </div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6526a540a8d49488a572e568_wade-logo-with-neon2.png"
               loading="lazy"
               id="w-node-fa66da1f-4f11-7d6f-249f-a8441f75daff-002a2318"
@@ -734,6 +776,8 @@
           </div>
           <div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525c47168420a905fb53a60_Group%209040%20(2).png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 49vw, 462px"
@@ -783,6 +827,8 @@
           </div>
           <div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525c47168420a905fb53a60_Group%209040%20(2).png"
               loading="lazy"
               sizes="100vw"
@@ -825,6 +871,8 @@
               <div class="slide-37 w-slide">
                 <div class="text-block-95">First Iteration</div>
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/651b0d55ad64bb27debf6b06_Group%208951.png"
                   loading="lazy"
                   alt=""
@@ -838,6 +886,8 @@
               <div class="slide-37 w-slide">
                 <div class="text-block-95">Second Iteration</div>
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/651b0d5f32cda7a93544bf86_Group%208953.png"
                   loading="lazy"
                   alt=""
@@ -850,7 +900,9 @@
               </div>
               <div class="slide-37 w-slide">
                 <div class="text-block-95">Final</div>
-                <!-- <img
+                <!-- <img 
+                  #image
+      (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/651b0d6903633ac4501fba58_Group%208952.png"
                   loading="lazy"
                   alt=""
@@ -885,12 +937,16 @@
         </div>
         <div class="div-block-126">
           <img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/651b0d55ad64bb27debf6b06_Group%208951.png"
             loading="lazy"
             id="w-node-f3ac13e7-a85a-0e92-4b92-ed2ea621c80a-002a2318"
             alt=""
             class="image-211"
           /><img
+            #image
+            (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/651b0d5f32cda7a93544bf86_Group%208953.png"
             loading="lazy"
             id="w-node-_24d94717-69aa-dfa6-b21d-122078442e6e-002a2318"
@@ -966,6 +1022,8 @@
               <div class="slide-37 w-slide">
                 <div class="text-block-95">First Iteration</div>
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525f16d040afbb97fac1d4d_Group%209043%20(1).png"
                   loading="lazy"
                   sizes="100vw"
@@ -985,6 +1043,8 @@
               <div class="slide-37 w-slide">
                 <div class="text-block-95">Second Iteration</div>
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525f176a0814f03b1ee9d32_Group%209044%20(2).png"
                   loading="lazy"
                   sizes="100vw"
@@ -1003,7 +1063,9 @@
               </div>
               <div class="slide-37 w-slide">
                 <div class="text-block-95">Final</div>
-                <!-- <img
+                <!-- <img 
+                  #image
+      (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/651b12ee469271abd65ec738_Group%208941.png"
                   loading="lazy"
                   sizes="100vw"
@@ -1044,6 +1106,8 @@
           >
             <div class="div-block-127">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525f16d040afbb97fac1d4d_Group%209043%20(1).png"
                 loading="lazy"
                 id="w-node-cea62ac5-147b-256e-28a8-f292fbd123bd-002a2318"
@@ -1062,6 +1126,8 @@
                 Second Iteration
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525f176a0814f03b1ee9d32_Group%209044%20(2).png"
                 loading="lazy"
                 id="w-node-d1164eb1-15e7-b3f0-be7f-9fa99a1d3fe0-002a2318"
@@ -1153,6 +1219,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525600c7d34ad4cd1375af7_Group%209049.png"
                 loading="lazy"
                 id="w-node-cef8ceaa-bc10-d4e3-39be-2d2ce6221619-002a2318"
@@ -1164,6 +1232,8 @@
                 "
                 class="image-198"
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525602c61a9b3332a9a3253_Group%208997.png"
                 loading="lazy"
                 id="w-node-_7155b111-24b5-d45f-f57b-3b1eb6e04d8f-002a2318"
@@ -1193,6 +1263,8 @@
                 <div class="slide-37 w-slide">
                   <div class="text-block-95">Original</div>
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525600c7d34ad4cd1375af7_Group%209049.png"
                     loading="lazy"
                     sizes="100vw"
@@ -1207,6 +1279,8 @@
                 <div class="slide-37 w-slide">
                   <div class="text-block-95">Final</div>
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525602c61a9b3332a9a3253_Group%208997.png"
                     loading="lazy"
                     sizes="100vw"
@@ -1250,6 +1324,8 @@
                 Original
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525600c7d34ad4cd1375af7_Group%209049.png"
                 loading="lazy"
                 id="w-node-a52bf024-0e56-4380-c343-ac508f9317d2-002a2318"
@@ -1268,6 +1344,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525602c61a9b3332a9a3253_Group%208997.png"
                 loading="lazy"
                 id="w-node-a52bf024-0e56-4380-c343-ac508f9317d3-002a2318"
@@ -1331,6 +1409,8 @@
                 class="w-layout-cell"
               >
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525ab8cd096dfcb63f7e821_Group%209053.png"
                   loading="lazy"
                   alt=""
@@ -1341,6 +1421,8 @@
                 class="w-layout-cell"
               >
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525ac390b2a2bbcd88ae374_Group%209054.png"
                   loading="lazy"
                   alt=""
@@ -1389,6 +1471,8 @@
               >
                 <div class="text-block-95">Original</div>
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525ab8cd096dfcb63f7e821_Group%209053.png"
                   loading="lazy"
                   alt=""
@@ -1401,6 +1485,8 @@
               >
                 <div class="text-block-95">Final</div>
                 <img
+                  #image
+                  (load)="imageHasLoaded()"
                   src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525ac390b2a2bbcd88ae374_Group%209054.png"
                   loading="lazy"
                   alt=""
@@ -1455,6 +1541,8 @@
                   class="w-layout-cell"
                 >
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525b1a39a4e0d35a0be2e3b_Group%209055.png"
                     loading="lazy"
                     sizes="(max-width: 645px) 100vw, 645px"
@@ -1470,6 +1558,8 @@
                   class="w-layout-cell"
                 >
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525b1b7231b9c34035e08d7_Group%209056.png"
                     loading="lazy"
                     sizes="(max-width: 645px) 100vw, 645px"
@@ -1485,6 +1575,8 @@
                   class="w-layout-cell"
                 >
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525b1c39a4e0d35a0be4ae6_Group%209057.png"
                     loading="lazy"
                     sizes="(max-width: 645px) 100vw, 645px"
@@ -1544,6 +1636,8 @@
             <div class="slide-37 w-slide">
               <div class="text-block-95">Original</div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525b1a39a4e0d35a0be2e3b_Group%209055.png"
                 loading="lazy"
                 sizes="100vw"
@@ -1562,6 +1656,8 @@
             <div class="slide-37 w-slide">
               <div class="text-block-95">Iteration</div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525b1b7231b9c34035e08d7_Group%209056.png"
                 loading="lazy"
                 sizes="100vw"
@@ -1580,6 +1676,8 @@
             <div class="slide-37 w-slide">
               <div class="text-block-95">Final</div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6525b1c39a4e0d35a0be4ae6_Group%209057.png"
                 loading="lazy"
                 sizes="100vw"
@@ -1606,6 +1704,8 @@
         </div>
       </div>
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6437486d179d053069c0495b_Desktop%20-%2044%20(2).png"
         loading="lazy"
         sizes="100vw"
@@ -1681,6 +1781,8 @@
       </div>
     </div>
     <img
+      #image
+      (load)="imageHasLoaded()"
       src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/643749f50b94ae3abea570d8_Desktop%20-%2046%20(2).png"
       loading="lazy"
       sizes="(max-width: 3300px) 100vw, 3300px"
@@ -1732,7 +1834,9 @@
           href="https://webflow.com/"
           target="_blank"
           class="webflow-link w-inline-block"
-          ><img
+          ><img 
+          #image
+      (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/63d2e77a08075980b12a2321_webflow-w-small%402x.png"
             width="15"
             alt=""

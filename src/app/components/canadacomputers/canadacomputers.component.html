@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-<app-loader></app-loader>
 <!DOCTYPE html>
 <html
   data-wf-domain="catie-camer-portfolio.webflow.io"
@@ -59,7 +58,8 @@
       })(window, document);
     </script>
   </head>
-  <body class="body-2">
+  <app-loader *ngIf="!doneLoading"></app-loader>
+  <body [ngStyle]="{ display: !doneLoading ? 'none' : '' }" class="body-2">
     <!-- <div
       data-collapse="medium"
       data-animation="default"
@@ -73,6 +73,8 @@
       <div class="navigation-items">
         <a href="/" class="logo-link w-nav-brand"
           ><img
+        #image
+        (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8be635ca6475a317ecc_Frame%2011.svg"
             width="104"
             alt=""
@@ -85,6 +87,8 @@
           </nav>
           <div class="menu-button w-nav-button">
             <img
+        #image
+        (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/63d2e77a0807595def2a231f_menu-icon.png"
               width="22"
               alt=""
@@ -95,6 +99,8 @@
       </div>
     </div> -->
     <img
+      #image
+      (load)="imageHasLoaded()"
       src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/644994ff139a082781aed23e_Desktop%20-%2025%20(2).png"
       loading="lazy"
       srcset="
@@ -111,6 +117,8 @@
       alt=""
       class="hero-2"
     /><img
+      #image
+      (load)="imageHasLoaded()"
       src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6449959fac6a580836299115_13%20Pro%20-%2019.png"
       loading="lazy"
       srcset="
@@ -265,6 +273,8 @@
           <div class="div-block-57">
             <h1 class="heading-left-white">/03 <br />User Interviews</h1>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b0f10cccaa798474f6201_Group%204.png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 57vw, 560px"
@@ -280,6 +290,8 @@
               alt=""
               class="image-162"
             /><img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b6eb2a5d430357bbc3eac_Group%2014111.png"
               loading="lazy"
               sizes="100vw"
@@ -315,6 +327,8 @@
           <h1 class="heading-5">The Computer Builder</h1>
           <div class="div-block-60">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b11ccb116e41f3804f1d4_Group%209.png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 41vw, 400px"
@@ -496,6 +510,8 @@
               <div class="mask-2 w-slider-mask">
                 <div class="slide-7 w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a79f5a09c31f_13%20Pro%20-%2021.png"
                     loading="lazy"
                     sizes="100vw"
@@ -511,6 +527,8 @@
                 </div>
                 <div class="w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7049b09c323_13%20Pro%20-%2022.png"
                     loading="lazy"
                     sizes="100vw"
@@ -526,6 +544,8 @@
                 </div>
                 <div class="w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7136b09c327_13%20Pro%20-%2023.png"
                     loading="lazy"
                     sizes="100vw"
@@ -541,6 +561,8 @@
                 </div>
                 <div class="w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a73e3209c32b_13%20Pro%20-%2024.png"
                     loading="lazy"
                     sizes="100vw"
@@ -556,6 +578,8 @@
                 </div>
                 <div class="w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7e7f609c32f_13%20Pro%20-%2025.png"
                     loading="lazy"
                     sizes="100vw"
@@ -581,6 +605,8 @@
               ></div>
             </div>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b1766f2522a6a920afe40_Group%2014088.png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 82vw, 800px"
@@ -609,6 +635,8 @@
             </h1>
             <h1 class="heading-right-white">/06 <br />User Flow</h1>
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b24ca6d1d5e1daa596c51_Group%2014089%20(1).png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 991px) 82vw, 800px"
@@ -644,6 +672,8 @@
           <div class="mask-2 w-slider-mask">
             <div class="slide-8 w-slide">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7316409c333_13%20Pro%20-%2028.png"
                 loading="lazy"
                 sizes="100vw"
@@ -659,6 +689,8 @@
             </div>
             <div class="w-slide">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7ec8109c337_13%20Pro%20-%2029.png"
                 loading="lazy"
                 sizes="100vw"
@@ -674,6 +706,8 @@
             </div>
             <div class="w-slide">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7466f09c33b_13%20Pro%20-%2030.png"
                 loading="lazy"
                 sizes="100vw"
@@ -689,6 +723,8 @@
             </div>
             <div class="w-slide">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7de4e09c33f_13%20Pro%20-%2031.png"
                 loading="lazy"
                 sizes="100vw"
@@ -739,6 +775,8 @@
             </h1>
             <div class="div-block-69">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b2b229334b25bed22e9d5_Group%2014092%20(1).png"
                 loading="lazy"
                 id="w-node-_9b2f8938-c0fd-a460-36e0-3b4a45c5dab5-452a2317"
@@ -752,6 +790,8 @@
                 "
                 class="image-172"
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b293b5876345d22015047_Group%2014091%20(1).png"
                 loading="lazy"
                 id="w-node-c937273d-6b59-c579-0911-e5f79d672b15-452a2317"
@@ -768,6 +808,8 @@
             </div>
             <div class="div-block-78">
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b2b229334b25bed22e9d5_Group%2014092%20(1).png"
                 loading="lazy"
                 id="w-node-_545c6ff3-d6a0-38bd-3922-baa696885c00-452a2317"
@@ -781,6 +823,8 @@
                 "
                 class="image-166"
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b293b5876345d22015047_Group%2014091%20(1).png"
                 loading="lazy"
                 id="w-node-_545c6ff3-d6a0-38bd-3922-baa696885c01-452a2317"
@@ -812,6 +856,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b33b4f6bc4945f5a48591_Group%2014093.png"
                 loading="lazy"
                 id="w-node-_367d1605-d54f-5d2e-e7da-44ae0781b76d-452a2317"
@@ -826,6 +872,8 @@
                   https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b33b4f6bc4945f5a48591_Group%2014093.png        2164w
                 "
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b33c3ee8c2307c9f0c53b_Group%2014094.png"
                 loading="lazy"
                 id="w-node-_013e6170-e2a8-a0d3-0db7-35dbcbdfea84-452a2317"
@@ -848,6 +896,8 @@
                 Iteration
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b611a2caa97549174ce37_Group%2014107.png"
                 loading="lazy"
                 id="w-node-ffb71d95-2802-ee75-c3c8-c2ee7693f49c-452a2317"
@@ -868,6 +918,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b612b6e1153e729bc14d5_Group%2014108.png"
                 loading="lazy"
                 id="w-node-ffb71d95-2802-ee75-c3c8-c2ee7693f49d-452a2317"
@@ -911,6 +963,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b36c8d932d7e47ac28237_Group%2014095.png"
                 loading="lazy"
                 id="w-node-_86abe946-5b5f-fa13-260f-d3a6467e65f1-452a2317"
@@ -924,6 +978,8 @@
                   https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b36c8d932d7e47ac28237_Group%2014095.png        1917w
                 "
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b36de07a463522895a868_Group%2014096.png"
                 loading="lazy"
                 id="w-node-ad88d485-85b9-1918-dd0e-e815873d066e-452a2317"
@@ -937,6 +993,8 @@
                   https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b36de07a463522895a868_Group%2014096.png        1916w
                 "
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b36ed4408b924c329c632_Group%2014097.png"
                 loading="lazy"
                 id="w-node-_94dc7ac8-aef1-f608-6d44-ce832f2b57c4-452a2317"
@@ -959,6 +1017,8 @@
                 Current
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b6070e724a0d4e3678d91_Group%2014104.png"
                 loading="lazy"
                 id="w-node-_1040ca9c-cee1-2774-6d3b-19f1d2e89c06-452a2317"
@@ -979,6 +1039,8 @@
                 Iteration
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b607b215a304c5182c660_Group%2014105.png"
                 loading="lazy"
                 id="w-node-_1040ca9c-cee1-2774-6d3b-19f1d2e89c07-452a2317"
@@ -999,6 +1061,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b6088b11150950c590f30_Group%2014106.png"
                 loading="lazy"
                 id="w-node-_1040ca9c-cee1-2774-6d3b-19f1d2e89c08-452a2317"
@@ -1035,6 +1099,8 @@
                 Target
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3c1919f5a1832111625a_Group%2014099.png"
                 loading="lazy"
                 id="w-node-e739b722-ae25-402c-bc4b-2d3b06df22a6-452a2317"
@@ -1049,6 +1115,8 @@
                   https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3c1919f5a1832111625a_Group%2014099.png        2143w
                 "
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3c259327357a512dd136_Group%2014098.png"
                 loading="lazy"
                 id="w-node-_944013ea-e0f6-8a79-f758-3aebb193698f-452a2317"
@@ -1072,6 +1140,8 @@
                 Current
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b6d64ea0676429102177e_Group%2014109.png"
                 loading="lazy"
                 id="w-node-_87150653-019a-ee9f-61d0-5c9b6c34f633-452a2317"
@@ -1092,6 +1162,8 @@
                 Target
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b6d7e423ce4528e7f9e37_Group%2014110.png"
                 loading="lazy"
                 id="w-node-_87150653-019a-ee9f-61d0-5c9b6c34f634-452a2317"
@@ -1127,6 +1199,8 @@
                 Final
               </div>
               <img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3f0dcd1f2bedbddaa477_Group%2014102.png"
                 loading="lazy"
                 id="w-node-_0742153a-1798-923d-65f5-6ca87ab09427-452a2317"
@@ -1140,6 +1214,8 @@
                   https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3f0dcd1f2bedbddaa477_Group%2014102.png        1800w
                 "
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3f2027cdfe78197c19e2_Group%2014101.png"
                 loading="lazy"
                 id="w-node-cefd839a-d9ff-6730-3009-0daa3b012ea5-452a2317"
@@ -1153,6 +1229,8 @@
                   https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3f2027cdfe78197c19e2_Group%2014101.png        1800w
                 "
               /><img
+                #image
+                (load)="imageHasLoaded()"
                 src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b3f2f3beb4e2e45adb3b5_Group%2014103.png"
                 loading="lazy"
                 id="w-node-_5a7a1863-e953-a8ad-a486-3a5b43c58739-452a2317"
@@ -1183,6 +1261,8 @@
               <div class="mask-7 w-slider-mask">
                 <div class="slide-16 w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7fa2c09c35b_13%20Pro%20-%2053.png"
                     loading="lazy"
                     sizes="100vw"
@@ -1198,6 +1278,8 @@
                 </div>
                 <div class="slide-17 w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a704a709c35f_13%20Pro%20-%2054.png"
                     loading="lazy"
                     sizes="100vw"
@@ -1213,6 +1295,8 @@
                 </div>
                 <div class="slide-18 w-slide">
                   <img
+                    #image
+                    (load)="imageHasLoaded()"
                     src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a71be709c363_13%20Pro%20-%2055.png"
                     loading="lazy"
                     sizes="100vw"
@@ -1370,6 +1454,8 @@
         <div class="mask-4 w-slider-mask">
           <div class="slide-10 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a76ecc09c343_13%20Pro%20-%2036.png"
               loading="lazy"
               sizes="100vw"
@@ -1385,6 +1471,8 @@
           </div>
           <div class="slide-11 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7710809c347_13%20Pro%20-%2035.png"
               loading="lazy"
               sizes="100vw"
@@ -1423,6 +1511,8 @@
         <div class="mask-5 w-slider-mask">
           <div class="slide-12 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a7505509c34b_13%20Pro%20-%2042.png"
               loading="lazy"
               sizes="100vw"
@@ -1438,6 +1528,8 @@
           </div>
           <div class="slide-13 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a76d0709c34f_13%20Pro%20-%2043.png"
               loading="lazy"
               sizes="100vw"
@@ -1476,6 +1568,8 @@
         <div class="mask-6 w-slider-mask">
           <div class="slide-14 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a711bc09c353_13%20Pro%20-%2049.png"
               loading="lazy"
               sizes="100vw"
@@ -1491,6 +1585,8 @@
           </div>
           <div class="slide-15 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8d07780a70f4609c357_13%20Pro%20-%2050.png"
               loading="lazy"
               sizes="100vw"
@@ -1536,6 +1632,8 @@
           target="_blank"
           class="webflow-link w-inline-block"
           ><img
+        #image
+        (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/63d2e77a08075980b12a2321_webflow-w-small%402x.png"
             width="15"
             alt=""

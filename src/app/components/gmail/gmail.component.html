@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-<app-loader></app-loader>
 <!DOCTYPE html>
 <html
   data-wf-domain="catie-camer-portfolio.webflow.io"
@@ -56,7 +55,8 @@
       })(window, document);
     </script>
   </head>
-  <body class="body-3">
+  <app-loader *ngIf="!doneLoading"></app-loader>
+  <body [ngStyle]="{ display: !doneLoading ? 'none' : '' }" class="body-3">
     <!-- <div
       data-collapse="medium"
       data-animation="default"
@@ -70,6 +70,8 @@
       <div class="navigation-items">
         <a href="/" class="logo-link w-nav-brand"
           ><img
+        #image
+        (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6408a8be635ca6475a317ecc_Frame%2011.svg"
             width="104"
             alt=""
@@ -82,6 +84,8 @@
           </nav>
           <div class="menu-button w-nav-button">
             <img
+        #image
+        (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/63d2e77a0807595def2a231f_menu-icon.png"
               width="22"
               alt=""
@@ -93,6 +97,8 @@
     <!-- </div> -->
     <div>
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b384190971b7c94e80c30_Desktop%20-%2058%20(1).jpg"
         loading="lazy"
         sizes="100vw"
@@ -108,6 +114,8 @@
         alt=""
         class="image-119"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b384e3905f73bcbe1f3d3_Desktop%20-%2059.jpg"
         loading="lazy"
         sizes="100vw"
@@ -133,6 +141,8 @@
         >
       </div>
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b386784373f0c965ac8e2_Desktop%20-%2060.png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -148,11 +158,15 @@
         alt=""
         class="image-13"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b397c7c91e08123b078b6_Desktop%20-%2061%20(1).png"
         loading="lazy"
         alt=""
         class="image-116"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b387b6276f00fd55fdfe7_Desktop%20-%2063.png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -168,6 +182,8 @@
         alt=""
         class="image-117"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b398c8e726f3db62549fb_Desktop%20-%2064%20(1).jpg"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -183,6 +199,8 @@
         alt=""
         class="image-118"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b7aa954dfee1854051e64_Desktop%20-%2065%20(2).jpg"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -199,6 +217,8 @@
         alt=""
         class="image-121"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b7ab604ea374c235bc10c_Desktop%20-%2066%20(1).jpg"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -215,6 +235,8 @@
         alt=""
         class="image-122"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b7ac440c745aac2886af0_Desktop%20-%2067%20(3).jpg"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -231,6 +253,8 @@
         alt=""
         class="image-123"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/642b7b0a3c186474512e0358_Desktop%20-%2068%20(2).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -247,6 +271,8 @@
         alt=""
         class="image-124"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b39d587a18706767dac5e_Desktop%20-%2069%20(1).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -262,6 +288,8 @@
         alt=""
         class="image-125"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/641372329a109f9820832ef6_Desktop%20-%2070%20(2).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -277,6 +305,8 @@
         alt=""
         class="image-126"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6413723f8dda6b724b26c7c9_Desktop%20-%2071%20(1).jpg"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -292,6 +322,8 @@
         alt=""
         class="image-27"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b39fc43138c92a5219b71_Desktop%20-%2072%20(1).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -307,6 +339,8 @@
         alt=""
         class="image-27"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6413724b516334bbdf2a4500_Desktop%20-%2074%20(2).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -347,6 +381,8 @@
         </div>
       </div>
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3a2b38ea4db551c6a5f4_Desktop%20-%2075%20(1).png"
         loading="lazy"
         sizes="(max-width: 991px) 100vw, 940px"
@@ -362,6 +398,8 @@
         alt=""
         class="image-30"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b40b843138cc29a220c54_13%20Pro%20-%20116.jpg"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -374,6 +412,8 @@
         alt=""
         class="image-131"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c19ce1a57cf7ffdde1a_13%20Pro%20-%20117.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -386,6 +426,8 @@
         alt=""
         class="image-132"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c2c9a999df87a48c340_13%20Pro%20-%20118.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -398,6 +440,8 @@
         alt=""
         class="image-133"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c4c0771bd5f9ee4f274_13%20Pro%20-%20106.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -426,6 +470,8 @@
         <div class="mask-13 w-slider-mask">
           <div class="slide-35 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3f448e726f5fb125aea2_13%20Pro%20-%20108.png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -441,6 +487,8 @@
           </div>
           <div class="slide-35 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3fb6f321ab0fbfef3ba6_13%20Pro%20-%20105.png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -456,6 +504,8 @@
           </div>
           <div class="slide-35 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b4001d7d42299d3c9d170_13%20Pro%20-%20109.png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -471,6 +521,8 @@
           </div>
           <div class="slide-36 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b4040714c5a7ebc565f40_13%20Pro%20-%20110.png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -496,6 +548,8 @@
         ></div>
       </div>
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c5a87f7f85d01ec09e9_13%20Pro%20-%20111.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -508,6 +562,8 @@
         alt=""
         class="image-135"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c6c2ea4ad493f95d98e_13%20Pro%20-%20107.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -520,6 +576,8 @@
         alt=""
         class="image-136"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c7cee836380b2bbc224_13%20Pro%20-%20100.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -532,6 +590,8 @@
         alt=""
         class="image-137"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b425587a1874a5f7e267f_13%20Pro%20-%20112.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -544,6 +604,8 @@
         alt=""
         class="image-138"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3c985735a458c3c8e8ad_13%20Pro%20-%20113.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -556,6 +618,8 @@
         alt=""
         class="image-139"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6413738377a18c3666e25b87_13%20Pro%20-%20114.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -568,6 +632,8 @@
         alt=""
         class="image-10"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6413739c274b04d93132b141_13%20Pro%20-%20101.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -580,6 +646,8 @@
         alt=""
         class="image-10"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3ccbe5569e07b05a6acb_13%20Pro%20-%20119.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -592,6 +660,8 @@
         alt=""
         class="image-10"
       /><img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3cdb9a999d103548cf3e_Frame%2014288.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -620,6 +690,8 @@
         <div class="mask-3 w-slider-mask">
           <div class="slide-9 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/641374630a81398915f9963d_Frame%2014283%20(2).png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -635,6 +707,8 @@
           </div>
           <div class="slide-2 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6413746b1643b96a2e11ddae_Frame%2014284%20(2).png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -650,6 +724,8 @@
           </div>
           <div class="slide-4 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/641374760a813955e5f99842_Frame%2014285%20(2).png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -665,6 +741,8 @@
           </div>
           <div class="slide-4 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/64137481c905e855a37bba6c_Frame%2014286%20(2).png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -680,6 +758,8 @@
           </div>
           <div class="slide-4 w-slide">
             <img
+              #image
+              (load)="imageHasLoaded()"
               src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/6413748a4812d2cb4bb4939a_Frame%2014287%20(2).png"
               loading="lazy"
               sizes="(max-width: 479px) NaNvw, 100vw"
@@ -727,6 +807,8 @@
         </div>
       </div>
       <img
+        #image
+        (load)="imageHasLoaded()"
         src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/640b3ce897b40f934f658b0c_13%20Pro%20-%20104.png"
         loading="lazy"
         sizes="(max-width: 479px) NaNvw, 100vw"
@@ -762,6 +844,8 @@
           target="_blank"
           class="webflow-link w-inline-block"
           ><img
+        #image
+        (load)="imageHasLoaded()"
             src="https://assets-global.website-files.com/63d2e77a080759f2c42a230e/63d2e77a08075980b12a2321_webflow-w-small%402x.png"
             width="15"
             alt=""

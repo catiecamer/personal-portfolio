@@ -1,18 +1,24 @@
 .background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
   background-color: rgb(31, 90, 89);
   text-align: center;
   height: 100vh;
+  width: 100vw;
   font-family: "lato";
   font-weight: 100;
-  position: static;
+  position: absolute;
+  overflow-y: hidden;
+  z-index: 1000000;
 }
 .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
 }
 .circle {
   display: inline-block;

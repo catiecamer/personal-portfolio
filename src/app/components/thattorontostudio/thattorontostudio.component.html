@@ -1,7 +1,5 @@
-<app-loader *ngIf="!doneLoading"></app-loader>
 <app-navbar></app-navbar>
 <!DOCTYPE html>
-
 <html
   data-wf-domain="catie-camer-portfolio.webflow.io"
   data-wf-page="63d2e77a080759bb002a2318"
@@ -53,7 +51,8 @@
       })(window, document);
     </script>
   </head>
-  <body class="body">
+  <app-loader *ngIf="!doneLoading"></app-loader>
+  <body [ngStyle]="{ display: !doneLoading ? 'none' : '' }" class="body">
     <!-- <div
       data-collapse="medium"
       data-animation="default"
@@ -914,6 +913,7 @@
                   muted
                   loading="lazy"
                   class="booking-process-image"
+                  playsinline
                 >
                   <source
                     src="../../../assets/images/landingpage.mp4"
@@ -1083,6 +1083,7 @@
                   loading="lazy"
                   sizes="100vw"
                   class="booking-process-image"
+                  playsinline
                 >
                   <source
                     src="../../../assets/images/dropdown.mp4"

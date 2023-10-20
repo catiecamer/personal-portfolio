@@ -16,13 +16,17 @@ export class THATtorontostudioComponent {
     private loadingService: LoadingService
   ) {}
 
-  // ngOnInit() {
-  //   setTimeout(() => {
-  //     this.isLoading = false;
-  //   }, this.loadingService.PAGE_LOADING_TIME);
-  // }
+  ngOnInit() {
+    // setTimeout(() => {
+    //   this.isLoading = false;
+    // }, this.loadingService.PAGE_LOADING_TIME);
+  }
 
   ngAfterViewInit() {
+    setTimeout(() => {
+      this.doneLoading = true;
+    }, 5000);
+
     var a = document.createElement('script');
     a.type = 'text/javascript';
     a.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
@@ -42,8 +46,9 @@ export class THATtorontostudioComponent {
   imageHasLoaded() {
     if (this.doneLoading) return;
     this.imagesLoaded++;
+    console.log(this.imagesLoaded);
 
-    if (this.imagesLoaded >= this.images.length - 10) {
+    if (this.imagesLoaded >= this.images.length / 2) {
       this.doneLoading = true;
     }
   }

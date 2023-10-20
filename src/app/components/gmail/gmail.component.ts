@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
@@ -8,6 +8,9 @@ import { LoadingService } from 'src/app/services/loading.service';
 })
 export class GmailComponent {
   // isLoading = true;
+  doneLoading = false;
+  @ViewChildren('image') private images: QueryList<ElementRef>;
+  imagesLoaded: number = 0;
 
   constructor(
     private elementRef: ElementRef,
@@ -21,6 +24,10 @@ export class GmailComponent {
   // }
 
   ngAfterViewInit() {
+    setTimeout(() => {
+      this.doneLoading = true;
+    }, 5000);
+
     // this.isLoading = false;
     var a = document.createElement('script');
     a.type = 'text/javascript';
@@ -36,5 +43,15 @@ export class GmailComponent {
     c.src =
       'https://assets-global.website-files.com/63d2e77a080759f2c42a230e/js/webflow.9470194d8.js';
     this.elementRef.nativeElement.appendChild(c);
+  }
+
+  imageHasLoaded() {
+    if (this.doneLoading) return;
+    this.imagesLoaded++;
+    console.log(this.imagesLoaded);
+
+    if (this.imagesLoaded >= this.images.length / 2) {
+      this.doneLoading = true;
+    }
   }
 }

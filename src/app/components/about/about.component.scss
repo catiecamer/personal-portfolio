@@ -242,7 +242,7 @@ span {
   // color: rgb(74, 114, 179);
   // color: rgb(253, 130, 63);
   // color: rgb(255, 255, 135);
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .accounting,
@@ -337,7 +337,7 @@ span {
 
 p {
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 1rem;
   color: rgb(253, 130, 63);
   color: rgb(255, 255, 135);
@@ -345,12 +345,13 @@ p {
 
 .p-xsmall {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 200;
   margin-bottom: 1rem;
 }
 
 .p-small {
   font-size: 36px;
+  font-weight: 200;
 }
 
 .container {
@@ -483,6 +484,7 @@ p {
 
 .work-small {
   font-size: 72px;
+  font-weight: 200;
 }
 
 .workItalics {
@@ -501,14 +503,17 @@ p {
 
 .workItalics-small {
   font-size: 72px;
+  font-weight: 200;
 }
 
 .workItalics-xsmall {
   font-size: 60px;
+  font-weight: 200;
 }
 
 .work-xsmall {
   font-size: 60px;
+  font-weight: 200;
 }
 
 #expand {

@@ -55,8 +55,8 @@ h2 {
   justify-content: right;
   display: flex;
   padding-bottom: 0;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
   opacity: 0;
@@ -73,8 +73,9 @@ h2 {
   font-size: 96px;
   color: white;
   letter-spacing: 2px;
-  font-weight: 400;
+  font-weight: 300;
   z-index: 2;
+  line-height: 0.7;
 }
 
 .projecttext-xsmall {
@@ -84,12 +85,14 @@ h2 {
   margin-bottom: -2rem;
   padding-left: 20px;
   padding-right: 20px;
+  font-weight: 200;
 }
 
 .projecttext-small {
   font-size: 72px;
   line-height: normal;
   margin: 0;
+  font-weight: 200;
 }
 
 .line1 {
@@ -97,7 +100,7 @@ h2 {
   color: white;
   color: rgb(233, 94, 84);
   font-size: 72px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.1;
   display: inline;
   padding-left: 5rem;
@@ -128,12 +131,14 @@ h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 20px;
+  font-weight: 200;
 }
 
 .slogan-small {
-  font-size: 72px;
+  font-size: 64px;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+  font-weight: 200;
 }
 .text {
   display: flex;
@@ -145,7 +150,6 @@ h2 {
 }
 
 .bold {
-  font-weight: 300;
   color: #b71375;
   color: #fa2452;
   color: rgb(31, 90, 89);
@@ -240,7 +244,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 35rem;
+  padding-top: 33rem;
 }
 
 .maincircle-xsmall {
@@ -271,6 +275,10 @@ h2 {
 }
 
 .circle-xsmall {
+  width: 100%;
+}
+
+.circle-small {
   width: 100%;
 }
 
@@ -330,6 +338,12 @@ h2 {
   margin: 1rem;
   display: inline;
   flex: 0 0 50px;
+}
+
+.circles-small {
+  height: 100px;
+  width: 100px;
+  flex: 0 0 100px;
 }
 
 #expand {
@@ -496,8 +510,8 @@ a {
 
 .para-small {
   font-size: 14px;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
+  padding-bottom: 4rem;
+  padding-top: 0;
 }
 
 .circle3 {
@@ -753,15 +767,18 @@ a {
 
 .aboutmeItalics-xsmall {
   font-size: 48px;
+  font-weight: 200;
 }
 
 .aboutme-xsmall {
   font-size: 48px;
+  font-weight: 200;
 }
 
 .aboutme-small,
 .aboutmeItalics-small {
   font-size: 72px;
+  font-weight: 200;
 }
 
 :-webkit-scrollbar {
@@ -778,3 +795,99 @@ app-navbar {
 // .projectimages:hover {
 //   filter: none !important;
 // }
+
+.animate-words {
+  overflow: hidden;
+  transition-delay: 0.3s !important;
+  display: inline-block;
+}
+
+.word {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 96px;
+  letter-spacing: 2px;
+  color: #f4cedd;
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  -webkit-transform: translateY(110%);
+  transform: translateY(200%);
+  -webkit-transition: -webkit-transform 0.4s
+    cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: -webkit-transform 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: transform 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: transform 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335),
+    -webkit-transform 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+.word-xsmall,
+.delay-05-xsmall {
+  font-weight: 200;
+  font-size: 48px;
+}
+
+.word-small,
+.delay-05-small {
+  font-weight: 300;
+  font-size: 72px;
+}
+
+.word-delay-05 {
+  transition-delay: 0.4s !important;
+  padding-right: 22px;
+}
+
+.delay-05-xsmall,
+.delay-05-small {
+  padding-right: 0px;
+}
+
+.word-delay-06 {
+  transition-delay: 0.5s !important;
+  // margin-left: 7rem;
+  color: rgb(253, 130, 63);
+  color: rgb(233, 94, 84);
+  color: rgb(255, 255, 135);
+}
+
+.word-delay-07 {
+  transition-delay: 0.5s;
+}
+
+.show .animate-words .word {
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1),
+    -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.intro {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  margin-top: 10rem;
+  z-index: 0;
+}
+
+.intro-xsmall {
+  padding: 20px;
+  text-align: center;
+  margin-top: 16rem;
+  justify-content: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.intro-small {
+  text-align: center;
+  margin-top: 8rem;
+  justify-content: center;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}

@@ -5,11 +5,34 @@
       <app-navbar></app-navbar>
       <div class="animation">
         <div
+          class="intro"
+          [ngClass]="{ 'intro-xsmall': isMobile, 'intro-small': isTablet }"
+        >
+          <div class="animate-words">
+            <div
+              class="word word-delay-05"
+              [ngClass]="{
+                'word-xsmall, delay-05-xsmall': isMobile,
+                'word-small, delay-05-small': isTablet
+              }"
+            >
+              PRODUCT
+            </div>
+            <div
+              class="word word-delay-06"
+              [ngClass]="{ 'word-xsmall': isMobile, 'word-small': isTablet }"
+            >
+              DESIGNER
+            </div>
+          </div>
+        </div>
+
+        <!-- <div
+          class="headline"
           [ngClass]="{
             'headline-xsmall': isMobile,
             'headline-small': isTablet
           }"
-          class="headline"
         >
           <h1 [ngClass]="{ 'text-xsmall': isMobile, 'text-small': isTablet }">
             PRODUCT
@@ -20,7 +43,7 @@
           >
             DESIGNER
           </h2>
-        </div>
+        </div> -->
         <div [ngClass]="{ 'maincircle-xsmall': isMobile }" class="mainCircle">
           <div class="halfcircle"></div>
           <div [ngClass]="{ 'circle-xsmall': isMobile }" class="circle">
@@ -40,32 +63,77 @@
               </p>
             </div>
             <div class="circleContainer">
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
-                <span></span>
-              </div>
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
-                <span></span>
-              </div>
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
-                <span></span>
-              </div>
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
                 <span></span>
               </div>
               <div
-                [ngClass]="{ 'circles-xsmall': isMobile }"
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
+                <span></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
+                <span></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
+                <span></span>
+              </div>
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
                 class="circles"
                 id="expand"
               >
                 <span></span>
               </div>
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
                 <span></span>
               </div>
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
                 <span></span>
               </div>
-              <div [ngClass]="{ 'circles-xsmall': isMobile }" class="circles">
+              <div
+                [ngClass]="{
+                  'circles-xsmall': isMobile,
+                  'circles-small': isTablet
+                }"
+                class="circles"
+              >
                 <span></span>
               </div>
             </div>

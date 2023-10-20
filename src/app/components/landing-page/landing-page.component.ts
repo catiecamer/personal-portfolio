@@ -48,6 +48,26 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Get a reference to the item dialog
+    var splash = document.querySelector('.intro');
+
+    // When the window is loaded....
+    window.addEventListener('load', function () {
+      // Check to see if the cookie indicates a first-time visit
+      // if(document.cookie.indexOf("visited=true") === -1) {
+
+      // Reveal the item (remember: item is hidden by default by CSS)
+      // splash.classList.remove("hidden");
+
+      // .5 seconds later, hide the splash
+      setTimeout(function () {
+        splash.classList.add('show');
+
+        // >> Set cookie to visited here <<
+      }, 300);
+      // }
+    });
+
     if (!localStorage.getItem('land')) {
       localStorage.setItem('land', 'no reload');
       location.reload();
@@ -98,40 +118,40 @@ export class LandingPageComponent implements OnInit {
   initAnimations() {
     gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 
-    ScrollTrigger.refresh();
-    let landingPage = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.animation',
-        scrub: true,
-        pin: false,
-        start: 'top top',
-        end: '+=80%',
-        // markers: true,
-        // pinSpacing: false
-      },
-    });
-    landingPage.to('h1', {
-      x: '150%',
-      opacity: 0,
-      ease: 'power1.in',
-      stagger: 0.15,
-    });
-    landingPage.to('h2', {
-      x: '150%',
-      opacity: 0,
-      ease: 'power1.in',
-      stagger: 0.15,
-    });
-    landingPage.to('.arrow', { y: '100%', opacity: 0, ease: 'power1.in' }, 0);
+    // ScrollTrigger.refresh();
+    // let landingPage = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.animation',
+    //     scrub: true,
+    //     pin: false,
+    //     start: 'top top',
+    //     end: '+=80%',
+    //     // markers: true,
+    //     // pinSpacing: false
+    //   },
+    // });
+    // landingPage.to('h1', {
+    //   x: '150%',
+    //   opacity: 0,
+    //   ease: 'power1.in',
+    //   stagger: 0.15,
+    // });
+    // landingPage.to('h2', {
+    //   x: '150%',
+    //   opacity: 0,
+    //   ease: 'power1.in',
+    //   stagger: 0.15,
+    // });
+    // landingPage.to('.arrow', { y: '100%', opacity: 0, ease: 'power1.in' }, 0);
 
     ScrollTrigger.refresh();
     let circleBG = gsap.timeline({
       scrollTrigger: {
-        trigger: '.circle',
+        trigger: '.halfcircle',
         scrub: true,
         pin: false,
-        start: 'top top',
-        end: '+=400%',
+        start: 'top bottom',
+        end: '+=300%',
         // markers: true,
         // pinSpacing: false
       },
@@ -152,10 +172,10 @@ export class LandingPageComponent implements OnInit {
     ScrollTrigger.refresh();
     let bubbles = gsap.timeline({
       scrollTrigger: {
-        trigger: '.circles',
+        trigger: '.circleContainer',
         scrub: true,
         pin: false,
-        start: 'bottom 20% ',
+        start: 'top 90% ',
         end: '+=200%',
         // pinSpacing: false
         // markers: true,
@@ -174,15 +194,21 @@ export class LandingPageComponent implements OnInit {
       stagger: 0.1,
       scale: 0.9,
     });
+    bubbles.to('.circles-xsmall', {
+      x: '+120%',
+      ease: 'power1.in',
+      stagger: 0.1,
+      scale: 0.9,
+    });
 
     ScrollTrigger.refresh();
     let projects = gsap.timeline({
       scrollTrigger: {
-        trigger: '.circles',
+        trigger: '.line1',
         scrub: true,
         pin: false,
-        start: 'top top',
-        end: '+=170%',
+        start: 'top 40%',
+        end: '+=80%',
         pinSpacing: false,
         // markers: true,
       },
@@ -204,18 +230,18 @@ export class LandingPageComponent implements OnInit {
 
     // handle the section pinning "#F79540"
 
-    ScrollTrigger.refresh();
-    let pin = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.magenta',
-        scrub: true,
-        pin: true,
-        start: 'top top',
-        end: '+=140%',
+    // ScrollTrigger.refresh();
+    // let pin = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.magenta',
+    //     scrub: true,
+    //     pin: true,
+    //     start: 'top top',
+    //     end: '+=140%',
 
-        // markers: true,
-      },
-    });
+    //     // markers: true,
+    //   },
+    // });
 
     ScrollTrigger.refresh();
     let aboutcircles = gsap.timeline({

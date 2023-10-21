@@ -85,20 +85,20 @@ h2 {
   margin-bottom: -2rem;
   padding-left: 20px;
   padding-right: 20px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .projecttext-small {
   font-size: 72px;
   line-height: normal;
   margin: 0;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .line1 {
   font-family: "Inter";
   color: white;
-  color: rgb(233, 94, 84);
+  color: rgb(31, 90, 89);
   font-size: 72px;
   font-weight: 200;
   line-height: 1.1;
@@ -131,7 +131,7 @@ h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 20px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .slogan-small {
@@ -152,7 +152,7 @@ h2 {
 .bold {
   color: #b71375;
   color: #fa2452;
-  color: rgb(31, 90, 89);
+  color: rgb(233, 94, 84);
   display: inline;
 }
 
@@ -491,6 +491,11 @@ h2 {
   padding-right: 20px;
 }
 
+.imgText2-xsmall {
+  padding-right: 5px;
+  padding-top: 20px;
+}
+
 a {
   text-decoration: none !important;
 }
@@ -824,7 +829,7 @@ app-navbar {
 
 .word-xsmall,
 .delay-05-xsmall {
-  font-weight: 200;
+  font-weight: 300;
   font-size: 48px;
 }
 

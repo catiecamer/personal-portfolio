@@ -227,7 +227,10 @@
               }"
               [ngStyle]="{ color: isHovering ? 'white' : '' }"
             >
-              <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
+              <p
+                [ngClass]="{ 'imgText-xsmall, imgText2-xsmall': isMobile }"
+                class="imgText"
+              >
                 THAT TORONTO STUDIO
               </p>
               <p

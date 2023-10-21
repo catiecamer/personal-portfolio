@@ -224,7 +224,7 @@ export class LandingPageComponent implements OnInit {
       { backgroundColor: 'rgb(253, 130, 63)', ease: 'power1.in' },
       0
     );
-    projects.to('.project', { opacity: 1 }, 0);
+    // projects.to('.project', { opacity: 1 }, 0);
     projects.to('.project', { x: '-15%', ease: 'power1.in' }, 0);
     projects.to('.projecttext-xsmall', { x: '', ease: 'power1.in' }, 0);
 

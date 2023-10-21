@@ -59,7 +59,7 @@ h2 {
   margin-bottom: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-  opacity: 0;
+  // opacity: 0;
 }
 
 .project-xsmall {
@@ -293,6 +293,7 @@ h2 {
   border-radius: 50%;
   background-color: #f79540;
   background-color: rgb(253, 130, 63);
+
   z-index: 2;
   margin: 2rem;
   display: inline;
@@ -333,7 +334,7 @@ h2 {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: #f79540;
+  background-color: rgb(253, 130, 63);
   z-index: 2;
   margin: 1rem;
   display: inline;

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  NgxGoogleAnalyticsModule,
+  NgxGoogleAnalyticsRouterModule,
+} from 'ngx-google-analytics';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +22,6 @@ import { THATtorontostudioComponent } from './components/thattorontostudio/thatt
 import { CanadacomputersComponent } from './components/canadacomputers/canadacomputers.component';
 import { GmailComponent } from './components/gmail/gmail.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { LoadInterceptor } from './load.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,14 +45,10 @@ import { LoadInterceptor } from './load.interceptor';
     HttpClientModule,
     FontAwesomeModule,
     LayoutModule,
+    NgxGoogleAnalyticsModule.forRoot('MEASUREMENT-ID'),
+    NgxGoogleAnalyticsRouterModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadInterceptor,
-      multi: true,
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {

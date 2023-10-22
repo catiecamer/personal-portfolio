@@ -16,7 +16,6 @@
         }"
         class="imgContainer"
       >
-        <!-- <p class="name">I'm Catie Camer</p> -->
         <img
           class="profile"
           [ngClass]="{ 'img-xsmall': isMobile }"
@@ -152,13 +151,14 @@
             <span></span>
           </div>
         </div>
-        <a routerLink="">
+        <div (click)="navigateHomeToProjects()">
           <p
             class="work"
             [ngClass]="{ 'work-small': isTablet, 'work-xsmall': isMobile }"
           >
-            Work - Work - Work - Work - Work - Work - Work - Work - Work - Work
-            - Work - Work - Work
+            Projects - Projects - Projects - Projects - Projects - Projects -
+            Projects - Projects - Projects - Projects- Projects - Projects -
+            Projects - Projects - Projects - Projects - Projects - Projects -
           </p>
           <p
             class="workItalics"
@@ -167,10 +167,11 @@
               'workItalics-xsmall': isMobile
             }"
           >
-            Work - Work - Work - Work - Work - Work - Work - Work - Work - Work
-            - Work - Work - Work
+            Projects - Projects - Projects - Projects - Projects - Projects -
+            Projects - Projects - Projects - Projects Projects - Projects -
+            Projects - Projects - Projects - Projects - Projects - Projects -
           </p>
-        </a>
+        </div>
       </div>
     </div>
   </div>

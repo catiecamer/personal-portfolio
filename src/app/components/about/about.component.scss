@@ -235,15 +235,24 @@ img {
   padding: 5rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  font-weight: 200;
+}
+
+.mainmessage span {
+  font-weight: 200;
+}
+
+.mainmessage-small span {
+  font-weight: 200;
+}
+
+.mainmessage-xsmall span {
+  font-weight: 300;
 }
 
 span {
   color: rgb(203, 0, 135);
   color: rgb(233, 94, 84);
-  // color: rgb(74, 114, 179);
-  // color: rgb(253, 130, 63);
-  // color: rgb(255, 255, 135);
-  font-weight: 300;
 }
 
 .accounting,
@@ -363,7 +372,6 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  // background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
   background-color: rgb(31, 90, 89);
   width: 180%;
   border-radius: 100% 100% 0 0;
@@ -375,7 +383,6 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  // background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
   background-color: rgb(31, 90, 89);
   width: 300%;
   border-radius: 100% 100% 0 0;
@@ -387,7 +394,6 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  // background-image: linear-gradient(0deg, #b71375 25%, rgb(175, 3, 109));
   background-color: rgb(31, 90, 89);
   width: 400%;
   border-radius: 100% 100% 0 0;
@@ -429,7 +435,6 @@ p {
   border-radius: 80px;
   background-color: rgb(203, 145, 189);
   background-color: #f4cedd;
-  // background-color: #FCC8C2;
   z-index: 2;
   margin: 2rem;
   display: inline;
@@ -453,8 +458,6 @@ p {
       rgb(253, 130, 63, 0.8)
     ),
     url("../../../assets/images/backgroundLanding.jpg");
-
-  // background:linear-gradient(0deg, rgb(27, 6, 94), rgb(27, 6, 94,0.5)),  url('../../../assets/images/backgroundLanding.jpg');
   background-size: 1600px;
   width: 100%;
   display: block;
@@ -463,16 +466,11 @@ p {
   margin-top: -15rem;
 }
 
-.workContainer-xsmall {
-  // margin-top: 5rem;
-}
-
 .work {
   font-family: "Inter";
   font-size: 96px;
   color: rgb(249, 195, 203);
   color: #f4cedd;
-  // color: #F5ECCD;
   font-weight: 300;
   z-index: 2;
   display: inline-block;
@@ -481,20 +479,20 @@ p {
   margin: 0;
   padding: 0;
   padding-top: 3rem;
-  margin-left: -40rem;
+  margin-left: -35rem;
 }
 
 .work-small {
   font-size: 72px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .workItalics {
-  font-family: "Montserrat";
+  font-family: "Inter";
+  font-style: italic;
   font-size: 96px;
-  color: #f8c149;
-  // color: #FF87AB;
-  font-weight: 300;
+  color: rgb(255, 255, 135);
+  font-weight: 100;
   z-index: 2;
   display: inline-block;
   white-space: nowrap;
@@ -505,21 +503,19 @@ p {
 
 .workItalics-small {
   font-size: 72px;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .workItalics-xsmall {
-  font-size: 60px;
-  font-weight: 200;
+  font-size: 48px;
+  font-weight: 100;
 }
 
 .work-xsmall {
-  font-size: 60px;
-  font-weight: 200;
+  font-size: 48px;
+  font-weight: 300;
 }
 
 #expand {
-  background-color: #ff661f;
   background-color: rgb(255, 255, 135);
-  // background-color: #FF47DA;
 }

@@ -26,24 +26,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div
-          class="headline"
-          [ngClass]="{
-            'headline-xsmall': isMobile,
-            'headline-small': isTablet
-          }"
-        >
-          <h1 [ngClass]="{ 'text-xsmall': isMobile, 'text-small': isTablet }">
-            PRODUCT
-          </h1>
-          <h2
-            [ngClass]="{ 'text-xsmall': isMobile, 'text-small': isTablet }"
-            class="title2"
-          >
-            DESIGNER
-          </h2>
-        </div> -->
         <div [ngClass]="{ 'maincircle-xsmall': isMobile }" class="mainCircle">
           <div class="halfcircle"></div>
           <div [ngClass]="{ 'circle-xsmall': isMobile }" class="circle">
@@ -150,15 +132,21 @@
                   'projecttext-small': isTablet
                 }"
                 class="projects"
+                (click)="scrollToElement(target)"
               >
-                PROJECTS
+                Projects
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <section class="container" [ngClass]="{ 'container-xsmall': isMobile }">
+    <section
+      #target
+      id="projects"
+      class="container"
+      [ngClass]="{ 'container-xsmall': isMobile }"
+    >
       <div
         class="projectsidebar"
         [ngClass]="{ 'projectsidebar-xsmall': isMobile }"
@@ -376,76 +364,6 @@
         </a>
       </div>
     </section>
-    <!-- <section class="container">
-      <a routerLink="/waterloo" >
-        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel one">
-          <img
-            class="projectimages img1"
-            [ngClass]="{ 'img-xsmall': isMobile }"
-            src="assets/images/UofW.jpg"
-            alt="UNIVERSITY OF WATERLOO PROJECT"
-          />
-
-          <div class="description">
-            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-              UNIVERSITY OF WATERLOO PROJECT
-            </p>
-            <p>test test ets</p>
-          </div>
-        </div>
-      </a>
-
-      <a routerLink="/thattorontostudio" >
-        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel two">
-          <div class="description">
-            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-              THAT TORONTO STUDIO
-            </p>
-            <p>test test ets</p>
-          </div>
-          <img
-            class="projectimages img2"
-            [ngClass]="{ 'img-xsmall': isMobile }"
-            src="assets/images/THATTorontoStudio.jpg"
-            alt="THAT Toronto Studio Project"
-          />
-        </div>
-      </a>
-
-      <a routerLink="/canadacomputers" >
-        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel three">
-          <img
-            class="projectimages img3"
-            [ngClass]="{ 'img-xsmall': isMobile }"
-            src="assets/images/CanadaComputers.jpg"
-            alt="Canada Computers Project"
-          />
-          <div class="description">
-            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-              CANADA COMPUTERS
-            </p>
-            <p>test test ets</p>
-          </div>
-        </div>
-      </a>
-
-      <a routerLink="/gmail" >
-        <div [ngClass]="{ 'panel-xsmall': isMobile }" class="panel four">
-          <div class="description">
-            <p [ngClass]="{ 'imgText-xsmall': isMobile }" class="imgText">
-              GMAIL
-            </p>
-            <p>test test ets</p>
-          </div>
-          <img
-            class="projectimages img4"
-            [ngClass]="{ 'img-xsmall': isMobile }"
-            src="assets/images/Gmail.jpg"
-            alt="Gmail Project"
-          />
-        </div>
-      </a>
-    </section> -->
 
     <div class="contact">
       <div
@@ -495,7 +413,8 @@
           class="aboutme"
           [ngClass]="{ 'aboutme-xsmall': isMobile, 'aboutme-small': isTablet }"
         >
-          About me - About me - About me - About me - About me - About me
+          About me - About me - About me - About me - About me - About me -
+          About me - About me - About me - About me - About me
         </p>
         <p
           class="aboutmeItalics"
@@ -504,7 +423,8 @@
             'aboutmeItalics-small': isTablet
           }"
         >
-          About me - About me - About me - About me - About me - About me
+          About me - About me - About me - About me - About me - About me -
+          About me - About me - About me - About me - About me
         </p>
       </a>
     </div>

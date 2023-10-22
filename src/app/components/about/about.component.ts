@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CSSPlugin } from 'gsap/CSSPlugin';
-// import { faArrowDown } from '@fortawesome/fontawesome-free-solid';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
   BreakpointObserver,
@@ -13,6 +12,7 @@ import {
 import { ChangeDetectorRef } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { ModalService } from 'src/app/services/modal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -30,7 +30,8 @@ export class AboutComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver,
     private change: ChangeDetectorRef,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private router: Router
   ) {}
 
   openDialog() {
@@ -120,8 +121,6 @@ export class AboutComponent implements OnInit {
         pin: false,
         start: 'top 60%',
         end: '+=40%',
-        // markers: true,
-        // pinSpacing: false,
       },
     });
     message.to('.mainmessage', { opacity: 1, stagger: 0.4 }, 0);
@@ -135,7 +134,6 @@ export class AboutComponent implements OnInit {
         pin: false,
         start: 'top 110%',
         end: '+=100%',
-        // markers: true,
         pinSpacing: false,
       },
     });
@@ -152,7 +150,6 @@ export class AboutComponent implements OnInit {
         pin: false,
         start: 'top 60%',
         end: '+=30%',
-        // markers: true,
       },
     });
 
@@ -167,11 +164,8 @@ export class AboutComponent implements OnInit {
         pin: false,
         start: 'top 70%',
         end: '+=30%',
-        // markers: true,
       },
     });
-
-    // ScrollTrigger.refresh()
 
     painting.to('.painting', { opacity: 1 }, 0);
 
@@ -182,13 +176,10 @@ export class AboutComponent implements OnInit {
         pin: false,
         start: 'top 70%',
         end: '+=30%',
-        // markers: true,
       },
     });
 
     uxdesign.to('.uxdesign', { opacity: 1 }, 0);
-
-    // ScrollTrigger.refresh()
 
     let workcircles = gsap.timeline({
       scrollTrigger: {
@@ -197,7 +188,6 @@ export class AboutComponent implements OnInit {
         pin: false,
         start: 'top bottom',
         end: '+=120%',
-        // markers: true,
       },
     });
 
@@ -208,7 +198,10 @@ export class AboutComponent implements OnInit {
     });
     workcircles.to('.work', { x: '5%', ease: 'power1.in' }, 0);
     workcircles.to('.workItalics', { x: '-5%', ease: 'power1.in' }, 0);
-    // "#ff661f"
+  }
+
+  navigateHomeToProjects() {
+    this.router.navigate(['/'], { state: { target: true } });
   }
 
   ngOnDestroy() {

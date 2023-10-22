@@ -1,5 +1,4 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-thattorontostudio',
@@ -11,16 +10,7 @@ export class THATtorontostudioComponent {
   @ViewChildren('image') private images: QueryList<ElementRef>;
   imagesLoaded: number = 0;
 
-  constructor(
-    private elementRef: ElementRef,
-    private loadingService: LoadingService
-  ) {}
-
-  ngOnInit() {
-    // setTimeout(() => {
-    //   this.isLoading = false;
-    // }, this.loadingService.PAGE_LOADING_TIME);
-  }
+  constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
     setTimeout(() => {

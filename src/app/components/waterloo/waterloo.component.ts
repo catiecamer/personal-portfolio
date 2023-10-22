@@ -1,5 +1,4 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-waterloo',
@@ -11,23 +10,13 @@ export class WaterlooComponent {
   @ViewChildren('image') private images: QueryList<ElementRef>;
   imagesLoaded: number = 0;
 
-  constructor(
-    private elementRef: ElementRef,
-    private loadingService: LoadingService
-  ) {}
-
-  // ngOnInit() {
-  //   // setTimeout(() => {
-  //   //   this.isLoading = false;
-  //   // }, this.loadingService.PAGE_LOADING_TIME);
-  // }
+  constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
     setTimeout(() => {
       this.doneLoading = true;
     }, 5000);
 
-    // this.isLoading = false;
     var a = document.createElement('script');
     a.type = 'text/javascript';
     a.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';

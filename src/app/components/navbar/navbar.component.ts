@@ -31,7 +31,6 @@ export class NavbarComponent implements OnInit {
   modalOpenSubject: BehaviorSubject<boolean>;
   breakpointSub: Subscription;
 
-  // faArrowDown = faArrowDown;
   constructor(
     private sanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver,

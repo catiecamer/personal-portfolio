@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -33,6 +33,8 @@ export class LandingPageComponent implements OnInit {
   dialogBox: boolean = false;
   modalOpenSubject: BehaviorSubject<boolean>;
 
+  @ViewChild('target') private projects: ElementRef;
+
   constructor(
     private sanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver,
@@ -60,11 +62,11 @@ export class LandingPageComponent implements OnInit {
       // splash.classList.remove("hidden");
 
       // .5 seconds later, hide the splash
-      setTimeout(function () {
-        splash.classList.add('show');
 
-        // >> Set cookie to visited here <<
-      }, 300);
+      splash.classList.add('show');
+
+      // >> Set cookie to visited here <<
+
       // }
     });
 
@@ -74,6 +76,7 @@ export class LandingPageComponent implements OnInit {
     } else {
       localStorage.removeItem('land');
     }
+
     this.modalOpenSubject = this.modalService.emailModalOpen;
     this.breakpointSub = this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.XSmall])
@@ -115,34 +118,27 @@ export class LandingPageComponent implements OnInit {
     this.initAnimations();
   }
 
+  ngAfterViewInit() {
+    const { state } = history;
+
+    if (state.target) {
+      setTimeout(() => {
+        this.scrollToElement(this.projects.nativeElement);
+      }, 50);
+    }
+  }
+
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  }
+
   initAnimations() {
     gsap.registerPlugin(ScrollTrigger, CSSPlugin);
-
-    // ScrollTrigger.refresh();
-    // let landingPage = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.animation',
-    //     scrub: true,
-    //     pin: false,
-    //     start: 'top top',
-    //     end: '+=80%',
-    //     // markers: true,
-    //     // pinSpacing: false
-    //   },
-    // });
-    // landingPage.to('h1', {
-    //   x: '150%',
-    //   opacity: 0,
-    //   ease: 'power1.in',
-    //   stagger: 0.15,
-    // });
-    // landingPage.to('h2', {
-    //   x: '150%',
-    //   opacity: 0,
-    //   ease: 'power1.in',
-    //   stagger: 0.15,
-    // });
-    // landingPage.to('.arrow', { y: '100%', opacity: 0, ease: 'power1.in' }, 0);
 
     ScrollTrigger.refresh();
     let circleBG = gsap.timeline({
@@ -152,22 +148,14 @@ export class LandingPageComponent implements OnInit {
         pin: false,
         start: 'top bottom',
         end: '+=300%',
-        // markers: true,
-        // pinSpacing: false
       },
     });
 
-    //  circleBG.to(".circle", {y: "-50%", ease: "power1.in", duration: 3, overflowX:"hidden", transformOrigin: 'center'}, 0)
     circleBG.to(
       '.halfcircle',
       { y: '-200%', ease: 'power1.in', duration: 3, overflowX: 'hidden' },
       0
     );
-    //  circleBG.to(".mainCircle", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
-    //  circleBG.to(".mainCircle-xsmall", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
-    //  circleBG.to(".animation", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
-    //  circleBG.to(".container", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
-    //  circleBG.to(".magenta", {y: "-50%", ease: "power1.in", duration: 4, overflowX:"hidden"}, 0)
 
     ScrollTrigger.refresh();
     let bubbles = gsap.timeline({
@@ -177,8 +165,6 @@ export class LandingPageComponent implements OnInit {
         pin: false,
         start: 'top 90% ',
         end: '+=200%',
-        // pinSpacing: false
-        // markers: true,
       },
     });
 
@@ -210,7 +196,6 @@ export class LandingPageComponent implements OnInit {
         start: 'top 40%',
         end: '+=80%',
         pinSpacing: false,
-        // markers: true,
       },
     });
 
@@ -224,24 +209,8 @@ export class LandingPageComponent implements OnInit {
       { backgroundColor: 'rgb(253, 130, 63)', ease: 'power1.in' },
       0
     );
-    // projects.to('.project', { opacity: 1 }, 0);
     projects.to('.project', { x: '-15%', ease: 'power1.in' }, 0);
     projects.to('.projecttext-xsmall', { x: '', ease: 'power1.in' }, 0);
-
-    // handle the section pinning "#F79540"
-
-    // ScrollTrigger.refresh();
-    // let pin = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.magenta',
-    //     scrub: true,
-    //     pin: true,
-    //     start: 'top top',
-    //     end: '+=140%',
-
-    //     // markers: true,
-    //   },
-    // });
 
     ScrollTrigger.refresh();
     let aboutcircles = gsap.timeline({
@@ -251,7 +220,6 @@ export class LandingPageComponent implements OnInit {
         pin: false,
         start: 'top bottom',
         end: '+=200%',
-        // markers: true,
       },
     });
 
@@ -263,37 +231,12 @@ export class LandingPageComponent implements OnInit {
     aboutcircles.to('.aboutme', { x: '20%', ease: 'power1.in' }, 0);
     aboutcircles.to('.aboutmeItalics', { x: '-20%', ease: 'power1.in' }, 0);
 
-    // gsap.to('.one', {
-    //   yPercent: -10,
-    //   scaleY: 1.1,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.one',
-    //     // start: "top bottom", // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //   },
-    // });
-
-    // gsap.to('.img1', {
-    //   yPercent: 5,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.one',
-    //     // start: "top bottom", // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //   },
-    // });
-
     if (!this.isMobile) {
       gsap.to('.img2', {
         yPercent: -30,
         ease: 'none',
         scrollTrigger: {
           trigger: '.one',
-          // start: "top bottom", // the default values
-          // end: "bottom top",
           scrub: true,
         },
       });
@@ -303,8 +246,6 @@ export class LandingPageComponent implements OnInit {
         ease: 'none',
         scrollTrigger: {
           trigger: '.two',
-          // start: "top bottom", // the default values
-          // end: "bottom top",
           scrub: true,
         },
       });
@@ -314,8 +255,6 @@ export class LandingPageComponent implements OnInit {
         ease: 'none',
         scrollTrigger: {
           trigger: '.two',
-          // start: "top bottom", // the default values
-          // end: "bottom top",
           scrub: true,
         },
       });
@@ -325,56 +264,10 @@ export class LandingPageComponent implements OnInit {
         ease: 'none',
         scrollTrigger: {
           trigger: '.three',
-          // start: "top bottom", // the default values
-          // end: "bottom top",
           scrub: true,
         },
       });
     }
-
-    // gsap.to('.circle3-xsmall', {
-    //   yPercent: -20,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.panel1-xsmall',
-    //     // start: "top bottom", // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //   },
-    // });
-
-    // gsap.to('.circle4-xsmall', {
-    //   yPercent: -20,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.panel3-xsmall',
-    //     // start: "top bottom", // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //   },
-    // });
-
-    // gsap.to('.three', {
-    //   yPercent: -100,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.two',
-    //     // start: "top bottom", // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //   },
-    // });
-
-    // gsap.to('.four', {
-    //   yPercent: -120,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.two',
-    //     start: 'bottom bottom', // the default values
-    //     // end: "bottom top",
-    //     scrub: true,
-    //   },
-    // }); 'rgb(31, 90, 89)'
 
     gsap.to('.container', {
       backgroundColor: 'rgb(74, 114, 179)',
@@ -386,38 +279,6 @@ export class LandingPageComponent implements OnInit {
         scrub: true,
       },
     });
-
-    // ScrollTrigger.refresh();
-    // let panels = gsap.utils.toArray('.panel');
-    // panels.forEach((panel: any, i) => {
-    //   ScrollTrigger.create({
-    //     trigger: panel,
-    //     start: 'top top', // if it's shorter than the viewport, we prefer to pin it at the top
-    //     pin: i === panels.length - 1 ? false : true,
-    //     end: 'bottom 100',
-    //     pinSpacing: false,
-    //   });
-    // });
-
-    // gsap.utils.toArray(".panel").forEach((container:any, i:any) => {
-    //   ScrollTrigger.create({
-    //     trigger: container,
-    //     start: "top top",
-    //     pin: true,
-    //     pinSpacing: false,
-    //     snap: 1,
-    //   });
-    //   gsap.from(container.children, {
-    //     y: 0,
-    //     opacity: 0,
-    //     scrollTrigger: {
-    //       trigger: container,
-    //       start: "top bottom",
-    //       end: "top top",
-    //       toggleActions: "play none reverse reset",
-    //     },
-    //   });
-    // });
   }
 
   ngOnDestroy() {

@@ -14,12 +14,7 @@
   overflow-y: hidden;
   z-index: 1000000;
 }
-.wrapper {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-}
+
 .circle {
   display: inline-block;
   width: 17px;
@@ -30,8 +25,6 @@
   transform-origin: bottom center;
   position: relative;
 }
-
-// rgb(31, 90, 89)
 
 @keyframes loading {
   0% {

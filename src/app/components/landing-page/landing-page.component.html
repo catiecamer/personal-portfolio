@@ -2,7 +2,7 @@
   <app-email *ngIf="modalOpenSubject | async"></app-email>
   <div [ngClass]="{ freeze: modalOpenSubject | async }">
     <div class="magenta">
-      <app-navbar></app-navbar>
+      <app-navbar (scrollEmit)="scrollToElement(target)"></app-navbar>
       <div class="animation">
         <div
           class="intro"
@@ -24,6 +24,10 @@
             >
               DESIGNER
             </div>
+            <!-- <p class="nameintro word word-delay-07">
+              User-centered experiences crafted by
+              <span class="names">Catie Camer</span>
+            </p> -->
           </div>
         </div>
         <div [ngClass]="{ 'maincircle-xsmall': isMobile }" class="mainCircle">
@@ -134,7 +138,7 @@
                 class="projects"
                 (click)="scrollToElement(target)"
               >
-                Projects
+                Work
               </p>
             </div>
           </div>

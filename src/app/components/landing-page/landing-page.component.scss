@@ -653,10 +653,14 @@ app-navbar {
 .animate-words {
   overflow: hidden;
   transition-delay: 0 !important;
-  display: inline-block;
+  // display: inline-block;
+  display: block;
+  // justify-content: center;
+  align-items: center;
 }
 
 .word {
+  text-align: center;
   font-family: "Inter";
   font-weight: 300;
   font-size: 96px;
@@ -691,6 +695,8 @@ app-navbar {
 .word-delay-05 {
   transition-delay: 0.4s !important;
   padding-right: 22px;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .delay-05-xsmall,
@@ -703,10 +709,13 @@ app-navbar {
   color: rgb(253, 130, 63);
   color: rgb(233, 94, 84);
   color: rgb(255, 255, 135);
+  line-height: 1.1;
+  text-align: center;
 }
 
 .word-delay-07 {
-  transition-delay: 0.5s;
+  transition-delay: 0.5s !important;
+  text-align: center;
 }
 
 .show .animate-words .word {
@@ -721,18 +730,17 @@ app-navbar {
 
 .intro {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem;
+  padding: 5rem 5rem 5rem 5rem;
   margin-top: 10rem;
   z-index: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .intro-xsmall {
   padding: 20px;
   text-align: center;
-  margin-top: 16rem;
+  margin-top: 12rem;
   justify-content: center;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -743,4 +751,18 @@ app-navbar {
   justify-content: center;
   padding-left: 7rem;
   padding-right: 7rem;
+}
+
+.nameintro {
+  font-family: "Inter";
+  font-size: 36px;
+  text-align: center;
+  font-weight: 100;
+  color: white;
+  margin-top: 20px;
+}
+
+.names {
+  font-weight: 300;
+  color: rgb(250, 116, 43);
 }

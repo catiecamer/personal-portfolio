@@ -28,27 +28,51 @@
       </button>
     </a>
 
-    <a routerLink="/about">
-      <button
-        [ngClass]="{
-          about: ['/about', '/resume'].includes(url1),
-          home: !['/about', '/resume'].includes(url1),
-          navprojects: [
-            '/waterloo',
-            '/thattorontostudio',
-            '/canadacomputers',
-            '/gmail'
-          ].includes(url1),
-          'button-xsmall': isMobile,
-          'about-xsmall': isMobile
-        }"
-        mat-flat-button
-        [autofocus]="false"
-        class="about"
-      >
-        ABOUT
-      </button>
-    </a>
+    <div class="rightsidenav">
+      <a routerLink="/" (click)="navigateHomeToProjects()">
+        <button
+          [ngClass]="{
+            about: ['/about', '/resume'].includes(url1),
+            home: !['/about', '/resume'].includes(url1),
+            navprojects: [
+              '/waterloo',
+              '/thattorontostudio',
+              '/canadacomputers',
+              '/gmail'
+            ].includes(url1),
+            'button-xsmall': isMobile,
+            'about-xsmall': isMobile
+          }"
+          mat-flat-button
+          [autofocus]="false"
+          class="work"
+        >
+          WORK
+        </button>
+      </a>
+
+      <a routerLink="/about">
+        <button
+          [ngClass]="{
+            about: ['/about', '/resume'].includes(url1),
+            home: !['/about', '/resume'].includes(url1),
+            navprojects: [
+              '/waterloo',
+              '/thattorontostudio',
+              '/canadacomputers',
+              '/gmail'
+            ].includes(url1),
+            'button-xsmall': isMobile,
+            'about-xsmall': isMobile
+          }"
+          mat-flat-button
+          [autofocus]="false"
+          class="about"
+        >
+          ABOUT
+        </button>
+      </a>
+    </div>
   </div>
 
   <div

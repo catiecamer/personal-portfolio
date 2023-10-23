@@ -1,4 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -38,7 +44,8 @@ export class LandingPageComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   openDialog() {
@@ -129,12 +136,13 @@ export class LandingPageComponent implements OnInit {
   }
 
   scrollToElement($element): void {
-    console.log($element);
-    $element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
+    setTimeout(() => {
+      $element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    }, 0);
   }
 
   initAnimations() {

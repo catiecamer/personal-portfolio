@@ -10,7 +10,7 @@
   color: rgb(233, 94, 84);
   font-size: 14px;
   border: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 button {
@@ -18,13 +18,13 @@ button {
 }
 
 .button-xsmall {
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  // padding-left: 0.3rem;
+  // padding-right: 0.3rem;
 }
 
 .buttons-xsmall {
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  // padding-left: 0.3rem;
+  // padding-right: 0.3rem;
 }
 
 .home {
@@ -37,11 +37,11 @@ button {
   color: rgb(255, 255, 135);
   font-size: 14px;
   border: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .about-xsmall {
-  float: right;
+  // float: right;
   color: rgb(255, 255, 135);
 }
 
@@ -53,9 +53,6 @@ button {
   display: flex;
   justify-content: space-between;
   height: 19px;
-}
-
-.firstline-xsmall {
 }
 
 .name {
@@ -73,7 +70,7 @@ button {
 .nav-xsmall {
   padding-left: 20px;
   padding-right: 20px;
-  position: absolute;
+  // position: absolute;
   z-index: 20;
   width: calc(100vw - 40px);
   padding-top: 20px;
@@ -95,7 +92,7 @@ button {
   color: white;
   color: rgb(31, 90, 89);
   border: none;
-  font-weight: 400;
+  font-weight: 300;
   font-family: "Inter";
   letter-spacing: 1px;
   font-size: 12px;
@@ -146,8 +143,13 @@ button {
   display: flex;
   background-color: white;
   color: black;
+  font-weight: 400;
   height: 19px;
   margin-top: -6px;
+}
+
+.rightsidenav {
+  display: inline-flex;
 }
 
 a {
@@ -174,5 +176,9 @@ a {
 
 #logo {
   text-decoration: overline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1.5px;
+}
+
+.work {
+  padding-right: 3px;
 }

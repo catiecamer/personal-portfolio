@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CSSPlugin } from 'gsap/CSSPlugin';
@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
   dialogBox: boolean = false;
   modalOpenSubject: BehaviorSubject<boolean>;
   breakpointSub: Subscription;
+  @Output() scrollEmit = new EventEmitter<boolean>();
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -65,6 +66,14 @@ export class NavbarComponent implements OnInit {
       });
 
     gsap.registerPlugin(ScrollTrigger, CSSPlugin);
+  }
+
+  navigateHomeToProjects() {
+    if (this.router.url == '/') {
+      this.scrollEmit.emit(true);
+    } else {
+      this.router.navigate(['/'], { state: { target: true } });
+    }
   }
 
   ngOnDestroy() {

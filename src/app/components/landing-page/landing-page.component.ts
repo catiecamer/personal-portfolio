@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CSSPlugin } from 'gsap/CSSPlugin';
-// import { faArrowDown } from '@fortawesome/fontawesome-free-solid';
+import { faChevronDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalService } from 'src/app/services/modal.service';
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -25,12 +25,15 @@ import {
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+  faChevronDown = faChevronDown;
+  faArrowRight = faArrowRight;
   isHovering = false;
   isHovering2 = false;
   isHovering3 = false;
   isHovering4 = false;
   isMobile = false;
   isTablet = false;
+  isDesktop = !this.isMobile || !this.isTablet;
   gmailProjectLink: string;
   canadaComputersProjectLink: string;
   THATTorontoStudioProjectLink: string;
@@ -90,6 +93,7 @@ export class LandingPageComponent implements OnInit {
       .subscribe((result: BreakpointState) => {
         if (result.breakpoints[Breakpoints.XSmall]) {
           this.isMobile = true;
+          this.isDesktop = false;
           this.gmailProjectLink =
             'https://www.figma.com/proto/wuQGws1ZZcce32YBp3t2JY/Case-Studies?type=design&node-id=1278-4191&t=Huin31uQ7NF3gdTn-1&scaling=scale-down-width&page-id=1249%3A2349&mode=design';
           this.canadaComputersProjectLink =
@@ -109,6 +113,7 @@ export class LandingPageComponent implements OnInit {
           this.waterlooProjectLink =
             'https://www.figma.com/proto/wuQGws1ZZcce32YBp3t2JY/Case-Studies?type=design&node-id=1446-19012&t=xhPdcKQ3DdLmCBAV-1&scaling=scale-down-width&page-id=1446%3A17267&starting-point-node-id=1538%3A1960&mode=design';
           this.isTablet = true;
+          this.isDesktop = false;
         } else {
           this.gmailProjectLink =
             'https://www.figma.com/proto/wuQGws1ZZcce32YBp3t2JY/Case-Studies?type=design&node-id=1251-2273&t=DZNkMRexxK5Co6fV-1&scaling=scale-down-width&page-id=1251%3A2272&starting-point-node-id=1251%3A2273&mode=design';
@@ -120,6 +125,7 @@ export class LandingPageComponent implements OnInit {
             'https://www.figma.com/proto/wuQGws1ZZcce32YBp3t2JY/Case-Studies?type=design&node-id=1446-19012&t=xhPdcKQ3DdLmCBAV-1&scaling=scale-down-width&page-id=1446%3A17267&starting-point-node-id=1538%3A1960&mode=design';
           this.isMobile = false;
           this.isTablet = false;
+          this.isDesktop = true;
         }
       });
     this.initAnimations();
@@ -239,51 +245,149 @@ export class LandingPageComponent implements OnInit {
     aboutcircles.to('.aboutme', { x: '20%', ease: 'power1.in' }, 0);
     aboutcircles.to('.aboutmeItalics', { x: '-20%', ease: 'power1.in' }, 0);
 
-    if (!this.isMobile) {
-      gsap.to('.img2', {
-        yPercent: -30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.one',
-          scrub: true,
-        },
-      });
+    // if (!this.isMobile) {
+    //   gsap.to('.img2', {
+    //     xPercent: -7,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: '.two',
+    //       scrub: true,
+    //     },
+    //   });
 
-      gsap.to('.img3', {
-        yPercent: -30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.two',
-          scrub: true,
-        },
-      });
+    //   gsap.to('.img1', {
+    //     yPercent: -10,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: '.projectsidebar',
+    //       scrub: true,
+    //     },
+    //   });
 
-      gsap.to('.img31', {
-        yPercent: 10,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.two',
-          scrub: true,
-        },
-      });
+    //   gsap.to('.img3', {
+    //     yPercent: 10,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: '.two',
+    //       scrub: true,
+    //     },
+    //   });
 
-      gsap.to('.img4', {
-        yPercent: 15,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.three',
-          scrub: true,
-        },
-      });
-    }
+    //   gsap.to('.img31', {
+    //     yPercent: 10,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: '.two',
+    //       scrub: true,
+    //     },
+    //   });
 
-    gsap.to('.container', {
-      backgroundColor: 'rgb(74, 114, 179)',
+    //   gsap.to('.img4', {
+    //     yPercent: -15,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: '.one',
+    //       scrub: true,
+    //       start: '50% 25% ',
+    //     },
+    //   });
+
+    //   gsap.to('.img4', {
+    //     yPercent: -15,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //       trigger: '.one',
+    //       scrub: true,
+    //       start: '50% 25% ',
+    //     },
+    //   });
+    // }
+
+    let backgroundColorChange = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.projectsidebar',
+        scrub: true,
+        pin: false,
+        start: 'top bottom',
+        end: 'bottom bottom',
+      },
+    });
+
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#FCD54D',
+      ease: 'power1.in',
+    });
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#D9623E',
+      ease: 'power1.in',
+    });
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#93AAFF',
+      ease: 'power1.in',
+    });
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#1C4889',
+      ease: 'power1.in',
+    });
+
+    // gsap.to('.projectsidebar', {
+    //   backgroundColor: '#FCD54D',
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.one',
+    //     start: 'top 50%',
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.projectsidebar', {
+    //   backgroundColor: '#D24C37',
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.four',
+    //     start: 'top 50%',
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.projectsidebar', {
+    //   backgroundColor: '#1C4889',
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.projectsidebar',
+    //     start: '0%',
+    //     end: '',
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.projectsidebar', {
+    //   backgroundColor: '#93AAFF',
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.projectsidebar',
+    //     start: '25%',
+    //     scrub: true,
+    //   },
+    // });
+
+    // gsap.to('.projectsidebar', {
+    //   backgroundColor: 'D24C37',
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.projectsidebar',
+    //     start: '50%',
+    //     scrub: true,
+    //   },
+    // });
+
+    gsap.to('.chevron', {
+      opacity: '0',
       ease: 'none',
       scrollTrigger: {
-        trigger: '.three',
-        start: '50% bottom ',
-        end: 'top top',
+        trigger: 'fa-icon',
+        start: 'top 90%',
+        end: 'top 80%',
         scrub: true,
       },
     });

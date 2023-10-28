@@ -385,10 +385,11 @@ export class LandingPageComponent implements OnInit {
       opacity: '0',
       ease: 'none',
       scrollTrigger: {
-        trigger: 'fa-icon',
-        start: 'top 90%',
-        end: 'top 80%',
+        trigger: '.word',
+        start: 'top 40%',
+        end: 'top 20%',
         scrub: true,
+        // markers: true,
       },
     });
   }

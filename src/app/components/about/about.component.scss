@@ -207,9 +207,9 @@ img {
   color: rgb(253, 130, 63);
   color: rgb(233, 94, 84);
   color: rgb(31, 90, 89);
-  letter-spacing: 2px;
+  letter-spacing: -2%;
   font-weight: 200;
-  line-height: 1.1;
+  line-height: 1.2;
   padding-top: 5rem;
   padding-left: 7rem;
   padding-right: 7rem;
@@ -270,6 +270,8 @@ span {
   display: flex;
   flex-direction: column;
   opacity: 0;
+  line-height: 1.2;
+  letter-spacing: -1%;
 }
 
 .accounting-xsmall,

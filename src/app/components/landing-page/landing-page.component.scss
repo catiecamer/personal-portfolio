@@ -90,7 +90,8 @@ h2 {
   color: rgb(31, 90, 89);
   font-size: 72px;
   font-weight: 200;
-  line-height: 1.1;
+  line-height: 1.2;
+  letter-spacing: -2%;
   display: inline;
   padding-left: 5rem;
   padding-right: 5rem;
@@ -515,6 +516,7 @@ h2 {
   font-size: 36px;
   margin-top: 0;
   margin-bottom: 1rem;
+  letter-spacing: -2%;
 }
 
 .imgText-small {
@@ -700,7 +702,7 @@ app-navbar {
   font-family: "Inter";
   font-weight: 300;
   font-size: 96px;
-  letter-spacing: 2px;
+  letter-spacing: -2%;
   color: #f4cedd;
   text-align: center;
   line-height: 1.2;

@@ -31,6 +31,8 @@ export class LandingPageComponent implements OnInit {
   isHovering2 = false;
   isHovering3 = false;
   isHovering4 = false;
+  isHovering5 = false;
+  isHovering6 = false;
   isMobile = false;
   isTablet = false;
   isDesktop = !this.isMobile || !this.isTablet;
@@ -313,6 +315,14 @@ export class LandingPageComponent implements OnInit {
       },
     });
 
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#DAF8FF',
+      ease: 'power1.in',
+    });
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#f0f6fd',
+      ease: 'power1.in',
+    });
     backgroundColorChange.to('.projectsidebar', {
       backgroundColor: '#FCD54D',
       ease: 'power1.in',

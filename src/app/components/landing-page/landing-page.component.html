@@ -198,6 +198,145 @@
         class="projectsidebar"
         [ngClass]="{ 'projectsidebar-xsmall': isMobile }"
       >
+        <a href="https://www.spectra.bm">
+          <div
+            [ngClass]="{ 'panel-xsmall panel6-xsmall': isMobile }"
+            class="panel four"
+            (mouseover)="isHovering6 = true"
+            (mouseout)="isHovering6 = false"
+            [ngStyle]="{
+              'background-color': isHovering6 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <img
+              class="projectimages"
+              *ngIf="isDesktop"
+              src="assets/images/SPECTRAdesktop.png"
+              loading="lazy"
+              alt="SPECTRA website preview"
+            />
+            <img
+              class="mobileimages"
+              *ngIf="isMobile || isTablet"
+              src="assets/images/SPECTRAmobile.png"
+              loading="lazy"
+              alt="SPECTRA website preview"
+            />
+            <div
+              class="description desc6"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering6 ? 'white' : '' }"
+            >
+              <p
+                [ngClass]="{
+                  'imgText-xsmall': isMobile,
+                  'imgText-small': isTablet
+                }"
+                class="imgText"
+              >
+                SPECTRA
+              </p>
+              <p
+                [ngClass]="{
+                  'para-xsmall': isMobile,
+                  'para-small': isTablet
+                }"
+                class="para"
+              >
+                Designed and developed SPECTRA's website for their innovative
+                insurance app using Figma and Webflow. The brand redesign,
+                completed in just 3 weeks, strikes a harmonious balance, merging
+                modern aesthetics with an emphasis on safety and trust.
+              </p>
+              <div
+                [ngClass]="{
+              'readmore-xsmall': isMobile,
+            }"
+                class="readmore"
+              >
+                <p class="readmoretext">EXPLORE WEBSITE</p>
+                <fa-icon
+                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
+                  [icon]="faArrowRight"
+                  class="arrow arrowSix"
+                ></fa-icon>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </a>
+
+        <a href="http://www.compas.utoronto.ca">
+          <div
+            [ngClass]="{ 'panel-xsmall panel5-xsmall': isMobile }"
+            class="panel four"
+            (mouseover)="isHovering5 = true"
+            (mouseout)="isHovering5 = false"
+            [ngStyle]="{
+              'background-color': isHovering5 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <div
+              class="description desc5"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering5 ? 'white' : '' }"
+            >
+              <p
+                [ngClass]="{
+                  'imgText-xsmall imgText5-xsmall': isMobile,
+                  'imgText-small': isTablet
+                }"
+                class="imgText"
+              >
+                UNIVERSITY OF TORONTO'S COMPAS
+              </p>
+              <p
+                [ngClass]="{
+                  'para-xsmall': isMobile,
+                  'para-small': isTablet
+                }"
+                class="para"
+              >
+                Explore the website I designed for COMPAS, an internal partner
+                of the University of Toronto. Tasked with creating a responsive
+                site using Angular and implementing a content management system,
+                I prioritized accessibility and adhered to the University's
+                design system. The project was successfully completed in just
+                two weeks.
+              </p>
+
+              <div class="readmore">
+                <p class="readmoretext">EXPLORE WEBSITE</p>
+                <fa-icon
+                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
+                  [icon]="faArrowRight"
+                  class="arrow arrowFive"
+                ></fa-icon>
+              </div>
+            </div>
+            <img
+              class="projectimages img5"
+              *ngIf="isDesktop"
+              src="assets/images/CompasMobile.jpg"
+              loading="lazy"
+              alt="COMPAS Project"
+            />
+            <img
+              class="mobileimages"
+              *ngIf="isMobile || isTablet"
+              src="assets/images/CompasMobile.jpg"
+              loading="lazy"
+              alt="COMPAS Project"
+            />
+          </div>
+          <!-- </div> -->
+        </a>
         <a routerLink="/waterloo">
           <!-- <div
             class="whitebackground"

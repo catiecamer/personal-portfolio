@@ -381,7 +381,8 @@ h2 {
 }
 
 .panel3-xsmall,
-.panel4-xsmall {
+.panel4-xsmall,
+.panel5-xsmall {
   flex-direction: column-reverse;
 }
 
@@ -847,6 +848,14 @@ app-navbar {
 
 .arrowFour {
   color: #d9623e;
+}
+
+.arrowFive {
+  color: #f37d1d;
+}
+
+.arrowSix {
+  color: #008787;
 }
 
 .readmore {

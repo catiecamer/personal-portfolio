@@ -316,14 +316,6 @@ export class LandingPageComponent implements OnInit {
     });
 
     backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#DAF8FF',
-      ease: 'power1.in',
-    });
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#f0f6fd',
-      ease: 'power1.in',
-    });
-    backgroundColorChange.to('.projectsidebar', {
       backgroundColor: '#FCD54D',
       ease: 'power1.in',
     });
@@ -331,6 +323,16 @@ export class LandingPageComponent implements OnInit {
       backgroundColor: '#D9623E',
       ease: 'power1.in',
     });
+
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#DAF8FF',
+      ease: 'power1.in',
+    });
+    backgroundColorChange.to('.projectsidebar', {
+      backgroundColor: '#f0f6fd',
+      ease: 'power1.in',
+    });
+
     backgroundColorChange.to('.projectsidebar', {
       backgroundColor: '#93AAFF',
       ease: 'power1.in',

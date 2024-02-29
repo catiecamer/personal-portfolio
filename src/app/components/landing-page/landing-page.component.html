@@ -198,6 +198,158 @@
         class="projectsidebar"
         [ngClass]="{ 'projectsidebar-xsmall': isMobile }"
       >
+        <a routerLink="/waterloo">
+          <!-- <div
+          class="whitebackground"
+          [ngStyle]="{
+            'background-color': isHovering4 ? 'rgba(0,0,0,1)' : ''
+          }" -->
+
+          <div
+            [ngClass]="{ 'panel-xsmall panel1-xsmall': isMobile }"
+            class="panel one"
+            (mouseover)="isHovering4 = true"
+            (mouseout)="isHovering4 = false"
+            [ngStyle]="{
+              'background-color': isHovering4 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <img
+              class="projectimages"
+              *ngIf="isDesktop"
+              src="assets/images/UofW.jpg"
+              loading="lazy"
+              alt="UNIVERSITY OF
+          WATERLOO PROJECT"
+            />
+            <img
+              class="mobileimages"
+              *ngIf="isMobile || isTablet"
+              src="assets/images/UofWMobile.png"
+              loading="lazy"
+              alt="UNIVERSITY OF WATERLOO PROJECT"
+            />
+            <div
+              class="description desc1"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering4 ? 'white' : '' }"
+            >
+              <p
+                [ngClass]="{
+                  'imgText-xsmall': isMobile,
+                  'imgText-small': isTablet
+                }"
+                class="imgText"
+              >
+                UNIVERSITY OF WATERLOO
+              </p>
+              <p
+                [ngClass]="{
+                  'para-xsmall': isMobile,
+                  'para-small': isTablet
+                }"
+                class="para"
+              >
+                When it comes to this world-renowned university, we had a big
+                challenge in approaching the organization and presentation of
+                large amounts of information meant for various audiences.
+              </p>
+              <div
+                [ngClass]="{
+              'readmore-xsmall': isMobile,
+            }"
+                class="readmore"
+              >
+                <p class="readmoretext">READ MORE</p>
+                <fa-icon
+                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
+                  [icon]="faArrowRight"
+                  class="arrow arrowOne"
+                ></fa-icon>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </a>
+
+        <!-- <div class="circle3" [ngClass]="{ 'circle3-xsmall': isMobile }"></div> -->
+        <a routerLink="/gmail">
+          <!-- <div
+          class="whitebackground"
+          [ngStyle]="{
+            'background-color': isHovering2 ? 'rgba(0,0,0,1)' : ''
+          }" -->
+          <!-- > -->
+          <div
+            [ngClass]="{ 'panel-xsmall panel4-xsmall': isMobile }"
+            class="panel four"
+            (mouseover)="isHovering2 = true"
+            (mouseout)="isHovering2 = false"
+            [ngStyle]="{
+              'background-color': isHovering2 ? 'rgba(0,0,0,0.7)' : ''
+            }"
+          >
+            <div
+              class="description desc4"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+              [ngStyle]="{ color: isHovering2 ? 'white' : '' }"
+            >
+              <p
+                [ngClass]="{
+                  'imgText-xsmall imgText4-xsmall': isMobile,
+                  'imgText-small': isTablet
+                }"
+                class="imgText"
+              >
+                GMAIL
+              </p>
+              <p
+                [ngClass]="{
+                  'para-xsmall': isMobile,
+                  'para-small': isTablet
+                }"
+                class="para"
+              >
+                As part of a UX Design case study, I was given the task to
+                research and improve a pre-installed android application with a
+                two-week turnaround. The following is an analysis about the user
+                friendliness of the Gmail application, more specifically when it
+                comes to composing emails and interacting with ‘drafts’ on an
+                android.
+              </p>
+
+              <div class="readmore">
+                <p class="readmoretext">READ MORE</p>
+                <fa-icon
+                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
+                  [icon]="faArrowRight"
+                  class="arrow arrowFour"
+                ></fa-icon>
+              </div>
+            </div>
+            <img
+              class="projectimages img4"
+              *ngIf="isDesktop"
+              src="assets/images/Gmail.jpg"
+              loading="lazy"
+              alt="Gmail Project"
+            />
+            <img
+              class="mobileimages"
+              *ngIf="isMobile || isTablet"
+              src="assets/images/GmailMobile.jpg"
+              loading="lazy"
+              alt="Gmail Project"
+            />
+          </div>
+          <!-- </div> -->
+        </a>
         <a href="https://www.spectra.bm">
           <div
             [ngClass]="{ 'panel-xsmall panel6-xsmall': isMobile }"
@@ -337,158 +489,7 @@
           </div>
           <!-- </div> -->
         </a>
-        <a routerLink="/waterloo">
-          <!-- <div
-            class="whitebackground"
-            [ngStyle]="{
-              'background-color': isHovering4 ? 'rgba(0,0,0,1)' : ''
-            }" -->
 
-          <div
-            [ngClass]="{ 'panel-xsmall panel1-xsmall': isMobile }"
-            class="panel one"
-            (mouseover)="isHovering4 = true"
-            (mouseout)="isHovering4 = false"
-            [ngStyle]="{
-              'background-color': isHovering4 ? 'rgba(0,0,0,0.7)' : ''
-            }"
-          >
-            <img
-              class="projectimages"
-              *ngIf="isDesktop"
-              src="assets/images/UofW.jpg"
-              loading="lazy"
-              alt="UNIVERSITY OF
-            WATERLOO PROJECT"
-            />
-            <img
-              class="mobileimages"
-              *ngIf="isMobile || isTablet"
-              src="assets/images/UofWMobile.png"
-              loading="lazy"
-              alt="UNIVERSITY OF WATERLOO PROJECT"
-            />
-            <div
-              class="description desc1"
-              [ngClass]="{
-                'description-xsmall': isMobile,
-                'description-small': isTablet
-              }"
-              [ngStyle]="{ color: isHovering4 ? 'white' : '' }"
-            >
-              <p
-                [ngClass]="{
-                  'imgText-xsmall': isMobile,
-                  'imgText-small': isTablet
-                }"
-                class="imgText"
-              >
-                UNIVERSITY OF WATERLOO
-              </p>
-              <p
-                [ngClass]="{
-                  'para-xsmall': isMobile,
-                  'para-small': isTablet
-                }"
-                class="para"
-              >
-                When it comes to this world-renowned university, we had a big
-                challenge in approaching the organization and presentation of
-                large amounts of information meant for various audiences.
-              </p>
-              <div
-                [ngClass]="{
-                'readmore-xsmall': isMobile,
-              }"
-                class="readmore"
-              >
-                <p class="readmoretext">READ MORE</p>
-                <fa-icon
-                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
-                  [icon]="faArrowRight"
-                  class="arrow arrowOne"
-                ></fa-icon>
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-        </a>
-
-        <!-- <div class="circle3" [ngClass]="{ 'circle3-xsmall': isMobile }"></div> -->
-        <a routerLink="/gmail">
-          <!-- <div
-            class="whitebackground"
-            [ngStyle]="{
-              'background-color': isHovering2 ? 'rgba(0,0,0,1)' : ''
-            }" -->
-          <!-- > -->
-          <div
-            [ngClass]="{ 'panel-xsmall panel4-xsmall': isMobile }"
-            class="panel four"
-            (mouseover)="isHovering2 = true"
-            (mouseout)="isHovering2 = false"
-            [ngStyle]="{
-              'background-color': isHovering2 ? 'rgba(0,0,0,0.7)' : ''
-            }"
-          >
-            <div
-              class="description desc4"
-              [ngClass]="{
-                'description-xsmall': isMobile,
-                'description-small': isTablet
-              }"
-              [ngStyle]="{ color: isHovering2 ? 'white' : '' }"
-            >
-              <p
-                [ngClass]="{
-                  'imgText-xsmall imgText4-xsmall': isMobile,
-                  'imgText-small': isTablet
-                }"
-                class="imgText"
-              >
-                GMAIL
-              </p>
-              <p
-                [ngClass]="{
-                  'para-xsmall': isMobile,
-                  'para-small': isTablet
-                }"
-                class="para"
-              >
-                As part of a UX Design case study, I was given the task to
-                research and improve a pre-installed android application with a
-                two-week turnaround. The following is an analysis about the user
-                friendliness of the Gmail application, more specifically when it
-                comes to composing emails and interacting with ‘drafts’ on an
-                android.
-              </p>
-
-              <div class="readmore">
-                <p class="readmoretext">READ MORE</p>
-                <fa-icon
-                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
-                  [icon]="faArrowRight"
-                  class="arrow arrowFour"
-                ></fa-icon>
-              </div>
-            </div>
-            <img
-              class="projectimages img4"
-              *ngIf="isDesktop"
-              src="assets/images/Gmail.jpg"
-              loading="lazy"
-              alt="Gmail Project"
-            />
-            <img
-              class="mobileimages"
-              *ngIf="isMobile || isTablet"
-              src="assets/images/GmailMobile.jpg"
-              loading="lazy"
-              alt="Gmail Project"
-            />
-          </div>
-          <!-- </div> -->
-        </a>
         <a routerLink="/thattorontostudio">
           <!-- <div
             class="whitebackground"

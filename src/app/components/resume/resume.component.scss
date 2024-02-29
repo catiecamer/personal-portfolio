@@ -50,15 +50,30 @@ ul {
   font-size: 12px;
   letter-spacing: 1.2;
   list-style-type: none;
-  margin-left: 0;
   margin-top: 0;
   padding-left: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+li.job {
+  margin-left: 12px;
+  list-style: disc;
+}
+
+li.date {
+  padding-top: 0px;
 }
 
 li {
-  padding-top: 0.5rem;
+  padding-top: 0.8rem;
+  line-height: 20px;
 }
+
+li.skill {
+  list-style: none;
+  margin-left: 0px;
+}
+
 .experience {
   font-size: 20px;
   font-weight: 700;
@@ -70,6 +85,7 @@ li {
 .title {
   display: inline;
   font-size: 14px;
+  margin-left: 0;
 }
 
 .title {

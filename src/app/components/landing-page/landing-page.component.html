@@ -8,7 +8,7 @@
           class="intro"
           [ngClass]="{ 'intro-xsmall': isMobile, 'intro-small': isTablet }"
         >
-          <div class="animate-words">
+          <div *ngIf="!navbarService.hamburgerOpen" class="animate-words">
             <div
               class="word word-delay-05"
               [ngClass]="{
@@ -16,13 +16,13 @@
                 'word-small, delay-05-small': isTablet
               }"
             >
-              PRODUCT
+              UX
             </div>
             <div
               class="word word-delay-06"
               [ngClass]="{ 'word-xsmall': isMobile, 'word-small': isTablet }"
             >
-              DESIGNER
+              {{ " " }}designer
             </div>
             <!-- <p class="nameintro word word-delay-07">
               User-centered experiences crafted by
@@ -37,8 +37,15 @@
         ></fa-icon>
       </div>
       <div [ngClass]="{ 'maincircle-xsmall': isMobile }" class="mainCircle">
-        <div class="halfcircle"></div>
-        <div [ngClass]="{ 'circle-xsmall': isMobile }" class="circle">
+        <div
+          class="halfcircle"
+          [ngStyle]="{ 'z-index': navbarService.hamburgerOpen ? '-1' : '' }"
+        ></div>
+        <div
+          [ngClass]="{ 'circle-xsmall': isMobile }"
+          class="circle"
+          [ngStyle]="{ 'z-index': navbarService.hamburgerOpen ? '-1' : '' }"
+        >
           <div class="text">
             <p
               [ngClass]="{
@@ -47,11 +54,10 @@
               }"
               class="line1"
             >
-              From <span class="bold">art to finance </span> and now
-              <span class="bold">product design, </span>I bring a fresh
-              perspective to<span class="bold">
-                creative problem-solving.
-              </span>
+              From <span class="bold">finance </span>to<span class="bold">
+                UX, </span
+              >I design intuitive solutions for
+              <span class="bold"> technical challenges. </span>
             </p>
           </div>
 
@@ -198,6 +204,71 @@
         class="projectsidebar"
         [ngClass]="{ 'projectsidebar-xsmall': isMobile }"
       >
+        <a routerLink="/funds-dlt">
+          <div
+            [ngClass]="{ 'panel-xsmall panel4-xsmall': isMobile }"
+            class="panel four"
+          >
+            <div
+              class="description desc4"
+              [ngClass]="{
+                'description-xsmall': isMobile,
+                'description-small': isTablet
+              }"
+            >
+              <p
+                [ngClass]="{
+                  'imgText-xsmall imgText4-xsmall': isMobile,
+                  'imgText-small': isTablet
+                }"
+                class="imgText"
+              >
+                FundsDLT
+              </p>
+              <p
+                [ngClass]="{
+                  'para-xsmall': isMobile,
+                  'para-small': isTablet
+                }"
+                class="para"
+              >
+                The goal of FundsDLT is to bring simplicity to the complex world
+                of fund investments through their innovative blockchain-based
+                service. I worked on Vision, an established product and led the
+                UX efforts during the discovery phase of a new distribution
+                platform.
+              </p>
+
+              <div class="readmore">
+                <p class="readmoretext">Read more</p>
+                <fa-icon
+                  [ngClass]="{ 'faArrow-xsmall': isMobile }"
+                  [icon]="faArrowRight"
+                  [ngStyle]="{ color: '' }"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
+                  class="arrow"
+                ></fa-icon>
+              </div>
+            </div>
+            <img
+              class="projectimages img4"
+              *ngIf="isDesktop"
+              src="assets/images/funds-dlt_hero.jpg"
+              loading="lazy"
+              alt="funds-dlt_project"
+            />
+            <img
+              class="mobileimages"
+              *ngIf="isMobile || isTablet"
+              src="assets/images/funds-dlt_hero.jpg"
+              loading="lazy"
+              alt="funds-dlt_project"
+            />
+          </div>
+          <!-- </div> -->
+        </a>
         <a routerLink="/waterloo">
           <!-- <div
           class="whitebackground"
@@ -208,11 +279,6 @@
           <div
             [ngClass]="{ 'panel-xsmall panel1-xsmall': isMobile }"
             class="panel one"
-            (mouseover)="isHovering4 = true"
-            (mouseout)="isHovering4 = false"
-            [ngStyle]="{
-              'background-color': isHovering4 ? 'rgba(0,0,0,0.7)' : ''
-            }"
           >
             <img
               class="projectimages"
@@ -235,7 +301,6 @@
                 'description-xsmall': isMobile,
                 'description-small': isTablet
               }"
-              [ngStyle]="{ color: isHovering4 ? 'white' : '' }"
             >
               <p
                 [ngClass]="{
@@ -244,7 +309,7 @@
                 }"
                 class="imgText"
               >
-                UNIVERSITY OF WATERLOO
+                University of Waterloo
               </p>
               <p
                 [ngClass]="{
@@ -263,11 +328,14 @@
             }"
                 class="readmore"
               >
-                <p class="readmoretext">READ MORE</p>
+                <p class="readmoretext">Read more</p>
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
                   class="arrow arrowOne"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
                 ></fa-icon>
               </div>
             </div>
@@ -286,11 +354,6 @@
           <div
             [ngClass]="{ 'panel-xsmall panel4-xsmall': isMobile }"
             class="panel four"
-            (mouseover)="isHovering2 = true"
-            (mouseout)="isHovering2 = false"
-            [ngStyle]="{
-              'background-color': isHovering2 ? 'rgba(0,0,0,0.7)' : ''
-            }"
           >
             <div
               class="description desc4"
@@ -298,7 +361,6 @@
                 'description-xsmall': isMobile,
                 'description-small': isTablet
               }"
-              [ngStyle]="{ color: isHovering2 ? 'white' : '' }"
             >
               <p
                 [ngClass]="{
@@ -307,7 +369,7 @@
                 }"
                 class="imgText"
               >
-                GMAIL
+                Gmail
               </p>
               <p
                 [ngClass]="{
@@ -325,11 +387,14 @@
               </p>
 
               <div class="readmore">
-                <p class="readmoretext">READ MORE</p>
+                <p class="readmoretext">Read more</p>
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
                   class="arrow arrowFour"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
                 ></fa-icon>
               </div>
             </div>
@@ -354,11 +419,6 @@
           <div
             [ngClass]="{ 'panel-xsmall panel6-xsmall': isMobile }"
             class="panel four"
-            (mouseover)="isHovering6 = true"
-            (mouseout)="isHovering6 = false"
-            [ngStyle]="{
-              'background-color': isHovering6 ? 'rgba(0,0,0,0.7)' : ''
-            }"
           >
             <img
               class="projectimages"
@@ -380,7 +440,6 @@
                 'description-xsmall': isMobile,
                 'description-small': isTablet
               }"
-              [ngStyle]="{ color: isHovering6 ? 'white' : '' }"
             >
               <p
                 [ngClass]="{
@@ -389,7 +448,7 @@
                 }"
                 class="imgText"
               >
-                SPECTRA
+                Spectra
               </p>
               <p
                 [ngClass]="{
@@ -398,7 +457,7 @@
                 }"
                 class="para"
               >
-                Designed and developed SPECTRA's website for their innovative
+                I designed and developed SPECTRA's website for their innovative
                 insurance app using Figma and Webflow. The brand redesign,
                 completed in just 3 weeks, strikes a harmonious balance, merging
                 modern aesthetics with an emphasis on safety and trust.
@@ -409,11 +468,14 @@
             }"
                 class="readmore"
               >
-                <p class="readmoretext">EXPLORE WEBSITE</p>
+                <p class="readmoretext">Explore website</p>
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
                   class="arrow arrowSix"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
                 ></fa-icon>
               </div>
             </div>
@@ -425,11 +487,6 @@
           <div
             [ngClass]="{ 'panel-xsmall panel5-xsmall': isMobile }"
             class="panel four"
-            (mouseover)="isHovering5 = true"
-            (mouseout)="isHovering5 = false"
-            [ngStyle]="{
-              'background-color': isHovering5 ? 'rgba(0,0,0,0.7)' : ''
-            }"
           >
             <div
               class="description desc5"
@@ -437,7 +494,6 @@
                 'description-xsmall': isMobile,
                 'description-small': isTablet
               }"
-              [ngStyle]="{ color: isHovering5 ? 'white' : '' }"
             >
               <p
                 [ngClass]="{
@@ -446,7 +502,7 @@
                 }"
                 class="imgText"
               >
-                UNIVERSITY OF TORONTO'S COMPAS
+                University of Toronto's COMPAS
               </p>
               <p
                 [ngClass]="{
@@ -464,11 +520,14 @@
               </p>
 
               <div class="readmore">
-                <p class="readmoretext">EXPLORE WEBSITE</p>
+                <p class="readmoretext">Explore website</p>
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
                   class="arrow arrowFive"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
                 ></fa-icon>
               </div>
             </div>
@@ -500,11 +559,6 @@
           <div
             [ngClass]="{ 'panel-xsmall panel2-xsmall': isMobile }"
             class="panel two"
-            [ngStyle]="{
-              'background-color': isHovering ? 'rgba(0,0,0,0.7)' : ''
-            }"
-            (mouseover)="isHovering = true"
-            (mouseout)="isHovering = false"
           >
             <img
               class="projectimages img2"
@@ -526,7 +580,6 @@
                 'description-xsmall': isMobile,
                 'description-small': isTablet
               }"
-              [ngStyle]="{ color: isHovering ? 'white' : '' }"
             >
               <p
                 [ngClass]="{
@@ -535,7 +588,7 @@
                 }"
                 class="imgText"
               >
-                THAT TORONTO STUDIO
+                THAT Toronto Studio
               </p>
               <p
                 [ngClass]="{
@@ -551,11 +604,14 @@
               </p>
 
               <div class="readmore">
-                <p class="readmoretext">READ MORE</p>
+                <p class="readmoretext">Read more</p>
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
                   class="arrow arrowTwo"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
                 ></fa-icon>
               </div>
             </div>
@@ -578,11 +634,6 @@
           <div
             [ngClass]="{ 'panel-xsmall panel3-xsmall': isMobile }"
             class="panel three"
-            [ngStyle]="{
-              'background-color': isHovering3 ? 'rgba(0,0,0,0.7)' : ''
-            }"
-            (mouseover)="isHovering3 = true"
-            (mouseout)="isHovering3 = false"
           >
             <!-- <img
               class="projectimages img31"
@@ -601,7 +652,6 @@
                 'description-xsmall': isMobile,
                 'description-small': isTablet
               }"
-              [ngStyle]="{ color: isHovering3 ? 'white' : '' }"
             >
               <p
                 [ngClass]="{
@@ -610,7 +660,7 @@
                 }"
                 class="imgText"
               >
-                CANADA COMPUTERS
+                Canada Computers
               </p>
               <p
                 [ngClass]="{
@@ -627,11 +677,14 @@
               </p>
 
               <div class="readmore">
-                <p class="readmoretext">READ MORE</p>
+                <p class="readmoretext">Read more</p>
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
                   class="arrow arrowThree"
+                  [ngStyle]="{
+                    'z-index': navbarService.hamburgerOpen ? '-1' : ''
+                  }"
                 ></fa-icon>
               </div>
             </div>

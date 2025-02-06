@@ -6,7 +6,7 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
   styleUrls: ['./waterloo.component.scss'],
 })
 export class WaterlooComponent {
-  doneLoading = false;
+  doneLoading = true;
   @ViewChildren('image') private images: QueryList<ElementRef>;
   imagesLoaded: number = 0;
 

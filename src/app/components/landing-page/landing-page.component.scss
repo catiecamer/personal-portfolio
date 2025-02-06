@@ -1,3 +1,10 @@
+$dark-purple: #22223b;
+$skin-tone: #e6beae;
+$pink: #eee4e1;
+$dark-green: #3c6e71;
+$light-purple: #e5e9ec;
+$light-teal: #ecf8f8;
+
 body {
   width: 100vw;
   background-color: rgb(253, 130, 63);
@@ -60,7 +67,7 @@ h2 {
 .projects {
   font-family: "Inter";
   font-size: 96px;
-  color: white;
+  color: $dark-purple;
   letter-spacing: 2px;
   font-weight: 300;
   z-index: 2;
@@ -87,7 +94,7 @@ h2 {
 .line1 {
   font-family: "Inter";
   color: white;
-  color: rgb(31, 90, 89);
+  color: $dark-purple;
   font-size: 72px;
   font-weight: 200;
   line-height: 1.2;
@@ -162,8 +169,9 @@ h2 {
 }
 
 .magenta {
-  background: linear-gradient(0deg, rgb(31, 90, 89), rgb(31, 90, 89, 0.8)),
-    url("../../../assets/images/backgroundLanding.jpg");
+  background-color: #ecf8f8;
+  // background: linear-gradient(0deg, $dark-purple, rgb(31, 90, 89, 0.8)),
+  //   url("../../../assets/images/backgroundLanding.jpg");
   background-size: 1920px;
   object-fit: cover;
   display: block;
@@ -228,8 +236,7 @@ h2 {
 }
 
 .halfcircle {
-  background-color: rgb(203, 145, 189);
-  background-color: #f4cedd;
+  background-color: #eee4e1;
   border-radius: 50% 50% 0 0;
   height: 40rem;
   display: block;
@@ -242,8 +249,7 @@ h2 {
   overflow: hidden;
 }
 .circle {
-  background-color: rgb(203, 145, 189);
-  background-color: #f4cedd;
+  background-color: #eee4e1;
   z-index: 1;
   margin-top: -35rem;
   width: 100%;
@@ -267,7 +273,7 @@ h2 {
   width: 140px;
   border-radius: 50%;
   background-color: #f79540;
-  background-color: rgb(253, 130, 63);
+  background-color: white;
 
   z-index: 2;
   margin: 2rem;
@@ -291,7 +297,7 @@ h2 {
   width: 120px;
   border-radius: 80px;
   background-color: rgb(203, 145, 189);
-  background-color: rgb(74, 114, 179);
+  background-color: $light-purple;
   z-index: 2;
   margin: 2rem;
   display: inline;
@@ -309,7 +315,7 @@ h2 {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: rgb(253, 130, 63);
+  background-color: white;
   z-index: 2;
   margin: 1rem;
   display: inline;
@@ -323,7 +329,6 @@ h2 {
 }
 
 #expand {
-  background-color: #ff661f;
   background-color: rgb(244, 244, 135);
 }
 
@@ -365,11 +370,14 @@ h2 {
   height: 65vh;
   width: calc(100% - 16vw);
   margin-bottom: 3rem;
-  // max-height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
   transition: transform ease 300ms;
   margin-left: 8vw;
   margin-right: 8vw;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    /* Main shadow */ 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: ease-in 0.15s;
 }
 
 .panel-xsmall {
@@ -409,6 +417,8 @@ h2 {
 
 .panel:hover {
   transform: translate(0, -10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Main shadow */ 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .three {
@@ -417,7 +427,7 @@ h2 {
   background-color: rgb(233, 94, 84);
   background-color: white;
   background-color: rgb(255, 255, 135);
-  background-color: rgb(31, 90, 89);
+  background-color: $dark-purple;
   background-color: white;
 
   margin-bottom: 6rem;
@@ -513,7 +523,7 @@ h2 {
 }
 
 .imgText {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 36px;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -558,7 +568,7 @@ a {
 }
 
 .circle3 {
-  background-color: rgb(233, 94, 84);
+  background-color: white;
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
@@ -578,7 +588,7 @@ a {
 }
 
 .circle4 {
-  background-color: rgb(250, 116, 43);
+  background-color: white;
   width: 11vw;
   height: 11vw;
   border-radius: 50%;
@@ -619,12 +629,10 @@ a {
 }
 
 .contact {
-  background: linear-gradient(0deg, #b71375, rgba(162, 19, 107, 0.5)),
-    url("../../../assets/images/backgroundLanding.jpg");
-  background: linear-gradient(0deg, rgb(31, 90, 89), rgba(31, 90, 89, 0.9)),
-    url("../../../assets/images/backgroundLanding.jpg");
+  background-color: $light-teal;
+  // background: linear-gradient(0deg, $dark-purple, rgba(31, 90, 89, 0.9)),
+  //   url("../../../assets/images/backgroundLanding.jpg");
   background-size: 1600px;
-
   width: 100%;
   display: block;
   margin: 0;
@@ -636,7 +644,7 @@ a {
   font-family: "Inter";
   font-size: 96px;
   color: rgb(249, 195, 203);
-  color: #f4cedd;
+  color: $dark-green;
   font-weight: 300;
   z-index: 2;
   display: inline-block;
@@ -652,7 +660,7 @@ a {
   font-family: "Inter";
   font-style: italic;
   font-size: 96px;
-  color: rgb(255, 255, 135);
+  color: $dark-purple;
   font-weight: 100;
   z-index: 2;
   display: inline-block;
@@ -704,7 +712,7 @@ app-navbar {
   font-weight: 300;
   font-size: 96px;
   letter-spacing: -2%;
-  color: #f4cedd;
+  color: $dark-purple;
   text-align: center;
   line-height: 1.2;
   position: relative;
@@ -734,21 +742,19 @@ app-navbar {
 .word-delay-05 {
   transition-delay: 0.4s !important;
   padding-right: 22px;
-  line-height: 1.1;
+  line-height: 1.3;
   text-align: center;
 }
 
 .delay-05-xsmall,
 .delay-05-small {
-  padding-right: 0px;
+  padding-right: 16px;
 }
 
 .word-delay-06 {
   transition-delay: 0.5s !important;
-  color: rgb(253, 130, 63);
-  color: rgb(233, 94, 84);
-  color: rgb(255, 255, 135);
-  line-height: 1.1;
+  color: #3c6e71;
+  line-height: 1.3;
   text-align: center;
 }
 
@@ -807,7 +813,7 @@ app-navbar {
 }
 
 .chevron {
-  color: rgb(221, 221, 221);
+  color: $dark-green;
   font-size: 36px;
   // display: flex;
   position: fixed;
@@ -825,7 +831,7 @@ app-navbar {
 }
 
 .arrow {
-  font-size: 36px;
+  font-size: 24px;
   z-index: 400;
 }
 

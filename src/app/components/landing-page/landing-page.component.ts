@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, withInterceptors } from '@angular/common/http';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CSSPlugin } from 'gsap/CSSPlugin';
@@ -18,6 +18,7 @@ import {
   Breakpoints,
   BreakpointState,
 } from '@angular/cdk/layout';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -27,12 +28,6 @@ import {
 export class LandingPageComponent implements OnInit {
   faChevronDown = faChevronDown;
   faArrowRight = faArrowRight;
-  isHovering = false;
-  isHovering2 = false;
-  isHovering3 = false;
-  isHovering4 = false;
-  isHovering5 = false;
-  isHovering6 = false;
   isMobile = false;
   isTablet = false;
   isDesktop = !this.isMobile || !this.isTablet;
@@ -41,7 +36,6 @@ export class LandingPageComponent implements OnInit {
   THATTorontoStudioProjectLink: string;
   waterlooProjectLink: string;
   breakpointSub: Subscription;
-  dialogBox: boolean = false;
   modalOpenSubject: BehaviorSubject<boolean>;
 
   @ViewChild('target') private projects: ElementRef;
@@ -50,7 +44,8 @@ export class LandingPageComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver,
     private modalService: ModalService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    public navbarService: NavbarService
   ) {}
 
   openDialog() {
@@ -217,12 +212,12 @@ export class LandingPageComponent implements OnInit {
 
     ScrollTrigger.refresh();
     projects.to('.circle', {
-      backgroundColor: 'rgb(253, 130, 63)',
+      backgroundColor: 'rgb(255, 255, 255)',
       ease: 'power1.in',
     });
     projects.to(
       '.halfcircle',
-      { backgroundColor: 'rgb(253, 130, 63)', ease: 'power1.in' },
+      { backgroundColor: 'rgb(255, 255, 255)', ease: 'power1.in' },
       0
     );
     projects.to('.project', { x: '-15%', ease: 'power1.in' }, 0);
@@ -241,7 +236,7 @@ export class LandingPageComponent implements OnInit {
 
     aboutcircles.to('.circles2', {
       x: '-200%',
-      backgroundColor: 'rgb(31, 90, 89)',
+      backgroundColor: '#DDCAD9',
       ease: 'power1.in',
     });
     aboutcircles.to('.aboutme', { x: '20%', ease: 'power1.in' }, 0);
@@ -315,82 +310,42 @@ export class LandingPageComponent implements OnInit {
       },
     });
 
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#FCD54D',
-      ease: 'power1.in',
-    });
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#D9623E',
-      ease: 'power1.in',
-    });
+    // === Background color change on scroll of projects ===
 
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#DAF8FF',
-      ease: 'power1.in',
-    });
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#f0f6fd',
-      ease: 'power1.in',
-    });
-
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#93AAFF',
-      ease: 'power1.in',
-    });
-    backgroundColorChange.to('.projectsidebar', {
-      backgroundColor: '#1C4889',
-      ease: 'power1.in',
-    });
-
-    // gsap.to('.projectsidebar', {
+    //FundsDLT
+    // backgroundColorChange.to('.projectsidebar', {
+    //   backgroundColor: '#003547',
+    //   ease: 'power1.in',
+    // });
+    // //Waterloo
+    // backgroundColorChange.to('.projectsidebar', {
     //   backgroundColor: '#FCD54D',
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.one',
-    //     start: 'top 50%',
-    //     scrub: true,
-    //   },
+    //   ease: 'power1.in',
     // });
-
-    // gsap.to('.projectsidebar', {
-    //   backgroundColor: '#D24C37',
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.four',
-    //     start: 'top 50%',
-    //     scrub: true,
-    //   },
+    // //Gmail
+    // backgroundColorChange.to('.projectsidebar', {
+    //   backgroundColor: '#D9623E',
+    //   ease: 'power1.in',
     // });
-
-    // gsap.to('.projectsidebar', {
-    //   backgroundColor: '#1C4889',
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.projectsidebar',
-    //     start: '0%',
-    //     end: '',
-    //     scrub: true,
-    //   },
+    // //Spectra
+    // backgroundColorChange.to('.projectsidebar', {
+    //   backgroundColor: '#DAF8FF',
+    //   ease: 'power1.in',
     // });
-
-    // gsap.to('.projectsidebar', {
+    // //COMPAS
+    // backgroundColorChange.to('.projectsidebar', {
+    //   backgroundColor: '#f0f6fd',
+    //   ease: 'power1.in',
+    // });
+    // //THATtoronto
+    // backgroundColorChange.to('.projectsidebar', {
     //   backgroundColor: '#93AAFF',
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.projectsidebar',
-    //     start: '25%',
-    //     scrub: true,
-    //   },
+    //   ease: 'power1.in',
     // });
-
-    // gsap.to('.projectsidebar', {
-    //   backgroundColor: 'D24C37',
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.projectsidebar',
-    //     start: '50%',
-    //     scrub: true,
-    //   },
+    // //CanadaComputers
+    // backgroundColorChange.to('.projectsidebar', {
+    //   backgroundColor: '#1C4889',
+    //   ease: 'power1.in',
     // });
 
     gsap.to('.chevron', {

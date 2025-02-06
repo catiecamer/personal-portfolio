@@ -7,6 +7,8 @@ import { WaterlooComponent } from './components/waterloo/waterloo.component';
 import { THATtorontostudioComponent } from './components/thattorontostudio/thattorontostudio.component';
 import { CanadacomputersComponent } from './components/canadacomputers/canadacomputers.component';
 import { GmailComponent } from './components/gmail/gmail.component';
+import { FundsDltComponent } from './pages/funds-dlt/funds-dlt.component';
+import { fundsDltResolver } from './resolvers/funds-dlt.resolver';
 
 const routes: Routes = [
   {
@@ -36,6 +38,13 @@ const routes: Routes = [
   {
     path: 'gmail',
     component: GmailComponent,
+  },
+  {
+    path: 'funds-dlt',
+    component: FundsDltComponent,
+    resolve: {
+      requirePassword: fundsDltResolver,
+    },
   },
 ];
 

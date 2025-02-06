@@ -1,165 +1,216 @@
 <div
   [ngClass]="{
    'nav-xsmall': isMobile,
-    navbarprojects: ['/waterloo', '/thattorontostudio', '/canadacomputers', '/gmail'].includes(url1),
+    navbarprojects: _isProjectPageWebflow,
   }"
-  class="nav"
+  [class]="float ? 'nav-float' : 'nav'"
 >
   <div [ngClass]="{ 'firstline-xsmall': isMobile }" class="firstline">
     <a routerLink="">
       <button
         [ngClass]="{
-          name: ['/about', '/resume'].includes(url1),
-          home: !['/about', '/resume'].includes(url1),
-          navprojects: [
-            '/waterloo',
-            '/thattorontostudio',
-            '/canadacomputers',
-            '/gmail'
-          ].includes(url1),
+          name: _isInfoPage,
+          home: !_isInfoPage,
+          navprojects: _isProjectPageWebflow,
           'button-xsmall': isMobile,
           'name-xsmall': isMobile
         }"
+        [ngStyle]="{ 'margin-top': '-6px' }"
         mat-flat-button
         [autofocus]="false"
         class="name"
       >
-        <span id="logo">C</span>ATIE CAMER
+        <span id="logo">C</span>atie Camer
       </button>
     </a>
 
     <div class="rightsidenav">
-      <a routerLink="/" (click)="navigateHomeToProjects()">
-        <button
-          [ngClass]="{
-            about: ['/about', '/resume'].includes(url1),
-            home: !['/about', '/resume'].includes(url1),
-            navprojects: [
-              '/waterloo',
-              '/thattorontostudio',
-              '/canadacomputers',
-              '/gmail'
-            ].includes(url1),
-            'button-xsmall': isMobile,
-            'about-xsmall': isMobile
-          }"
-          mat-flat-button
-          [autofocus]="false"
-          class="work"
-        >
-          WORK
-        </button>
-      </a>
+      <ng-container *ngIf="!isMobile">
+        <a routerLink="/" (click)="navigateHomeToProjects()">
+          <button
+            [ngClass]="{
+              about: _isInfoPage,
+              home: !_isInfoPage,
+              navprojects: _isProjectPageWebflow,
+              'button-xsmall': isMobile,
+              'about-xsmall': isMobile
+            }"
+            mat-flat-button
+            [autofocus]="false"
+            class="work"
+          >
+            Work
+          </button>
+        </a>
 
-      <a routerLink="/about">
-        <button
-          [ngClass]="{
-            about: ['/about', '/resume'].includes(url1),
-            home: !['/about', '/resume'].includes(url1),
-            navprojects: [
-              '/waterloo',
-              '/thattorontostudio',
-              '/canadacomputers',
-              '/gmail'
-            ].includes(url1),
-            'button-xsmall': isMobile,
-            'about-xsmall': isMobile
-          }"
-          mat-flat-button
-          [autofocus]="false"
-          class="about"
-        >
-          ABOUT
-        </button>
-      </a>
+        <a routerLink="/about">
+          <button
+            [ngClass]="{
+              about: _isInfoPage,
+              home: !_isInfoPage,
+              navprojects: _isProjectPageWebflow,
+              'button-xsmall': isMobile,
+              'about-xsmall': isMobile
+            }"
+            mat-flat-button
+            [autofocus]="false"
+            class="about"
+          >
+            About
+          </button>
+        </a>
+      </ng-container>
+      <div
+        *ngIf="isMobile"
+        (click)="toggleHamburger()"
+        [class]="navbarService.hamburgerOpen ? 'hamburger-open' : 'hamburger'"
+      >
+        <span class="x-right"></span>
+        <span class="x-left"></span>
+        <span class="x-hidden"></span>
+      </div>
     </div>
   </div>
 
   <div
     [ngClass]="{
-      buttons2: [
-        '/waterloo',
-        '/canadacomputers',
-        '/thattorontostudio',
-        '/gmail'
-      ].includes(url1),
-      buttons: ![
-        '/waterloo',
-        '/canadacomputers',
-        '/thattorontostudio',
-        '/gmail'
-      ].includes(url1)
+      buttons2: _isProjectPageWebflow,
+      buttons: !_isProjectPageWebflow
     }"
   >
-    <button
-      (click)="openDialog()"
-      [ngClass]="{
-        email: ['/about', '/resume'].includes(url1),
-        homecontact: !['/about', '/resume'].includes(url1),
-        buttonsprojects: [
-          '/waterloo',
-          '/thattorontostudio',
-          '/canadacomputers',
-          '/gmail'
-        ].includes(url1),
-        'buttons-xsmall': isMobile,
-        pink: hover1,
-        white: hover4
-      }"
-      (mouseenter)="url1 === '/about' && (hover1 = true)"
-      (mouseleave)="url1 === '/about' && (hover1 = false)"
-      (mouseenter)="url1 != '/about' && (hover4 = true)"
-      (mouseleave)="url1 != '/about' && (hover4 = false)"
-    >
-      Email
-    </button>
-    <a routerLink="/resume">
+    <ng-container *ngIf="!isMobile && _isHomePage">
       <button
+        (click)="openDialog()"
         [ngClass]="{
-          resume: ['/about', '/resume'].includes(url1),
-          homecontact: !['/about', '/resume'].includes(url1),
-          buttonsprojects: [
-            '/waterloo',
-            '/thattorontostudio',
-            '/canadacomputers',
-            '/gmail'
-          ].includes(url1),
+          email: _isInfoPage,
+          homecontact: !_isInfoPage,
+          buttonsprojects: _isProjectPageWebflow,
           'buttons-xsmall': isMobile,
-          pink: hover2,
-          white: hover5
+          pink: hover1,
+          white: hover4
         }"
-        (mouseenter)="url1 === '/about' && (hover2 = true)"
-        (mouseleave)="url1 === '/about' && (hover2 = false)"
-        (mouseenter)="url1 != '/about' && (hover5 = true)"
-        (mouseleave)="url1 != '/about' && (hover5 = false)"
+        (mouseenter)="url === '/about' && (hover1 = true)"
+        (mouseleave)="url === '/about' && (hover1 = false)"
+        (mouseenter)="url != '/about' && (hover4 = true)"
+        (mouseleave)="url != '/about' && (hover4 = false)"
       >
-        Resume
+        Email
       </button>
-    </a>
-    <a href="https://www.linkedin.com/in/catiecamer/" target="_blank">
+      <!-- <a routerLink="/resume">
+        <button
+          [ngClass]="{
+            resume: _isInfoPage,
+            homecontact: !_isInfoPage,
+            buttonsprojects: _isProjectPageWebflow,
+            'buttons-xsmall': isMobile,
+            pink: hover2,
+            white: hover5
+          }"
+          (mouseenter)="url === '/about' && (hover2 = true)"
+          (mouseleave)="url === '/about' && (hover2 = false)"
+          (mouseenter)="url != '/about' && (hover5 = true)"
+          (mouseleave)="url != '/about' && (hover5 = false)"
+        >
+          Resume
+        </button>
+      </a> -->
+      <a href="https://www.linkedin.com/in/catiecamer/" target="_blank">
+        <button
+          [ngClass]="{
+            linkedin: _isInfoPage,
+            homecontact: !_isInfoPage,
+            buttonsprojects: _isProjectPageWebflow,
+            'buttons-xsmall': isMobile,
+            pink: hover3,
+            white: hover6
+          }"
+          (mouseenter)="url === '/about' && (hover3 = true)"
+          (mouseleave)="url === '/about' && (hover3 = false)"
+          (mouseenter)="url != '/about' && (hover6 = true)"
+          (mouseleave)="url != '/about' && (hover6 = false)"
+        >
+          LinkedIn
+        </button>
+      </a>
+    </ng-container>
+  </div>
+
+  <app-email *ngIf="modalOpenSubject | async"></app-email>
+</div>
+
+<div
+  *ngIf="navbarService.hamburgerOpen"
+  class="hamburger-backdrop"
+  (click)="closeHamburger()"
+>
+  <div class="open-hamburger">
+    <a routerLink="/" (click)="navigateHomeToProjects()">
       <button
+        class="hamburger-button"
         [ngClass]="{
-          linkedin: ['/about', '/resume'].includes(url1),
-          homecontact: !['/about', '/resume'].includes(url1),
-          buttonsprojects: [
-            '/waterloo',
-            '/thattorontostudio',
-            '/canadacomputers',
-            '/gmail'
-          ].includes(url1),
+          linkedin: _isInfoPage,
+          homecontact: !_isInfoPage,
+          buttonsprojects: _isProjectPageWebflow,
           'buttons-xsmall': isMobile,
           pink: hover3,
           white: hover6
         }"
-        (mouseenter)="url1 === '/about' && (hover3 = true)"
-        (mouseleave)="url1 === '/about' && (hover3 = false)"
-        (mouseenter)="url1 != '/about' && (hover6 = true)"
-        (mouseleave)="url1 != '/about' && (hover6 = false)"
+        mat-flat-button
+        [autofocus]="false"
+      >
+        Work
+      </button>
+    </a>
+
+    <a routerLink="/about">
+      <button
+        class="hamburger-button"
+        [ngClass]="{
+          linkedin: _isInfoPage,
+          homecontact: !_isInfoPage,
+          buttonsprojects: _isProjectPageWebflow,
+          'buttons-xsmall': isMobile,
+          pink: hover3,
+          white: hover6
+        }"
+        mat-flat-button
+        [autofocus]="false"
+        (click)="closeHamburger()"
+      >
+        About
+      </button>
+    </a>
+    <button
+      (click)="openDialog()"
+      class="hamburger-button"
+      [ngClass]="{
+        linkedin: _isInfoPage,
+        homecontact: !_isInfoPage,
+        buttonsprojects: _isProjectPageWebflow,
+        'buttons-xsmall': isMobile,
+        pink: hover3,
+        white: hover6
+      }"
+    >
+      Email
+    </button>
+    <a>
+      <button
+        class="hamburger-button"
+        [ngClass]="{
+          linkedin: _isInfoPage,
+          homecontact: !_isInfoPage,
+          buttonsprojects: _isProjectPageWebflow,
+          'buttons-xsmall': isMobile,
+          pink: hover3,
+          white: hover6
+        }"
+        href="https://www.linkedin.com/in/catiecamer/"
+        target="_blank"
+        (click)="closeHamburger()"
       >
         LinkedIn
       </button>
     </a>
   </div>
-
-  <app-email *ngIf="modalOpenSubject | async"></app-email>
 </div>

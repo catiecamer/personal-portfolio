@@ -7,8 +7,6 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./email.component.scss'],
 })
 export class EmailComponent {
-  dialogBox: boolean = false;
-
   constructor(private modalService: ModalService) {}
 
   openDialog() {

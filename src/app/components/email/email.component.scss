@@ -1,17 +1,30 @@
-.box {
-  width: 250px;
-  position: fixed;
-  z-index: 9000;
-  top: 300px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: inset;
-  padding: 2.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+$main-blue: #294a5e;
+$mid-blue: #4881a4;
+$light-blue: #f1f5fb;
+
+.page-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  .box {
+    width: 250px;
+    position: fixed;
+    z-index: 9000;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: inset;
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .email {
@@ -34,16 +47,14 @@
   background: transparent;
   font-family: "Inter";
   width: 20%;
-  color: #5804de;
-  color: rgb(233, 94, 84);
+  color: $main-blue;
   box-shadow: none;
   outline: none !important;
+  cursor: pointer;
 }
 
 .done:hover {
-  color: #b71375;
-  color: rgb(233, 94, 84);
-  color: rgb(253, 130, 63);
+  color: $mid-blue;
 }
 
 .centerrow {

@@ -3,22 +3,61 @@
   <div [ngClass]="{ freeze: modalOpenSubject | async }">
     <div class="background">
       <app-navbar></app-navbar>
-      <div [ngClass]="{ 'art1-xsmall': isMobile }" class="art1"></div>
-      <div [ngClass]="{ 'art2-xsmall': isMobile }" class="art2"></div>
-      <div [ngClass]="{ 'art3-xsmall': isMobile }" class="art3"></div>
-      <div [ngClass]="{ 'art4-xsmall': isMobile }" class="art4"></div>
-      <div [ngClass]="{ 'art5-xsmall': isMobile }" class="art5"></div>
-      <div class="art6"></div>
+      <div
+        [ngClass]="{
+          'art1-xsmall': isMobile,
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        class="art1"
+      ></div>
+      <div
+        [ngClass]="{
+          'art2-xsmall': isMobile,
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        class="art2"
+      ></div>
+      <div
+        [ngClass]="{
+          'art3-xsmall': isMobile,
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        class="art3"
+      ></div>
+      <div
+        [ngClass]="{
+          'art4-xsmall': isMobile,
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        class="art4"
+      ></div>
+      <div
+        [ngClass]="{
+          'art5-xsmall': isMobile,
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        class="art5"
+      ></div>
+      <div
+        [ngClass]="{
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        class="art6"
+      ></div>
       <div
         [ngClass]="{
           'imgContainer-xsmall': isMobile,
-          'imgContainer-small': isTablet
+          'imgContainer-small': isTablet,
+          'z-index-back': navbarService.hamburgerOpen
         }"
         class="imgContainer"
       >
         <img
           class="profile"
-          [ngClass]="{ 'img-xsmall': isMobile }"
+          [ngClass]="{
+            'img-xsmall': isMobile,
+            'z-index-back': navbarService.hamburgerOpen
+          }"
           src="assets/images/me.jpeg"
           alt="picture of Catie"
         />
@@ -92,17 +131,17 @@
               class="uxdesign"
             >
               <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
-                To designing products!
+                To designing user experiences!
               </p>
-              I fell head over heels for everything UX during my immersive
-              course at General Assembly 🎓. Collaborating with other designers
-              and developers during the course was a blast 🚀. When it comes to
-              product design, I approach problem-solving like a detective,
-              always asking 'why, why, why, why, why?' until I uncover the root
-              cause. While I love brainstorming potential solutions, I back up
-              all my decisions with some serious data and research. I'm excited
-              to keep honing my skills and creating product designs that are
-              top-notch!
+              I fell in love with UX during my immersive course at General
+              Assembly 🎓. After that, I took on contract work, gaining hands-on
+              experience across different industries. At FundsDLT, I stepped
+              into the complex world of fund distribution and focused on making
+              processes clearer and more user-friendly. I conducted research,
+              improved the design system, led heuristic analyses, and
+              facilitated workshops to drive innovation. I take a thoughtful,
+              research-driven approach to problem-solving and am always eager to
+              create seamless, intuitive experiences.
             </div>
           </div>
         </div>

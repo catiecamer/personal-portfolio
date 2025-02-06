@@ -5,11 +5,28 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ModalService {
-  public emailModalOpen: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  emailModalOpen: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  passwordModalOpen: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() {}
 
   toggleEmailModal() {
     this.emailModalOpen.next(!this.emailModalOpen.getValue());
+  }
+
+  closeEmailModal() {
+    this.emailModalOpen.next(false);
+  }
+
+  openEmailModal() {
+    this.emailModalOpen.next(true);
+  }
+
+  openPasswordModal() {
+    this.passwordModalOpen.next(true);
+  }
+
+  closePasswordModal() {
+    this.passwordModalOpen.next(false);
   }
 }

@@ -1,5 +1,12 @@
+$dark-purple: #22223b;
+$skin-tone: #e6beae;
+$pink: #eee4e1;
+$dark-green: #3c6e71;
+$light-purple: #e5e9ec;
+$light-teal: #ecf8f8;
+
 .freeze {
-  background-color: rgba(255, 182, 201, 0.821);
+  background-color: $pink;
   z-index: 999;
   width: 100vw;
   height: 100vh;
@@ -11,7 +18,7 @@
 body {
   margin: 0;
   background-color: #e49fd8;
-  background-color: #f4cedd;
+  background-color: $pink;
 }
 
 .background {
@@ -45,10 +52,10 @@ p,
 ul {
   font-family: Inter;
   color: rgb(221, 32, 73);
-  color: #1f5a59;
+  color: $dark-purple;
   font-weight: 2s00;
-  font-size: 12px;
-  letter-spacing: 1.2;
+  font-size: 14px;
+  letter-spacing: 1.6;
   list-style-type: none;
   margin-top: 0;
   padding-left: 0;
@@ -122,7 +129,7 @@ li.skill {
   width: 90%;
   height: 2px;
   background-color: rgb(221, 32, 73);
-  background-color: rgb(31, 90, 89);
+  background-color: $dark-purple;
   border-radius: 1px;
   margin-bottom: 1.5rem;
 }

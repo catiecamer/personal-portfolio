@@ -13,6 +13,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { ModalService } from 'src/app/services/modal.service';
 import { Router } from '@angular/router';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-about',
@@ -23,7 +24,6 @@ export class AboutComponent implements OnInit {
   isMobile = false;
   isTablet = false;
   breakpointPointSub: Subscription;
-  dialogBox: boolean = false;
   modalOpenSubject: BehaviorSubject<boolean>;
 
   constructor(
@@ -31,7 +31,8 @@ export class AboutComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     private change: ChangeDetectorRef,
     private modalService: ModalService,
-    private router: Router
+    private router: Router,
+    public navbarService: NavbarService
   ) {}
 
   openDialog() {
@@ -193,7 +194,7 @@ export class AboutComponent implements OnInit {
 
     workcircles.to('.circles2', {
       x: '-100%',
-      backgroundColor: 'rgb(255, 255, 135)',
+      backgroundColor: '#EEE4E1',
       ease: 'power1.in',
     });
     workcircles.to('.work', { x: '5%', ease: 'power1.in' }, 0);

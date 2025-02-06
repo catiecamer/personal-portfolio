@@ -22,6 +22,10 @@ import { THATtorontostudioComponent } from './components/thattorontostudio/thatt
 import { CanadacomputersComponent } from './components/canadacomputers/canadacomputers.component';
 import { GmailComponent } from './components/gmail/gmail.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { FundsDltComponent } from './pages/funds-dlt/funds-dlt.component';
+import { PasswordModalComponent } from './components/password-modal/password-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     CanadacomputersComponent,
     GmailComponent,
     LoaderComponent,
+    FundsDltComponent,
+    PasswordModalComponent,
+    CarouselComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +54,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     LayoutModule,
     NgxGoogleAnalyticsModule.forRoot('MEASUREMENT-ID'),
     NgxGoogleAnalyticsRouterModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

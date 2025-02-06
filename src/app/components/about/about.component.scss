@@ -1,10 +1,17 @@
+$dark-purple: #22223b;
+$skin-tone: #e6beae;
+$pink: #eee4e1;
+$dark-green: #3c6e71;
+$light-purple: #e5e9ec;
+$light-teal: #ecf8f8;
+
 body {
   margin: 0 !important;
 }
 
 .freeze {
   background-color: rgb(183, 19, 117, 0.5);
-  background-color: #f4cedd;
+  background-color: $pink;
   z-index: 999;
   width: 100vw;
   height: 100vh;
@@ -20,6 +27,7 @@ body {
   z-index: 0;
   background-color: #e49fd8;
   background-color: #f4cedd;
+  background-color: $pink;
 }
 
 .imgContainer {
@@ -61,12 +69,20 @@ body {
   padding-top: 0;
 }
 
+.z-index-back {
+  z-index: -1 !important;
+}
+
 .gradient-xsmall {
-  background: linear-gradient(to bottom, rgb(13, 6, 9) 20%, rgb(13, 6, 9) 0%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 60%),
+    rgba(255, 255, 255, 0%)
+  );
   z-index: 2;
   display: block;
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.8;
   width: 100vw;
   height: 100vh;
 }
@@ -206,7 +222,7 @@ img {
   color: white;
   color: rgb(253, 130, 63);
   color: rgb(233, 94, 84);
-  color: rgb(31, 90, 89);
+  color: $dark-purple;
   letter-spacing: -2%;
   font-weight: 200;
   line-height: 1.2;
@@ -260,8 +276,8 @@ span {
 .uxdesign {
   font-family: "Inter";
   font-size: 20px;
-  color: white;
-  font-weight: 200;
+  color: $dark-purple;
+  font-weight: 300;
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 7rem;
@@ -270,7 +286,7 @@ span {
   display: flex;
   flex-direction: column;
   opacity: 0;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: -1%;
 }
 
@@ -282,7 +298,7 @@ span {
   padding-right: 30px;
   justify-content: center;
   width: calc(100vw - 60px);
-  line-height: 1.5;
+  line-height: 1.4;
   padding-top: 5rem;
   padding-bottom: 5rem;
   opacity: 0;
@@ -352,7 +368,7 @@ p {
   font-weight: 300;
   margin-bottom: 1rem;
   color: rgb(253, 130, 63);
-  color: rgb(255, 255, 135);
+  color: $dark-green;
 }
 
 .p-xsmall {
@@ -374,7 +390,7 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(31, 90, 89);
+  background-color: white;
   width: 180%;
   border-radius: 100% 100% 0 0;
   height: auto;
@@ -385,7 +401,7 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(31, 90, 89);
+  background-color: white;
   width: 300%;
   border-radius: 100% 100% 0 0;
   height: auto;
@@ -396,7 +412,7 @@ p {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(31, 90, 89);
+  background-color: white;
   width: 400%;
   border-radius: 100% 100% 0 0;
   height: auto;
@@ -436,7 +452,7 @@ p {
   width: 120px;
   border-radius: 80px;
   background-color: rgb(203, 145, 189);
-  background-color: #f4cedd;
+  background-color: $light-purple;
   z-index: 2;
   margin: 2rem;
   display: inline;
@@ -452,14 +468,13 @@ p {
 }
 
 .workContainer {
-  background: linear-gradient(0deg, #1b065e, rgba(162, 19, 107, 0.5)),
-    url("../../../assets/images/backgroundLanding.jpg");
-  background: linear-gradient(
-      0deg,
-      rgb(233, 94, 84, 0.8),
-      rgb(253, 130, 63, 0.8)
-    ),
-    url("../../../assets/images/backgroundLanding.jpg");
+  // background: linear-gradient(
+  //     0deg,
+  //     rgb(233, 94, 84, 0.8),
+  //     rgb(253, 130, 63, 0.8)
+  //   ),
+  //   url("../../../assets/images/backgroundLanding.jpg");
+  background-color: $light-teal;
   background-size: 1600px;
   width: 100%;
   display: block;
@@ -472,7 +487,7 @@ p {
   font-family: "Inter";
   font-size: 96px;
   color: rgb(249, 195, 203);
-  color: #f4cedd;
+  color: $dark-green;
   font-weight: 300;
   z-index: 2;
   display: inline-block;
@@ -493,7 +508,7 @@ p {
   font-family: "Inter";
   font-style: italic;
   font-size: 96px;
-  color: rgb(255, 255, 135);
+  color: $dark-purple;
   font-weight: 100;
   z-index: 2;
   display: inline-block;

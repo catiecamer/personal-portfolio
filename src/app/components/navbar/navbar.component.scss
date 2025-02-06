@@ -1,22 +1,30 @@
+$dark-purple: #22223b;
+$skin-tone: #e6beae;
+$pink: #eee4e1;
+$dark-green: #3c6e71;
+$light-purple: #e5e9ec;
+$light-teal: #ecf8f8;
+
 .about,
 .name,
-.resumepage {
+.resumepage,
+.home {
   text-align: right;
   font-family: "Inter";
   letter-spacing: 1.5px;
   background-color: transparent;
   outline: none !important;
   color: #1b065e;
-  color: rgb(233, 94, 84);
-  font-size: 14px;
+  color: $dark-purple;
+  font-size: 16px;
   border: none;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 button {
   cursor: pointer;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .button-xsmall {
@@ -26,23 +34,23 @@ button {
 
 .buttons-xsmall {
   padding-right: 0px;
-  padding-left: 6px;
+  padding-left: 8px;
   // padding-left: 0.3rem;
   // padding-right: 0.3rem;
 }
 
-.home {
-  // text-align: right;
-  font-family: "Inter";
-  letter-spacing: 1.5px;
-  background-color: transparent;
-  outline: none !important;
-  color: white;
-  color: rgb(255, 255, 135);
-  font-size: 14px;
-  border: none;
-  font-weight: 400;
-}
+// .home {
+//   // text-align: right;
+//   font-family: "Inter";
+//   letter-spacing: 1.5px;
+//   background-color: transparent;
+//   outline: none !important;
+//   color: white;
+//   color: rgb(255, 255, 135);
+//   font-size: 14px;
+//   border: none;
+//   font-weight: 400;
+// }
 
 .about-xsmall {
   // float: right;
@@ -57,6 +65,7 @@ button {
   display: flex;
   justify-content: space-between;
   height: 19px;
+  align-items: center;
 }
 
 .name {
@@ -66,19 +75,30 @@ button {
 .nav {
   display: block;
   padding-top: 24px;
-  padding-bottom: 21px;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-bottom: 24px;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.nav-float {
+  @extend .nav;
+  position: absolute;
+  width: 100vw;
+  box-sizing: border-box;
+  max-width: 1920px;
+  background-color: white;
 }
 
 .nav-xsmall {
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 30px;
   position: absolute;
-  z-index: 20;
-  width: calc(100vw - 40px);
-  padding-top: 20px;
+  z-index: 40;
+  width: calc(100vw - 50px);
+
+  padding-top: 25px;
   padding-bottom: 20px;
+  box-sizing: content-box;
 }
 
 .buttons {
@@ -94,21 +114,21 @@ button {
   background-color: transparent;
   outline: none !important;
   color: white;
-  color: rgb(31, 90, 89);
+  color: $dark-green;
   border: none;
-  font-weight: 300;
+  font-weight: 500;
   font-family: "Inter";
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .button-xsmall {
   color: #ffffff;
-  color: rgb(255, 255, 135);
+  color: $dark-purple;
 }
 
 .buttons-xsmall {
-  color: #ffffff;
+  color: $dark-purple;
 }
 
 .pink {
@@ -124,30 +144,31 @@ button {
   background-color: transparent;
   outline: none !important;
   border: none;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Inter";
   letter-spacing: 1px;
   color: rgb(249, 195, 203);
   color: rgb(255, 255, 255, 0.7);
-  font-size: 12px;
+  color: $dark-green;
+  font-size: 14px;
 }
 
 .homecontact:hover {
-  color: white;
+  color: $dark-purple;
 }
 
 .email:hover,
 .resume:hover,
 .linkedin:hover {
   color: #b71375;
-  color: rgb(253, 130, 63);
+  color: $dark-purple;
 }
 
 .navprojects {
   display: flex;
   background-color: white;
   color: black;
-  font-weight: 400;
+  font-weight: 500;
   height: 19px;
   margin-top: -6px;
 }
@@ -161,7 +182,7 @@ a {
 }
 
 .buttonsprojects {
-  display: none;
+  // display: none;
 }
 
 .buttons {
@@ -176,6 +197,8 @@ a {
   background-color: white;
   width: 100vw;
   z-index: 1000;
+  box-sizing: border-box;
+  line-height: 28px;
 }
 
 #logo {
@@ -184,5 +207,68 @@ a {
 }
 
 .work {
-  padding-right: 3px;
+  padding-right: 8px;
+}
+
+.hamburger {
+  height: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    height: 2px;
+    width: 100%;
+    background-color: $dark-purple;
+  }
+}
+
+.hamburger-open {
+  @extend .hamburger;
+  position: relative;
+
+  .x-hidden {
+    display: none;
+  }
+
+  .x-right {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  .x-left {
+    @extend .x-right;
+    transform: rotate(-45deg);
+  }
+}
+
+.open-hamburger {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  padding: 8rem 0rem 6rem 0rem;
+  z-index: 30;
+}
+
+.hamburger-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-button {
+  font-size: 30px;
 }

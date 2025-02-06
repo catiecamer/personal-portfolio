@@ -15,7 +15,6 @@ import {
 export class ResumeComponent implements OnInit {
   isMobile = false;
   isTablet = false;
-  dialogBox: boolean = false;
   modalOpenSubject: BehaviorSubject<boolean>;
   breakpointSub: Subscription;
 

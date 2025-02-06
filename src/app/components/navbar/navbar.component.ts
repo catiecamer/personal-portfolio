@@ -1,4 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CSSPlugin } from 'gsap/CSSPlugin';
@@ -11,6 +18,7 @@ import {
 import { Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal.service';
 import { BehaviorSubject, Subscription } from 'rxjs';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -26,33 +34,44 @@ export class NavbarComponent implements OnInit {
   public hover4: boolean = false;
   public hover5: boolean = false;
   public hover6: boolean = false;
-  public url1: string = '';
-  dialogBox: boolean = false;
+  public url: string = '';
   modalOpenSubject: BehaviorSubject<boolean>;
   breakpointSub: Subscription;
   @Output() scrollEmit = new EventEmitter<boolean>();
+  @Input() float = false;
 
   constructor(
     private sanitizer: DomSanitizer,
     private breakpointObserver: BreakpointObserver,
     public router: Router,
-    private modalService: ModalService
+    private modalService: ModalService,
+    public navbarService: NavbarService
   ) {}
 
   openDialog() {
-    this.modalService.toggleEmailModal();
+    this.modalService.openEmailModal();
   }
 
   closeDialog() {
-    this.modalService.toggleEmailModal();
+    this.modalService.closeEmailModal();
+  }
+
+  toggleHamburger() {
+    this.navbarService.hamburgerOpen = !this.navbarService.hamburgerOpen;
+  }
+
+  closeHamburger() {
+    this.navbarService.hamburgerOpen = false;
   }
 
   ngOnInit() {
-    this.url1 = this.router.url;
+    this.url = this.router.url;
     this.modalOpenSubject = this.modalService.emailModalOpen;
     this.breakpointSub = this.breakpointObserver
       .observe([Breakpoints.Small, Breakpoints.XSmall])
       .subscribe((result: BreakpointState) => {
+        this.closeDialog();
+        this.closeHamburger();
         if (result.breakpoints[Breakpoints.XSmall]) {
           this.isMobile = true;
           console.log('xsmall');
@@ -69,11 +88,34 @@ export class NavbarComponent implements OnInit {
   }
 
   navigateHomeToProjects() {
+    this.closeHamburger();
     if (this.router.url == '/') {
       this.scrollEmit.emit(true);
     } else {
       this.router.navigate(['/'], { state: { target: true } });
     }
+  }
+
+  get _isHomePage() {
+    return this.router.url === '/';
+  }
+
+  get _isProjectPageWebflow() {
+    return [
+      '/waterloo',
+      '/thattorontostudio',
+      '/canadacomputers',
+      '/gmail',
+      '/funds-dlt',
+    ].includes(this.router.url);
+  }
+
+  get _isProjectPage() {
+    return ['/funds-dlt'].includes(this.router.url);
+  }
+
+  get _isInfoPage() {
+    return ['/about', '/resume'].includes(this.router.url);
   }
 
   ngOnDestroy() {

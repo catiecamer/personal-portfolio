@@ -22,6 +22,10 @@ $main-blue: #294a5e;
 }
 
 @media screen and (max-width: 750px) {
+  .hero-container-mobile {
+    margin: 0 !important;
+    width: 100vw;
+  }
   .base-section-container,
   .summary-content,
   .overview-container,
@@ -39,8 +43,8 @@ $main-blue: #294a5e;
     margin: 4rem auto !important;
   }
   .hero-container {
-    background-color: $main-blue;
-    img {
+    // background-color: $main-blue;
+    img.hero-container-desktop {
       margin-top: 10vh;
     }
   }

@@ -1,0 +1,173 @@
+$dark-purple: #22223b;
+$skin-tone: #e6beae;
+$pink: #eee4e1;
+$dark-green: #3c6e71;
+$light-purple: #e5e9ec;
+$light-teal: #ecf8f8;
+
+.freeze {
+  background-color: $pink;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  filter: contrast(0.8) brightness(0.7) saturate(1);
+}
+
+body {
+  margin: 0;
+  background-color: #e49fd8;
+  background-color: $pink;
+}
+
+.background {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  padding: 3rem 5rem 5rem 5rem;
+  display: flex;
+}
+
+.container-xsmall {
+  display: block;
+  padding: 5rem 30px 3rem 30px;
+}
+
+h1 {
+  margin: 5rem;
+  font-family: Inter;
+  font-size: 72px;
+  color: #fa2452;
+  color: #e95d53;
+  font-weight: 700;
+  letter-spacing: -5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p,
+ul {
+  font-family: Inter;
+  color: rgb(221, 32, 73);
+  color: $dark-purple;
+  font-weight: 2s00;
+  font-size: 14px;
+  letter-spacing: 1.6;
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 3rem;
+}
+
+li.job {
+  margin-left: 12px;
+  list-style: disc;
+}
+
+li.date {
+  padding-top: 0px;
+}
+
+li {
+  padding-top: 0.8rem;
+  line-height: 20px;
+}
+
+li.skill {
+  list-style: none;
+  margin-left: 0px;
+}
+
+.experience {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.line1,
+.place,
+.title {
+  display: inline;
+  font-size: 14px;
+  margin-left: 0;
+}
+
+.title {
+  font-weight: 800;
+}
+
+.column2 {
+  width: 70%;
+  margin-top: 0rem;
+}
+
+.column2-xsmall {
+  width: 100%;
+}
+
+.column1 {
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  width: 130%;
+}
+
+.column1-small {
+  padding-right: 2rem;
+}
+
+.column1-xsmall {
+  padding-right: 0rem;
+  padding-bottom: 0rem;
+  width: 100%;
+}
+
+.line {
+  margin-top: 0.5rem;
+  width: 90%;
+  height: 2px;
+  background-color: rgb(221, 32, 73);
+  background-color: $dark-purple;
+  border-radius: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.design {
+  margin: 5rem;
+  margin-bottom: -0.5rem;
+  width: 100px;
+  height: 15px;
+  background-color: rgb(250, 36, 82);
+  background-color: rgb(233, 94, 84);
+}
+
+.designer {
+  margin: 5rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 32px;
+  font-weight: 200;
+  color: rgb(233, 94, 84);
+}
+
+.designer-xsmall,
+.h1-xsmall,
+.design-xsmall {
+  margin: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.h1-xsmall {
+  line-height: 0.9;
+}
+
+.background-xsmall {
+  padding-top: 10rem;
+}
+
+.skill {
+  padding-top: 0;
+}

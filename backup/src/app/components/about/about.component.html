@@ -1,0 +1,215 @@
+<!-- <app-email *ngIf="modalOpenSubject | async"></app-email> -->
+<div>
+  <div class="background">
+    <app-navbar></app-navbar>
+    <div
+      [ngClass]="{
+        'art1-xsmall': isMobile,
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="art1"
+    ></div>
+    <div
+      [ngClass]="{
+        'art2-xsmall': isMobile,
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="art2"
+    ></div>
+    <div
+      [ngClass]="{
+        'art3-xsmall': isMobile,
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="art3"
+    ></div>
+    <div
+      [ngClass]="{
+        'art4-xsmall': isMobile,
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="art4"
+    ></div>
+    <div
+      [ngClass]="{
+        'art5-xsmall': isMobile,
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="art5"
+    ></div>
+    <div
+      [ngClass]="{
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="art6"
+    ></div>
+    <div
+      [ngClass]="{
+        'imgContainer-xsmall': isMobile,
+        'imgContainer-small': isTablet,
+        'z-index-back': navbarService.hamburgerOpen
+      }"
+      class="imgContainer"
+    >
+      <img
+        class="profile"
+        [ngClass]="{
+          'img-xsmall': isMobile,
+          'z-index-back': navbarService.hamburgerOpen
+        }"
+        src="assets/images/me.jpeg"
+        alt="picture of Catie"
+      />
+      <div [ngClass]="{ 'gradient-xsmall': isMobile }"></div>
+    </div>
+    <div
+      [ngClass]="{
+        'mainmessage-small': isTablet,
+        'mainmessage-xsmall': isMobile
+      }"
+      class="mainmessage"
+    >
+      I’m fascinated with turning <span>problems into possibilities💡</span>
+    </div>
+    <div class="container">
+      <div
+        class="halfpill"
+        [ngClass]="{
+          'halfpill-small': isTablet,
+          'halfpill-xsmall': isMobile
+        }"
+      >
+        <div
+          [ngClass]="{
+            'rectangle-small': isTablet,
+            'rectangle-xsmall': isMobile
+          }"
+          class="rectangle"
+        >
+          <div
+            [ngClass]="{
+              'accounting-small': isTablet,
+              'accounting-xsmall': isMobile
+            }"
+            class="accounting"
+          >
+            <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
+              From balancing the books...
+            </p>
+            I started my career as a CPA, crunching numbers 📈. As I worked my
+            way up the ladder, I realized that I was losing "interest" (pun
+            intended) in accounting. I decided to take a leap of faith and
+            explore a career that involves both creativity and critical
+            thinking. After some self-discovery, I made the switch to product
+            design and made sure to bring my problem-solving skills with me. I
+            use these skills to identify user pain points, develop creative
+            solutions, and design effective user experiences.
+          </div>
+          <div
+            [ngClass]="{
+              'painting-small': isTablet,
+              'painting-xsmall': isMobile
+            }"
+            class="painting"
+          >
+            <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
+              And painting canvases...
+            </p>
+            By the way, I also paint abstract pieces 🎨 and have been selling my
+            art for about three years now. Although it's not directly related to
+            my work as a product designer, I find that my artistic background
+            has been helpful in bringing over some visual design principles. I'm
+            always looking for ways to bring a touch of creativity to my work
+            and keep things fresh.
+          </div>
+          <div
+            [ngClass]="{
+              'uxdesign-small': isTablet,
+              'uxdesign-xsmall': isMobile
+            }"
+            class="uxdesign"
+          >
+            <p [ngClass]="{ 'p-xsmall': isMobile, 'p-small': isTablet }">
+              To designing user experiences!
+            </p>
+            I fell in love with UX during my immersive course at General
+            Assembly 🎓. After that, I took on contract work, gaining hands-on
+            experience across different industries. At FundsDLT, I stepped into
+            the complex world of fund distribution and focused on making
+            processes clearer and more user-friendly. I conducted research,
+            improved the design system, led heuristic analyses, and facilitated
+            workshops to drive innovation. I take a thoughtful, research-driven
+            approach to problem-solving and am always eager to create seamless,
+            intuitive experiences.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workContainer">
+      <div
+        [ngClass]="{ 'circleContainer2-xsmall': isMobile }"
+        class="circleContainer2"
+      >
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div
+          [ngClass]="{ 'circles2-xsmall': isMobile }"
+          class="circles2"
+          id="expand"
+        >
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+        <div [ngClass]="{ 'circles2-xsmall': isMobile }" class="circles2">
+          <span></span>
+        </div>
+      </div>
+      <div (click)="navigateHomeToProjects()">
+        <p
+          class="work"
+          [ngClass]="{ 'work-small': isTablet, 'work-xsmall': isMobile }"
+        >
+          Work - Work - Work - Work - Work - Work - Work - Work - Work - Work -
+          Work - Work - Work - Work - Work - Work - Work - Work - Work - Work -
+          Work - Work - Work - Work
+        </p>
+        <p
+          class="workItalics"
+          [ngClass]="{
+            'workItalics-small': isTablet,
+            'workItalics-xsmall': isMobile
+          }"
+        >
+          Work - Work - Work - Work - Work - Work - Work - Work - Work - Work -
+          Work - Work - Work - Work - Work - Work - Work - Work - Work - Work -
+          Work - Work - Work - Work
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

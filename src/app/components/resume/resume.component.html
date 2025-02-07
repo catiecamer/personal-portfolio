@@ -1,6 +1,6 @@
 <body [ngClass]="{ 'body-xsmall': isMobile }">
-  <app-email *ngIf="modalOpenSubject | async"></app-email>
-  <div [ngClass]="{ freeze: modalOpenSubject | async }">
+  <!-- <app-email *ngIf="modalOpenSubject | async"></app-email> -->
+  <div>
     <app-navbar></app-navbar>
     <div [ngClass]="{ 'background-xsmall': isMobile }" class="background">
       <div [ngClass]="{ 'design-xsmall': isMobile }" class="design"></div>

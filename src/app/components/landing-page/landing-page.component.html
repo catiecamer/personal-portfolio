@@ -1,6 +1,6 @@
 <body>
-  <app-email *ngIf="modalOpenSubject | async"></app-email>
-  <div [ngClass]="{ freeze: modalOpenSubject | async }">
+  <!-- <app-email *ngIf="modalOpenSubject | async"></app-email> -->
+  <div>
     <div class="magenta">
       <app-navbar (scrollEmit)="scrollToElement(target)"></app-navbar>
       <div class="animation">
@@ -244,7 +244,6 @@
                 <fa-icon
                   [ngClass]="{ 'faArrow-xsmall': isMobile }"
                   [icon]="faArrowRight"
-                  [ngStyle]="{ color: '' }"
                   [ngStyle]="{
                     'z-index': navbarService.hamburgerOpen ? '-1' : ''
                   }"
@@ -253,16 +252,16 @@
               </div>
             </div>
             <img
-              class="projectimages img4"
+              class="projectimages"
               *ngIf="isDesktop"
-              src="assets/images/funds-dlt_hero.jpg"
+              src="assets/images/funds-dlt-Desktop-preview.png"
               loading="lazy"
               alt="funds-dlt_project"
             />
             <img
               class="mobileimages"
               *ngIf="isMobile || isTablet"
-              src="assets/images/funds-dlt_hero.jpg"
+              src="assets/images/funds-dlt-Mobile-preview.png"
               loading="lazy"
               alt="funds-dlt_project"
             />

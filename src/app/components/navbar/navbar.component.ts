@@ -57,11 +57,28 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleHamburger() {
+    // document.body.scrollTo({ top: 0 });
     this.navbarService.hamburgerOpen = !this.navbarService.hamburgerOpen;
+    // if (!this.navbarService.hamburgerOpen) {
+    //   this.unlockScroll();
+    // } else {
+    //   this.lockScroll();
+    // }
   }
 
   closeHamburger() {
     this.navbarService.hamburgerOpen = false;
+    this.unlockScroll();
+  }
+
+  private lockScroll() {
+    document.body.style.overflow = 'hidden';
+    document.body.style.maxHeight = '100vh';
+  }
+
+  private unlockScroll() {
+    document.body.style.overflow = 'auto';
+    document.body.style.maxHeight = 'none';
   }
 
   ngOnInit() {

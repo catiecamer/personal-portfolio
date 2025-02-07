@@ -1,9 +1,25 @@
-<main [ngClass]="{ 'page-locked': requirePassword }">
+<app-navbar [float]="true"></app-navbar>
+<main
+  [ngClass]="{
+    'page-locked': requirePassword,
+    'page-hidden': navbarService.hamburgerOpen
+  }"
+>
   <div class="content-container">
     <!-- Hero image and Nav Bar -->
     <section class="hero-container">
-      <app-navbar [float]="true"></app-navbar>
-      <img src="/assets/images/funds-dlt_hero.jpg" alt="hero" />
+      <img
+        class="hero-container-desktop"
+        *ngIf="isDesktop"
+        src="/assets/images/funds-dlt_hero.jpg"
+        alt="hero"
+      />
+      <img
+        class="hero-container-mobile"
+        *ngIf="isMobile || isTablet"
+        src="/assets/images/funds-dlt-mobile-hero-image.png"
+        alt="hero"
+      />
     </section>
     <!-- Summary of FundsDLT and my role -->
     <ng-container *ngIf="!requirePassword">
@@ -592,7 +608,7 @@
               src="assets/images/funds-dlt-SWIFT_sketch.jpg"
               alt="dlt_swift-sketch"
             />
-            <video autoplay muted loop>
+            <video controls>
               <source
                 src="assets/videos/funds-dlt-SWIFT_vid.mov"
                 type="video/mp4"
@@ -664,21 +680,21 @@
                 identified pain points and improving overall service delivery.
               </p> -->
               <h3>Dashboard</h3>
-              <video autoplay muted loop>
+              <video controls>
                 <source
                   src="assets/videos/funds-dlt-dashboard.mov"
                   type="video/mp4"
                 />
               </video>
               <h3>Calender</h3>
-              <video autoplay muted loop>
+              <video controls>
                 <source
                   src="assets/videos/funds-dlt-calender.mov"
                   type="video/mp4"
                 />
               </video>
               <h3>Order</h3>
-              <video autoplay muted loop>
+              <video controls>
                 <source
                   src="assets/videos/funds-dlt-order.mov"
                   type="video/mp4"
@@ -915,14 +931,14 @@
                 identified pain points and improving overall service delivery.
               </p>
               <h3>Distributer profile</h3>
-              <video autoplay muted loop>
+              <video controls>
                 <source
                   src="assets/videos/funds-dlt-dist_profile.mov"
                   type="video/mp4"
                 />
               </video>
               <h3>Universe creation</h3>
-              <video autoplay muted loop>
+              <video controls>
                 <source
                   src="assets/videos/funds-dlt-universe.mov"
                   type="video/mp4"

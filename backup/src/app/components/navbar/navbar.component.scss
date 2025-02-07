@@ -1,0 +1,285 @@
+$dark-purple: #22223b;
+$skin-tone: #e6beae;
+$pink: #eee4e1;
+$dark-green: #3c6e71;
+$light-purple: #e5e9ec;
+$light-teal: #ecf8f8;
+
+.about,
+.name,
+.resumepage,
+.home {
+  text-align: right;
+  font-family: "Inter";
+  letter-spacing: 1.5px;
+  background-color: transparent;
+  outline: none !important;
+  color: #1b065e;
+  color: $dark-purple;
+  font-size: 16px;
+  border: none;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.button-xsmall {
+  // padding-left: 0.3rem;
+  // padding-right: 0.3rem;
+}
+
+.buttons-xsmall {
+  padding-right: 0px;
+  padding-left: 8px;
+  // padding-left: 0.3rem;
+  // padding-right: 0.3rem;
+}
+
+// .home {
+//   // text-align: right;
+//   font-family: "Inter";
+//   letter-spacing: 1.5px;
+//   background-color: transparent;
+//   outline: none !important;
+//   color: white;
+//   color: rgb(255, 255, 135);
+//   font-size: 14px;
+//   border: none;
+//   font-weight: 400;
+// }
+
+.about-xsmall {
+  // float: right;
+  color: rgb(255, 255, 135);
+}
+
+.name-xsmall {
+  color: rgb(255, 255, 135);
+}
+
+.firstline {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 19px;
+  align-items: center;
+}
+
+.name {
+  text-align: left;
+}
+
+.nav {
+  background-color: white;
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.nav-float {
+  @extend .nav;
+  position: absolute;
+  width: 100vw;
+  box-sizing: border-box;
+  max-width: 1920px;
+  background-color: white;
+}
+
+.nav-xsmall {
+  padding-left: 20px;
+  padding-right: 30px;
+  position: absolute;
+  z-index: 40;
+  width: calc(100vw - 50px);
+
+  padding-top: 25px;
+  padding-bottom: 20px;
+  box-sizing: content-box;
+}
+
+.buttons {
+  display: block;
+  padding-top: 0.5rem;
+}
+
+.resume,
+.linkedin,
+.email,
+.email1,
+.resumebutton {
+  background-color: transparent;
+  outline: none !important;
+  color: white;
+  color: $dark-green;
+  border: none;
+  font-weight: 500;
+  font-family: "Inter";
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.button-xsmall {
+  color: #ffffff;
+  color: $dark-purple;
+}
+
+.buttons-xsmall {
+  color: $dark-purple;
+}
+
+.pink {
+  color: #b71375;
+  color: rgb(253, 130, 63);
+}
+
+.white {
+  color: white;
+}
+
+.homecontact {
+  background-color: transparent;
+  outline: none !important;
+  border: none;
+  font-weight: 500;
+  font-family: "Inter";
+  letter-spacing: 1px;
+  color: $dark-green !important;
+  font-size: 14px;
+}
+
+.homecontact:hover {
+  color: $dark-purple;
+}
+
+.email:hover,
+.resume:hover,
+.linkedin:hover {
+  color: #b71375;
+  color: $dark-purple;
+}
+
+.navprojects {
+  display: flex;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  height: 19px;
+  margin-top: -6px;
+}
+
+.rightsidenav {
+  display: inline-flex;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.buttonsprojects {
+  // display: none;
+}
+
+.buttons {
+  .buttons2 {
+    padding: 0;
+    display: none;
+  }
+}
+
+.navbarprojects {
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  z-index: 1000;
+  box-sizing: border-box;
+  line-height: 28px;
+}
+
+.navbar-sticky {
+  @extend .navbarprojects;
+  background-color: white;
+}
+
+#logo {
+  text-decoration: overline;
+  text-decoration-thickness: 1.5px;
+}
+
+.work {
+  padding-right: 8px;
+}
+
+.hamburger {
+  height: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    height: 2px;
+    width: 100%;
+    background-color: $dark-purple;
+  }
+}
+
+.hamburger-open {
+  @extend .hamburger;
+  position: relative;
+
+  .x-hidden {
+    display: none;
+  }
+
+  .x-right {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  .x-left {
+    @extend .x-right;
+    transform: rotate(-45deg);
+  }
+}
+
+.open-hamburger {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  padding: 8rem 0rem 6rem 0rem;
+  z-index: 30;
+}
+
+.hamburger-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 20;
+
+  body {
+    overflow: hidden;
+    max-height: 100vh;
+  }
+}
+
+.hamburger-button {
+  font-size: 30px;
+}

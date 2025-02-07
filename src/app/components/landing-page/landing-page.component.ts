@@ -242,64 +242,6 @@ export class LandingPageComponent implements OnInit {
     aboutcircles.to('.aboutme', { x: '20%', ease: 'power1.in' }, 0);
     aboutcircles.to('.aboutmeItalics', { x: '-20%', ease: 'power1.in' }, 0);
 
-    // if (!this.isMobile) {
-    //   gsap.to('.img2', {
-    //     xPercent: -7,
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: '.two',
-    //       scrub: true,
-    //     },
-    //   });
-
-    //   gsap.to('.img1', {
-    //     yPercent: -10,
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: '.projectsidebar',
-    //       scrub: true,
-    //     },
-    //   });
-
-    //   gsap.to('.img3', {
-    //     yPercent: 10,
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: '.two',
-    //       scrub: true,
-    //     },
-    //   });
-
-    //   gsap.to('.img31', {
-    //     yPercent: 10,
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: '.two',
-    //       scrub: true,
-    //     },
-    //   });
-
-    //   gsap.to('.img4', {
-    //     yPercent: -15,
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: '.one',
-    //       scrub: true,
-    //       start: '50% 25% ',
-    //     },
-    //   });
-
-    //   gsap.to('.img4', {
-    //     yPercent: -15,
-    //     ease: 'none',
-    //     scrollTrigger: {
-    //       trigger: '.one',
-    //       scrub: true,
-    //       start: '50% 25% ',
-    //     },
-    //   });
-    // }
-
     let backgroundColorChange = gsap.timeline({
       scrollTrigger: {
         trigger: '.projectsidebar',
@@ -310,51 +252,13 @@ export class LandingPageComponent implements OnInit {
       },
     });
 
-    // === Background color change on scroll of projects ===
-
-    //FundsDLT
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#003547',
-    //   ease: 'power1.in',
-    // });
-    // //Waterloo
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#FCD54D',
-    //   ease: 'power1.in',
-    // });
-    // //Gmail
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#D9623E',
-    //   ease: 'power1.in',
-    // });
-    // //Spectra
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#DAF8FF',
-    //   ease: 'power1.in',
-    // });
-    // //COMPAS
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#f0f6fd',
-    //   ease: 'power1.in',
-    // });
-    // //THATtoronto
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#93AAFF',
-    //   ease: 'power1.in',
-    // });
-    // //CanadaComputers
-    // backgroundColorChange.to('.projectsidebar', {
-    //   backgroundColor: '#1C4889',
-    //   ease: 'power1.in',
-    // });
-
     gsap.to('.chevron', {
       opacity: '0',
       ease: 'none',
       scrollTrigger: {
-        trigger: '.word',
-        start: 'top 40%',
-        end: 'top 20%',
+        trigger: '.intro',
+        start: 'top 20%',
+        end: 'top 10%%',
         scrub: true,
         // markers: true,
       },

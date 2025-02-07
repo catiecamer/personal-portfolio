@@ -1,0 +1,88 @@
+$main-blue: #294a5e;
+
+@media screen and (max-width: 1200px) {
+  .overview-container {
+    flex-direction: column;
+    gap: 3rem !important;
+
+    .left-side,
+    .right-side {
+      width: auto !important;
+    }
+  }
+
+  .card {
+    flex-direction: column;
+
+    .card-right-side,
+    .card-left-side {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .hero-container-mobile {
+    margin: 0 !important;
+    width: 100vw;
+  }
+  .base-section-container,
+  .summary-content,
+  .overview-container,
+  .user-interviews-container,
+  .project-selector-container,
+  .prioritization-container,
+  .findings-container,
+  .workflow-container,
+  .missing-feature-container,
+  .prototyping-container,
+  .project-summary-container,
+  .persona-container,
+  .user-flow-container,
+  .wireframing-container {
+    margin: 4rem auto !important;
+  }
+  .hero-container {
+    // background-color: $main-blue;
+    img.hero-container-desktop {
+      margin-top: 10vh;
+    }
+  }
+
+  .overview-container,
+  .summary-content,
+  .user-interviews-container,
+  .findings-container,
+  .prioritization-container,
+  .workflow-container,
+  .project-selector-container,
+  .technical-feasibility-container,
+  .missing-feature-container,
+  .persona-container,
+  .user-flow-container,
+  .wireframing-container {
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  .project-selector-container {
+    align-items: center;
+
+    .projects-slider {
+      height: 56px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .workshop-images-container {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;
+
+    .tile-img {
+      max-width: 100% !important;
+      flex: 1 1 100%;
+    }
+  }
+}

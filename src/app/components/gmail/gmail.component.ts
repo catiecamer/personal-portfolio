@@ -6,7 +6,7 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
   styleUrls: ['./gmail.component.scss'],
 })
 export class GmailComponent {
-  doneLoading = true;
+  doneLoading = false;
   @ViewChildren('image') private images: QueryList<ElementRef>;
   imagesLoaded: number = 0;
 

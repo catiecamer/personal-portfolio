@@ -6,7 +6,7 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
   styleUrls: ['./canadacomputers.component.scss'],
 })
 export class CanadacomputersComponent {
-  doneLoading = true;
+  doneLoading = false;
   @ViewChildren('image') private images: QueryList<ElementRef>;
   imagesLoaded: number = 0;
 

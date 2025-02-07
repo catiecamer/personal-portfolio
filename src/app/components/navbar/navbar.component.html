@@ -1,6 +1,7 @@
 <div
   [ngClass]="{
    'nav-xsmall': isMobile,
+   'navbar-sticky': isMobile,
     navbarprojects: _isProjectPageWebflow,
   }"
   [class]="float ? 'nav-float' : 'nav'"
@@ -25,7 +26,7 @@
     </a>
 
     <div class="rightsidenav">
-      <ng-container *ngIf="!isMobile">
+      <ng-container *ngIf="!isMobile && !isTablet">
         <a routerLink="/" (click)="navigateHomeToProjects()">
           <button
             [ngClass]="{
@@ -59,9 +60,43 @@
             About
           </button>
         </a>
+
+        <button
+          (click)="openDialog()"
+          [ngClass]="{
+            email: _isInfoPage,
+            about: _isInfoPage,
+            home: !_isInfoPage,
+            navprojects: _isProjectPageWebflow,
+            'button-xsmall': isMobile,
+            'about-xsmall': isMobile
+          }"
+          mat-flat-button
+          [autofocus]="false"
+          class="work"
+        >
+          Email
+        </button>
+
+        <a routerLink="https://www.linkedin.com/in/catiecamer/" target="_blank">
+          <button
+            [ngClass]="{
+              linkedin: _isInfoPage,
+              home: !_isInfoPage,
+              navprojects: _isProjectPageWebflow,
+              'button-xsmall': isMobile,
+              'about-xsmall': isMobile
+            }"
+            mat-flat-button
+            [autofocus]="false"
+            class="about"
+          >
+            LinkedIn
+          </button>
+        </a>
       </ng-container>
       <div
-        *ngIf="isMobile"
+        *ngIf="isMobile || isTablet"
         (click)="toggleHamburger()"
         [class]="navbarService.hamburgerOpen ? 'hamburger-open' : 'hamburger'"
       >
@@ -78,7 +113,7 @@
       buttons: !_isProjectPageWebflow
     }"
   >
-    <ng-container *ngIf="!isMobile && _isHomePage">
+    <!-- <ng-container *ngIf="!isMobile && _isHomePage">
       <button
         (click)="openDialog()"
         [ngClass]="{
@@ -95,8 +130,8 @@
         (mouseleave)="url != '/about' && (hover4 = false)"
       >
         Email
-      </button>
-      <!-- <a routerLink="/resume">
+      </button> -->
+    <!-- <a routerLink="/resume">
         <button
           [ngClass]="{
             resume: _isInfoPage,
@@ -114,7 +149,7 @@
           Resume
         </button>
       </a> -->
-      <a href="https://www.linkedin.com/in/catiecamer/" target="_blank">
+    <!-- <a href="https://www.linkedin.com/in/catiecamer/" target="_blank">
         <button
           [ngClass]="{
             linkedin: _isInfoPage,
@@ -131,8 +166,8 @@
         >
           LinkedIn
         </button>
-      </a>
-    </ng-container>
+      </a> -->
+    <!-- </ng-container> -->
   </div>
 
   <app-email *ngIf="modalOpenSubject | async"></app-email>
@@ -149,7 +184,7 @@
         class="hamburger-button"
         [ngClass]="{
           linkedin: _isInfoPage,
-          homecontact: !_isInfoPage,
+          homecontact: !_isInfoPage || isMobile,
           buttonsprojects: _isProjectPageWebflow,
           'buttons-xsmall': isMobile,
           pink: hover3,
@@ -167,7 +202,7 @@
         class="hamburger-button"
         [ngClass]="{
           linkedin: _isInfoPage,
-          homecontact: !_isInfoPage,
+          homecontact: !_isInfoPage || isMobile,
           buttonsprojects: _isProjectPageWebflow,
           'buttons-xsmall': isMobile,
           pink: hover3,
@@ -185,7 +220,7 @@
       class="hamburger-button"
       [ngClass]="{
         linkedin: _isInfoPage,
-        homecontact: !_isInfoPage,
+        homecontact: !_isInfoPage || isMobile,
         buttonsprojects: _isProjectPageWebflow,
         'buttons-xsmall': isMobile,
         pink: hover3,
@@ -194,18 +229,17 @@
     >
       Email
     </button>
-    <a>
+    <a href="https://www.linkedin.com/in/catiecamer/" target="_blank">
       <button
         class="hamburger-button"
         [ngClass]="{
           linkedin: _isInfoPage,
-          homecontact: !_isInfoPage,
+          homecontact: !_isInfoPage || isMobile,
           buttonsprojects: _isProjectPageWebflow,
           'buttons-xsmall': isMobile,
           pink: hover3,
           white: hover6
         }"
-        href="https://www.linkedin.com/in/catiecamer/"
         target="_blank"
         (click)="closeHamburger()"
       >

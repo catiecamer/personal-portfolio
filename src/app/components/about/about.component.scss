@@ -6,7 +6,7 @@ $light-purple: #e5e9ec;
 $light-teal: #ecf8f8;
 
 body {
-  margin: 0 !important;
+  // margin: 0 !important;
 }
 
 .freeze {
@@ -76,7 +76,7 @@ body {
 .gradient-xsmall {
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 60%),
+    rgba(255, 255, 255, 30%),
     rgba(255, 255, 255, 0%)
   );
   z-index: 2;

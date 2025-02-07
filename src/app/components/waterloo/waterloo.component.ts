@@ -1,4 +1,5 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-waterloo',
@@ -6,11 +7,14 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
   styleUrls: ['./waterloo.component.scss'],
 })
 export class WaterlooComponent {
-  doneLoading = true;
+  doneLoading = false;
   @ViewChildren('image') private images: QueryList<ElementRef>;
   imagesLoaded: number = 0;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    public navbarService: NavbarService
+  ) {}
 
   ngAfterViewInit() {
     setTimeout(() => {

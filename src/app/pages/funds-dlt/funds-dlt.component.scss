@@ -56,9 +56,9 @@ main {
     margin: 0px auto 0px auto;
 
     .hero-container {
-      min-width: 100vw;
+      // min-width: 100vw;
 
-      img {
+      img.hero-container-desktop {
         width: 100vw;
         max-width: 1920px;
       }
@@ -99,6 +99,7 @@ main {
     .full-img {
       margin-top: 2rem;
       border-radius: 10px;
+      object-fit: contain;
     }
 
     .mac-img-container {
@@ -180,6 +181,7 @@ main {
 
       .projects-slider {
         background-color: rgb(232, 232, 232);
+        color: black;
         padding: 5px;
         border-radius: 5px;
         display: flex;

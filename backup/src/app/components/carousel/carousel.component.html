@@ -1,0 +1,44 @@
+<div class="background-block">
+  <div class="carousel-wrapper">
+    <img
+      [src]="'assets/images/' + currentImg"
+      [alt]="currentImg.split('.')[0]"
+    />
+    <button
+      [disabled]="isOnFirst"
+      class="previous-button"
+      (click)="previousImage()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="48"
+          d="M244 400L100 256l144-144M120 256h292"
+        />
+      </svg>
+    </button>
+    <button [disabled]="isOnLast" class="next-button" (click)="nextImage()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="48"
+          d="M268 112l144 144-144 144M392 256H100"
+        />
+      </svg>
+    </button>
+  </div>
+</div>

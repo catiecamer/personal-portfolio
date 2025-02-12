@@ -41,9 +41,37 @@ $main-red: #ee3939;
   }
 
   video {
+    width: 100%;
+  }
+
+  .video-container {
+    overflow: hidden;
+    display: flex;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04),
       /* Main shadow */ 0 6px 20px rgba(0, 0, 0, 0.04);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &.swift {
+      background-image: url("/assets/videos/thumbnails/SWIFT-image.jpg");
+    }
+    &.calender {
+      background-image: url("/assets/videos/thumbnails/calender-image.jpg");
+    }
+    &.dashboard {
+      background-image: url("/assets/videos/thumbnails/dashboard-image.jpg");
+    }
+    &.dist_profile {
+      background-image: url("/assets/videos/thumbnails/dist_profile-image.jpg");
+    }
+    &.order {
+      background-image: url("/assets/videos/thumbnails/order-image.jpg");
+    }
+    &.univarse {
+      background-image: url("/assets/videos/thumbnails/univarse-image.jpg");
+    }
   }
 }
 
@@ -435,7 +463,7 @@ main {
       ul {
         padding-left: 20px;
       }
-      video {
+      .video-container {
         margin-bottom: 2rem;
       }
     }

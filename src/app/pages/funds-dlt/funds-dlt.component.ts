@@ -24,7 +24,7 @@ export class FundsDltComponent {
   isDesktop = !this.isMobile || !this.isTablet;
   requirePassword = false;
   breakpointSub: Subscription;
-  readonly PROJECT_NAMES = ['Vision', 'Distribution Platform'] as const;
+  readonly PROJECT_NAMES = ['Vision', 'Distributor Platform'] as const;
   readonly WORKFLOW_CAROUSEL = [
     'funds-dlt_worflow@0.jpg',
     'funds-dlt_worflow@1.jpg',
